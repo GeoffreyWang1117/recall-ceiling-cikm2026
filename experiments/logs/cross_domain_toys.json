@@ -1,0 +1,99 @@
+{
+  "dataset": "toys",
+  "n_users": 500,
+  "n_items": 9545,
+  "n_interactions": 67980,
+  "density_pct": 0.4468,
+  "catalog_size": 9545,
+  "recall_results": {
+    "K=100": {
+      "CF-SVD": {
+        "recall_mean": 0.088,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "ItemKNN": {
+        "recall_mean": 0.138,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "Popularity": {
+        "recall_mean": 0.028,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "LightGCN": {
+        "recall_mean": 0.108,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      }
+    },
+    "K=500": {
+      "CF-SVD": {
+        "recall_mean": 0.238,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "ItemKNN": {
+        "recall_mean": 0.234,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "Popularity": {
+        "recall_mean": 0.096,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "LightGCN": {
+        "recall_mean": 0.24,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      }
+    }
+  },
+  "reranker_results": {
+    "cf_order": {
+      "ndcg_mean": 0.009739645571344777,
+      "ndcg_std": 0.0804418888106716,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.0
+    },
+    "random": {
+      "ndcg_mean": 0.002892789260714372,
+      "ndcg_std": 0.03855920973188436,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.0
+    },
+    "reverse": {
+      "ndcg_mean": 0.003838193379829837,
+      "ndcg_std": 0.04486159743276785,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.0
+    },
+    "oracle": {
+      "ndcg_mean": 0.088,
+      "ndcg_std": 0.28329489935401236,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 1.0
+    }
+  },
+  "raep": {
+    "mean_recall": 0.088,
+    "zero_recall_pct": 91.2,
+    "mean_ceiling_ndcg": 0.088,
+    "mean_actual_ndcg": 0.009739645571344777,
+    "ceiling_utilization_pct": 11.06777905834634,
+    "ra_ndcg": 0.11067779058346337,
+    "adaptive_k_mean": 114.118,
+    "adaptive_recall": 0.094,
+    "adaptive_improvement": 0.006000000000000005,
+    "recall_diagnosis": "WARNING"
+  },
+  "best_recall_100": {
+    "method": "ItemKNN",
+    "recall": 0.138
+  },
+  "ceiling_broken": false,
+  "elapsed_seconds": 35.2,
+  "timestamp": "2026-03-26T16:10:19.757048"
+}

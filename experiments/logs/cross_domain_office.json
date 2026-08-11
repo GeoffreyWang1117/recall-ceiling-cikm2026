@@ -1,0 +1,99 @@
+{
+  "dataset": "office",
+  "n_users": 500,
+  "n_items": 5037,
+  "n_interactions": 38921,
+  "density_pct": 0.4535,
+  "catalog_size": 5037,
+  "recall_results": {
+    "K=100": {
+      "CF-SVD": {
+        "recall_mean": 0.138,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "ItemKNN": {
+        "recall_mean": 0.136,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "Popularity": {
+        "recall_mean": 0.094,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "LightGCN": {
+        "recall_mean": 0.104,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      }
+    },
+    "K=500": {
+      "CF-SVD": {
+        "recall_mean": 0.316,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "ItemKNN": {
+        "recall_mean": 0.316,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "Popularity": {
+        "recall_mean": 0.212,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      },
+      "LightGCN": {
+        "recall_mean": 0.312,
+        "recall_ci_low": 0.0,
+        "recall_ci_high": 1.0
+      }
+    }
+  },
+  "reranker_results": {
+    "cf_order": {
+      "ndcg_mean": 0.021761119357235546,
+      "ndcg_std": 0.12376959363454226,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.3722961376744442
+    },
+    "random": {
+      "ndcg_mean": 0.004766481429599568,
+      "ndcg_std": 0.044890444759115126,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.0
+    },
+    "reverse": {
+      "ndcg_mean": 0.003890808238230929,
+      "ndcg_std": 0.040632705950801,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 0.0
+    },
+    "oracle": {
+      "ndcg_mean": 0.138,
+      "ndcg_std": 0.34489998550304407,
+      "ndcg_ci_low": 0.0,
+      "ndcg_ci_high": 1.0
+    }
+  },
+  "raep": {
+    "mean_recall": 0.138,
+    "zero_recall_pct": 86.2,
+    "mean_ceiling_ndcg": 0.138,
+    "mean_actual_ndcg": 0.021761119357235546,
+    "ceiling_utilization_pct": 15.76892707046054,
+    "ra_ndcg": 0.15768927070460542,
+    "adaptive_k_mean": 120.724,
+    "adaptive_recall": 0.148,
+    "adaptive_improvement": 0.009999999999999981,
+    "recall_diagnosis": "WARNING"
+  },
+  "best_recall_100": {
+    "method": "CF-SVD",
+    "recall": 0.138
+  },
+  "ceiling_broken": false,
+  "elapsed_seconds": 24.9,
+  "timestamp": "2026-03-26T16:01:41.732132"
+}

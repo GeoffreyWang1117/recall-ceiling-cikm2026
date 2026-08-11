@@ -1,0 +1,55 @@
+{
+  "config": {
+    "seed": 42,
+    "K": 500,
+    "top_k_rerank": 30,
+    "cold_threshold": 20,
+    "n_case_studies": 5,
+    "model": "gpt-4o-mini"
+  },
+  "findings": {
+    "llm_fails_cold": true,
+    "reason": "Synthetic movie titles provide no semantic signal for LLM reasoning",
+    "effective_strategies": {
+      "cold": "Cooc (co-occurrence)",
+      "medium": "Cooc",
+      "active": "CF (SVD)"
+    }
+  },
+  "case_studies": [
+    {
+      "user_id": "91",
+      "n_interactions": 19,
+      "history": [
+        "Animation Movie #XIFO",
+        "Sci-Fi Movie #WNU0",
+        "Comedy Movie #ZJSW",
+        "Action Movie #CZ40",
+        "Western Movie #6Z3K",
+        "Horror Movie #8PYM",
+        "Mystery Movie #596O",
+        "Fantasy Movie #U12U",
+        "Thriller Movie #ECDC",
+        "Documentary Movie #PM1M",
+        "Romance Movie #XP4U",
+        "Horror Movie #V2FM",
+        "Thriller Movie #0V20",
+        "Sci-Fi Movie #UT26",
+        "Drama Movie #H2UQ",
+        "Animation Movie #VNDU",
+        "Biography Movie #AQCI",
+        "Fantasy Movie #ZVCG",
+        "Adventure Movie #HWKA"
+      ],
+      "gt": [
+        "Documentary Movie #18GX",
+        "Sci-Fi Movie #LSJ2",
+        "Mystery Movie #8SNJ"
+      ],
+      "gt_in_candidates": 1,
+      "llm_response": "1, 2, 9, 14, 3, 13, 17, 4, 22, 8, 6, 5, 15, 30, 23, 19, 18, 10, 12, 11, 21, 20, 28, 29, 7, 16, 27, 26, 25, 24\n\n**Explanation:**\nThe ranking prioritizes movies that align closely with the user's viewing history, particularly in terms of genre. The user has shown a strong interest in documentaries, biographies, horror, animation, drama, and romance. \n\n1. **Biography Movies (1, 2, 9, 14)**: These are highly relevant as the user has already watched several biographies.\n2. **Horror Movies (3, 13, 17)",
+      "ndcg_before": 0.0,
+      "ndcg_after": 0.0
+    }
+  ]
+}

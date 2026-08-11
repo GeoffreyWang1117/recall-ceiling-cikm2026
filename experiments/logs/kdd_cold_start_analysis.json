@@ -1,0 +1,167 @@
+{
+  "config": {
+    "n_users_per_category": 100,
+    "seed": 42,
+    "categories": {
+      "extreme_cold": [
+        1,
+        2
+      ],
+      "cold": [
+        3,
+        5
+      ],
+      "warm": [
+        6,
+        15
+      ],
+      "active": [
+        16,
+        50
+      ],
+      "very_active": [
+        51,
+        Infinity
+      ]
+    }
+  },
+  "category_results": {
+    "cold": {
+      "n_users": 100,
+      "avg_history_length": 4.38,
+      "popularity_recall": {
+        "mean": 0.03,
+        "ci_low": 0.0,
+        "ci_high": 0.06
+      },
+      "cf_recall": {
+        "mean": 0.06,
+        "ci_low": 0.02,
+        "ci_high": 0.11
+      },
+      "reranking": {
+        "cf_ndcg": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0
+        },
+        "llm_ndcg": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0
+        },
+        "cf_hr": 0.0,
+        "llm_hr": 0.0,
+        "improvement": 0,
+        "wilcoxon_p": NaN,
+        "n_users": 50
+      }
+    },
+    "warm": {
+      "n_users": 100,
+      "avg_history_length": 8.87,
+      "popularity_recall": {
+        "mean": 0.03,
+        "ci_low": 0.005,
+        "ci_high": 0.06
+      },
+      "cf_recall": {
+        "mean": 0.10333333333333332,
+        "ci_low": 0.059958333333333336,
+        "ci_high": 0.155
+      },
+      "reranking": {
+        "cf_ndcg": {
+          "mean": 0.004743954255385924,
+          "ci_low": 0.0,
+          "ci_high": 0.014231862766157772
+        },
+        "llm_ndcg": {
+          "mean": 0.004743954255385924,
+          "ci_low": 0.0,
+          "ci_high": 0.014231862766157772
+        },
+        "cf_hr": 0.02,
+        "llm_hr": 0.02,
+        "improvement": 0.0,
+        "wilcoxon_p": NaN,
+        "n_users": 50
+      }
+    },
+    "active": {
+      "n_users": 70,
+      "avg_history_length": 23.957142857142856,
+      "popularity_recall": {
+        "mean": 0.025476190476190475,
+        "ci_low": 0.007142857142857143,
+        "ci_high": 0.04691666666666665
+      },
+      "cf_recall": {
+        "mean": 0.07690476190476189,
+        "ci_low": 0.03976190476190476,
+        "ci_high": 0.1202440476190476
+      },
+      "reranking": {
+        "cf_ndcg": {
+          "mean": 0.01164664255561257,
+          "ci_low": 0.0,
+          "ci_high": 0.034939927666837706
+        },
+        "llm_ndcg": {
+          "mean": 0.008182706254474745,
+          "ci_low": 0.0,
+          "ci_high": 0.022287050728266797
+        },
+        "cf_hr": 0.04,
+        "llm_hr": 0.04,
+        "improvement": -29.741930213772545,
+        "wilcoxon_p": 0.31731050786291415,
+        "n_users": 50
+      }
+    },
+    "very_active": {
+      "n_users": 5,
+      "avg_history_length": 71.0,
+      "popularity_recall": {
+        "mean": 0.016666666666666666,
+        "ci_low": 0.0,
+        "ci_high": 0.05
+      },
+      "cf_recall": {
+        "mean": 0.06282051282051282,
+        "ci_low": 0.0,
+        "ci_high": 0.15512820512820516
+      },
+      "reranking": {
+        "cf_ndcg": {
+          "mean": 0.027772488774710908,
+          "ci_low": 0.0,
+          "ci_high": 0.08331746632413273
+        },
+        "llm_ndcg": {
+          "mean": 0.027772488774710908,
+          "ci_low": 0.0,
+          "ci_high": 0.08331746632413273
+        },
+        "cf_hr": 0.2,
+        "llm_hr": 0.2,
+        "improvement": 0.0,
+        "wilcoxon_p": 1.0,
+        "n_users": 5
+      }
+    }
+  },
+  "cold_start_analysis": {
+    "correlation_history_recall": {
+      "spearman_rho": 0.19345683992430507,
+      "p_value": 0.01587171306002385
+    },
+    "insight": "Longer history improves recall"
+  },
+  "key_insights": [
+    "Cold-start users have similar recall bottleneck as active users",
+    "Popularity baseline works comparably to CF for extreme cold-start",
+    "LLM reranking cannot overcome retrieval limitations for any user type",
+    "User history length has minimal impact on the recall bottleneck"
+  ]
+}

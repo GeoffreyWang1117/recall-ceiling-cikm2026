@@ -1,0 +1,149 @@
+{
+  "amazon_beauty": {
+    "n_users": 500,
+    "overall": {
+      "avg_recall": 0.07763333333333333,
+      "theoretical_max_ndcg": {
+        "mean": 0.0859661405146574,
+        "ci_low": 0.06421723706935978,
+        "ci_high": 0.108824587511792
+      }
+    },
+    "by_recall_bin": {
+      "10-20%": {
+        "n_users": 6,
+        "avg_recall": 0.19444444444444445,
+        "theoretical_max_ndcg": {
+          "mean": 0.3424592060899525,
+          "ci_low": 0.33916020527361607,
+          "ci_high": 0.34905720772262544
+        }
+      },
+      "20-50%": {
+        "n_users": 26,
+        "avg_recall": 0.4096153846153846,
+        "theoretical_max_ndcg": {
+          "mean": 0.5357044238764993,
+          "ci_low": 0.5007012524655717,
+          "ci_high": 0.5712637211019473
+        }
+      },
+      "50-100%": {
+        "n_users": 27,
+        "avg_recall": 1.0,
+        "theoretical_max_ndcg": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0
+        }
+      }
+    }
+  },
+  "amazon_movies": {
+    "n_users": 500,
+    "overall": {
+      "avg_recall": 0.031049615328965427,
+      "theoretical_max_ndcg": {
+        "mean": 0.089039661419429,
+        "ci_low": 0.07473978673875899,
+        "ci_high": 0.10366107679519884
+      }
+    },
+    "by_recall_bin": {
+      "0-5%": {
+        "n_users": 32,
+        "avg_recall": 0.037668118090703605,
+        "theoretical_max_ndcg": {
+          "mean": 0.24385064201723047,
+          "ci_low": 0.22443121766912877,
+          "ci_high": 0.27194896910742933
+        }
+      },
+      "5-10%": {
+        "n_users": 55,
+        "avg_recall": 0.0783280704633197,
+        "theoretical_max_ndcg": {
+          "mean": 0.24986508931186463,
+          "ci_low": 0.23471645907111324,
+          "ci_high": 0.26701455379168954
+        }
+      },
+      "10-20%": {
+        "n_users": 36,
+        "avg_recall": 0.14732590221321348,
+        "theoretical_max_ndcg": {
+          "mean": 0.3787685568272389,
+          "ci_low": 0.348256835305379,
+          "ci_high": 0.41269413546547584
+        }
+      },
+      "20-50%": {
+        "n_users": 11,
+        "avg_recall": 0.2675953605744877,
+        "theoretical_max_ndcg": {
+          "mean": 0.6119240218793084,
+          "ci_low": 0.533089509402797,
+          "ci_high": 0.697793232584214
+        }
+      },
+      "50-100%": {
+        "n_users": 3,
+        "avg_recall": 0.588034188034188,
+        "theoretical_max_ndcg": {
+          "mean": 0.86906598885253,
+          "ci_low": 0.8006937664098821,
+          "ci_high": 0.9363792118010483
+        }
+      }
+    }
+  },
+  "amazon_electronics": {
+    "n_users": 500,
+    "overall": {
+      "avg_recall": 0.023426398274927686,
+      "theoretical_max_ndcg": {
+        "mean": 0.050577515743306004,
+        "ci_low": 0.04131763599748232,
+        "ci_high": 0.060769234097138594
+      }
+    },
+    "by_recall_bin": {
+      "0-5%": {
+        "n_users": 5,
+        "avg_recall": 0.04023809523809523,
+        "theoretical_max_ndcg": {
+          "mean": 0.2478642550727911,
+          "ci_low": 0.2200917662980802,
+          "ci_high": 0.3034092326222129
+        }
+      },
+      "5-10%": {
+        "n_users": 25,
+        "avg_recall": 0.08233001965354907,
+        "theoretical_max_ndcg": {
+          "mean": 0.22564626405302238,
+          "ci_low": 0.22009176629808022,
+          "ci_high": 0.23675525956290674
+        }
+      },
+      "10-20%": {
+        "n_users": 61,
+        "avg_recall": 0.13995231972570446,
+        "theoretical_max_ndcg": {
+          "mean": 0.2777850994634949,
+          "ci_low": 0.2682958781173136,
+          "ci_high": 0.2875964097382507
+        }
+      },
+      "20-50%": {
+        "n_users": 3,
+        "avg_recall": 0.3055555555555555,
+        "theoretical_max_ndcg": {
+          "mean": 0.4877963092301001,
+          "ci_low": 0.4769701288867239,
+          "ci_high": 0.5008655546918773
+        }
+      }
+    }
+  }
+}

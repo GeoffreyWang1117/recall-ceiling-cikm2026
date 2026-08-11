@@ -1,0 +1,19 @@
+{
+  "title": "Cost-performance comparison (Beauty, n=500, K=100)",
+  "note": "Source data for the cost-case discussion in implications.tex (table moved to supplementary to fit CIKM 10-page body limit). No LLM achieves significant gains over the $0.00 CF baseline. All p > 0.05 under Holm-Bonferroni.",
+  "dataset": "amazon_beauty_sampled",
+  "n_users": 500,
+  "K": 100,
+  "rows": [
+    {"method": "CF-Score",      "latency_s": 0.01, "cost_per_1k_usd": 0.00,           "ndcg_at_10": 0.0051, "p_vs_cf": null,    "note": "baseline"},
+    {"method": "Gemma3-4B",     "latency_s": 1.4,  "cost_per_1k_usd": 0.01,           "ndcg_at_10": 0.0045, "p_vs_cf": "n.s.",  "note": "amortized GPU cost at $0.50/hr"},
+    {"method": "GPT-4o-mini",   "latency_s": 2.0,  "cost_per_1k_usd": 0.05,           "ndcg_at_10": 0.0045, "p_vs_cf": "n.s."},
+    {"method": "Qwen3-32B",     "latency_s": 0.4,  "cost_per_1k_usd": 0.23,           "ndcg_at_10": 0.0050, "p_vs_cf": "n.s."},
+    {"method": "Llama-3.3-70B", "latency_s": 0.4,  "cost_per_1k_usd": 0.40,           "ndcg_at_10": 0.0038, "p_vs_cf": "n.s.",  "movies_p_vs_cf": 0.006, "movies_delta_pct": -14.0, "note": "significantly worse than CF on Movies"},
+    {"method": "DeepSeek-V3",   "latency_s": 2.1,  "cost_per_1k_usd": 0.21,           "ndcg_at_10": 0.0016, "p_vs_cf": "n.s."},
+    {"method": "Kimi-K2",       "latency_s": 1.3,  "cost_per_1k_usd": 0.40,           "ndcg_at_10": 0.0028, "p_vs_cf": "n.s."},
+    {"method": "DeepSeek-671B", "latency_s": 17.7, "cost_per_1k_usd": 0.18,           "movies_delta_pct": -14.0, "note": "most expensive; 14% worse than CF on Movies"}
+  ],
+  "multiplicity_correction": "Holm-Bonferroni across 6 LLM vs CF tests on Beauty (k=6).",
+  "conclusion": "Under low-recall conditions, LLM reranking is not merely wasteful---it actively degrades the ranking."
+}

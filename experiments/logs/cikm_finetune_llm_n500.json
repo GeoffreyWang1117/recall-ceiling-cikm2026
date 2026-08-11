@@ -1,0 +1,92 @@
+{
+  "args": {
+    "datasets": [
+      "amazon_beauty_sampled",
+      "amazon_movies_sampled",
+      "amazon_electronics_sampled"
+    ],
+    "n_users": 500,
+    "n_train": 250,
+    "n_neg": 5,
+    "K": 100,
+    "epochs": 3,
+    "lr": 0.0002,
+    "batch": 8,
+    "eval_batch": 24,
+    "max_len": 512,
+    "seed": 42,
+    "out": "experiments/logs/cikm_finetune_llm_n500.json",
+    "notes": "amazon_electronics_sampled re-run on GPU 0 with batch=4 eval_batch=12 after initial OOM on multi-GPU pass"
+  },
+  "results": {
+    "amazon_beauty_sampled": {
+      "n_eval": 500,
+      "n_train": 1002,
+      "K": 100,
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "epochs": 3,
+      "lr": 0.0002,
+      "cf_ndcg": 0.005052854685392907,
+      "cf_ci": [
+        0.0015505691812172694,
+        0.00934660897533685
+      ],
+      "ft_ndcg": 0.007759241956975233,
+      "ft_ci": [
+        0.003139465957187374,
+        0.013784086813184306
+      ],
+      "delta_pct_vs_cf": 53.56154966035558,
+      "paired_wilcoxon_p": 0.19126730283569748,
+      "ft_scores_len": 500
+    },
+    "amazon_movies_sampled": {
+      "n_eval": 500,
+      "n_train": 1500,
+      "K": 100,
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "epochs": 3,
+      "lr": 0.0002,
+      "cf_ndcg": 0.008446297368370279,
+      "cf_ci": [
+        0.005198448510696738,
+        0.01201174902241745
+      ],
+      "ft_ndcg": 0.005106633584277889,
+      "ft_ci": [
+        0.0030119025355004737,
+        0.007590783203280834
+      ],
+      "delta_pct_vs_cf": -39.539974008004656,
+      "paired_wilcoxon_p": 0.02577574292452387,
+      "ft_scores_len": 500
+    },
+    "amazon_electronics_sampled": {
+      "n_eval": 500,
+      "n_train": 1500,
+      "K": 100,
+      "model": "meta-llama/Llama-3.2-3B-Instruct",
+      "lora_r": 16,
+      "lora_alpha": 32,
+      "epochs": 3,
+      "lr": 0.0002,
+      "cf_ndcg": 0.0035488976807043302,
+      "cf_ci": [
+        0.0015388843521668273,
+        0.006081049628029736
+      ],
+      "ft_ndcg": 0.0024564994978410228,
+      "ft_ci": [
+        0.0010340312508825378,
+        0.004244464856051238
+      ],
+      "delta_pct_vs_cf": -30.78133778842858,
+      "paired_wilcoxon_p": 0.477536356531021,
+      "ft_scores_len": 500
+    }
+  }
+}

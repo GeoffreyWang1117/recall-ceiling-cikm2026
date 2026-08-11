@@ -1,0 +1,13 @@
+{
+  "dataset": "Amazon Office_Products",
+  "domain": "Office_Products",
+  "n_users": 1704,
+  "n_items": 5037,
+  "n_interactions": 40625,
+  "density_pct": 0.4733,
+  "n_train": 38921,
+  "n_test": 1704,
+  "n_core": 5,
+  "implicit_threshold": 4.0,
+  "processed_at": "2026-03-26T15:55:38.650598"
+}

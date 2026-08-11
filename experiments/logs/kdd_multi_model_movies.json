@@ -1,0 +1,122 @@
+{
+  "config": {
+    "dataset": "Movies",
+    "n_users": 200,
+    "K": 100,
+    "top_k": 10,
+    "seed": 42,
+    "avg_recall_at_100": 0.0323
+  },
+  "results": {
+    "Random": {
+      "ndcg_mean": 0.0053,
+      "ndcg_ci_low": 0.0023,
+      "ndcg_ci_high": 0.0087,
+      "vs_cf_pct": -33.4
+    },
+    "CF_Score": {
+      "ndcg_mean": 0.0079,
+      "ndcg_ci_low": 0.0029,
+      "ndcg_ci_high": 0.0154,
+      "vs_cf_pct": 0.0
+    },
+    "DeepSeek-V3.2": {
+      "params": "671B",
+      "ndcg_mean": 0.0094,
+      "ndcg_ci_low": 0.0036,
+      "ndcg_ci_high": 0.017,
+      "vs_cf_pct": 17.8,
+      "t_test_p": 0.1818,
+      "wilcoxon_p": 0.6836,
+      "cohens_d": 0.095,
+      "effect_size": "negligible"
+    },
+    "Qwen3-Next-80B": {
+      "params": "80B",
+      "ndcg_mean": 0.0093,
+      "ndcg_ci_low": 0.0037,
+      "ndcg_ci_high": 0.0172,
+      "vs_cf_pct": 17.1,
+      "t_test_p": 0.2326,
+      "wilcoxon_p": 0.3394,
+      "cohens_d": 0.085,
+      "effect_size": "negligible"
+    },
+    "Mistral-Large-675B": {
+      "params": "675B",
+      "ndcg_mean": 0.0072,
+      "ndcg_ci_low": 0.0032,
+      "ndcg_ci_high": 0.0116,
+      "vs_cf_pct": -9.9,
+      "t_test_p": 0.7714,
+      "wilcoxon_p": 0.9358,
+      "cohens_d": -0.021,
+      "effect_size": "negligible"
+    },
+    "GPT-4o-mini": {
+      "params": "~8B*",
+      "ndcg_mean": 0.0098,
+      "ndcg_ci_low": 0.0046,
+      "ndcg_ci_high": 0.0163,
+      "vs_cf_pct": 22.9,
+      "t_test_p": 0.4494,
+      "wilcoxon_p": 0.2242,
+      "cohens_d": 0.054,
+      "effect_size": "negligible"
+    }
+  },
+  "holm_bonferroni": {
+    "GPT-4o-mini": {
+      "p": 0.2242,
+      "adj_alpha": 0.0125,
+      "significant": false
+    },
+    "Qwen3-Next-80B": {
+      "p": 0.3394,
+      "adj_alpha": 0.0167,
+      "significant": false
+    },
+    "DeepSeek-V3.2": {
+      "p": 0.6836,
+      "adj_alpha": 0.025,
+      "significant": false
+    },
+    "Mistral-Large-675B": {
+      "p": 0.9358,
+      "adj_alpha": 0.05,
+      "significant": false
+    }
+  },
+  "pairwise_llm": {
+    "DeepSeek-V3.2_vs_Qwen3-Next-80B": {
+      "mean_a": 0.0094,
+      "mean_b": 0.0093,
+      "p": 1.0
+    },
+    "DeepSeek-V3.2_vs_Mistral-Large-675B": {
+      "mean_a": 0.0094,
+      "mean_b": 0.0072,
+      "p": 0.6018
+    },
+    "DeepSeek-V3.2_vs_GPT-4o-mini": {
+      "mean_a": 0.0094,
+      "mean_b": 0.0098,
+      "p": 0.5277
+    },
+    "Qwen3-Next-80B_vs_Mistral-Large-675B": {
+      "mean_a": 0.0093,
+      "mean_b": 0.0072,
+      "p": 0.5897
+    },
+    "Qwen3-Next-80B_vs_GPT-4o-mini": {
+      "mean_a": 0.0093,
+      "mean_b": 0.0098,
+      "p": 0.695
+    },
+    "Mistral-Large-675B_vs_GPT-4o-mini": {
+      "mean_a": 0.0072,
+      "mean_b": 0.0098,
+      "p": 0.1212
+    }
+  }
+}

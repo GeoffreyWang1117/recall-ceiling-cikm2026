@@ -1,0 +1,554 @@
+{
+  "beauty": {
+    "dataset": "beauty",
+    "n_users": 500,
+    "recall_at_K": 0.08233333333333333,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.005052854685392908,
+        "ci_low": 0.0015042350927390686,
+        "ci_high": 0.00919304682667773
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.09114299201446087,
+        "ci_low": 0.07091512481259142,
+        "ci_high": 0.11419698334263435
+      },
+      "LambdaMART": {
+        "ndcg": 0.007886553751028022,
+        "ci_low": 0.003122967001414997,
+        "ci_high": 0.01364762686264154
+      },
+      "RankNet": {
+        "ndcg": 0.004946813520218963,
+        "ci_low": 0.0018720985408862644,
+        "ci_high": 0.008390400836140234
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.009427064323578843,
+        "ci_low": 0.00490559774733275,
+        "ci_high": 0.014396994001088065
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.08609013732906795,
+        "cohens_d": 0.347538540596354,
+        "p_value": 4.87186388013637e-12,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.002833699065635114,
+        "cohens_d": 0.038912429961683453,
+        "p_value": 0.46298148426609276,
+        "significant": false
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.00010604116517394457,
+        "cohens_d": -0.001731959287440627,
+        "p_value": 0.9381652397905107,
+        "significant": false
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.004374209638185937,
+        "cohens_d": 0.07444118753362494,
+        "p_value": 0.07012416237900206,
+        "significant": false
+      }
+    ],
+    "oracle_ceiling": 0.09114299201446087,
+    "ceiling_utilization": 0.10343158705762012
+  },
+  "movies": {
+    "dataset": "movies",
+    "n_users": 500,
+    "recall_at_K": 0.02988352260410328,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.009808834562223336,
+        "ci_low": 0.005978397693014302,
+        "ci_high": 0.013850633733730168
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.08762543443411797,
+        "ci_low": 0.0739079166890442,
+        "ci_high": 0.10220392108338763
+      },
+      "LambdaMART": {
+        "ndcg": 0.006574329270078671,
+        "ci_low": 0.00391248839838287,
+        "ci_high": 0.009716897663100254
+      },
+      "RankNet": {
+        "ndcg": 0.003836073809483909,
+        "ci_low": 0.001788588867076384,
+        "ci_high": 0.005803126821149287
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.005206651414578276,
+        "ci_low": 0.0029397544995478954,
+        "ci_high": 0.0076210338893167905
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.07781659987189464,
+        "cohens_d": 0.5427531330852277,
+        "p_value": 9.403503107095246e-25,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.0032345052921446634,
+        "cohens_d": -0.06245327221378164,
+        "p_value": 0.41194955915717624,
+        "significant": false
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.005972760752739424,
+        "cohens_d": -0.10925171780533309,
+        "p_value": 0.007729814689924337,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.004602183147645059,
+        "cohens_d": -0.09592761101817482,
+        "p_value": 0.02742689735078561,
+        "significant": true
+      }
+    ],
+    "oracle_ceiling": 0.08762543443411797,
+    "ceiling_utilization": 0.07502763672480141
+  },
+  "electronics": {
+    "dataset": "electronics",
+    "n_users": 500,
+    "recall_at_K": 0.025564076446429388,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.003241087222635997,
+        "ci_low": 0.0014925646475407127,
+        "ci_high": 0.005466401204060783
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.05381674155379537,
+        "ci_low": 0.044161542904201184,
+        "ci_high": 0.06378728501060704
+      },
+      "LambdaMART": {
+        "ndcg": 0.003283860832647994,
+        "ci_low": 0.0013688690511884272,
+        "ci_high": 0.005662114508407263
+      },
+      "RankNet": {
+        "ndcg": 0.001123608873736179,
+        "ci_low": 0.00015679653795735066,
+        "ci_high": 0.0023419797035880274
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.0024757391139416185,
+        "ci_low": 0.0009680237382271554,
+        "ci_high": 0.004340399180144868
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.05057565433115937,
+        "cohens_d": 0.468260010719317,
+        "p_value": 1.5030249419282885e-17,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 4.2773610011997145e-05,
+        "cohens_d": 0.0014505578141058492,
+        "p_value": 0.8551238490535518,
+        "significant": false
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.002117478348899818,
+        "cohens_d": -0.08398478140363569,
+        "p_value": 0.031063847396315014,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.0007653481086943779,
+        "cohens_d": -0.05517121179590511,
+        "p_value": 0.21444862591345104,
+        "significant": false
+      }
+    ],
+    "oracle_ceiling": 0.05381674155379537,
+    "ceiling_utilization": 0.061019317255830235
+  },
+  "toys": {
+    "dataset": "toys",
+    "n_users": 500,
+    "recall_at_K": 0.088,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.009739645571344777,
+        "ci_low": 0.003559029347685028,
+        "ci_high": 0.01744268503653615
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.088,
+        "ci_low": 0.064,
+        "ci_high": 0.112
+      },
+      "LambdaMART": {
+        "ndcg": 0.046353635985865026,
+        "ci_low": 0.029716945648229194,
+        "ci_high": 0.06412897320735407
+      },
+      "RankNet": {
+        "ndcg": 0.0052447963193024425,
+        "ci_low": 0.0005781296526357758,
+        "ci_high": 0.011913676411319879
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.0101587777449017,
+        "ci_low": 0.003261859507142915,
+        "ci_high": 0.0189700332196725
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.07826035442865523,
+        "cohens_d": 0.2980146174167929,
+        "p_value": 1.1575237312364903e-09,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.03661399041452025,
+        "cohens_d": 0.1822450001813558,
+        "p_value": 5.7556157957177614e-05,
+        "significant": true
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.0044948492520423345,
+        "cohens_d": -0.04298410103270736,
+        "p_value": 0.2767929554675851,
+        "significant": false
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.0004191321735569222,
+        "cohens_d": 0.004027855981325277,
+        "p_value": 0.7770829514135476,
+        "significant": false
+      }
+    ],
+    "oracle_ceiling": 0.088,
+    "ceiling_utilization": 0.5267458628771642
+  },
+  "sports": {
+    "dataset": "sports",
+    "n_users": 500,
+    "recall_at_K": 0.128,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.01725696851936896,
+        "ci_low": 0.009101241937110606,
+        "ci_high": 0.0273712746240909
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.128,
+        "ci_low": 0.098,
+        "ci_high": 0.158
+      },
+      "LambdaMART": {
+        "ndcg": 0.055562695392072266,
+        "ci_low": 0.03642351440930985,
+        "ci_high": 0.07456713597361327
+      },
+      "RankNet": {
+        "ndcg": 0.004725272614617664,
+        "ci_low": 0.0008548707880263215,
+        "ci_high": 0.010398259063296774
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.009410441215055857,
+        "ci_low": 0.0034381807092809208,
+        "ci_high": 0.016730817185874967
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.11074303148063104,
+        "cohens_d": 0.36511714452183097,
+        "p_value": 5.792185760988737e-13,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.038305726872703304,
+        "cohens_d": 0.1844759650519717,
+        "p_value": 4.525110550585563e-05,
+        "significant": true
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.012531695904751294,
+        "cohens_d": -0.10604428055693736,
+        "p_value": 0.02059060097106897,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.007846527304313101,
+        "cohens_d": -0.06309765311143503,
+        "p_value": 0.1435696559093578,
+        "significant": false
+      }
+    ],
+    "oracle_ceiling": 0.128,
+    "ceiling_utilization": 0.4340835574114368
+  },
+  "office": {
+    "dataset": "office",
+    "n_users": 500,
+    "recall_at_K": 0.138,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.021761119357235546,
+        "ci_low": 0.011435504914627468,
+        "ci_high": 0.03318990224572426
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.138,
+        "ci_low": 0.108,
+        "ci_high": 0.168
+      },
+      "LambdaMART": {
+        "ndcg": 0.0574605560236895,
+        "ci_low": 0.03806814526821044,
+        "ci_high": 0.0760254024191749
+      },
+      "RankNet": {
+        "ndcg": 0.005271870301597083,
+        "ci_low": 0.0007124143742160444,
+        "ci_high": 0.011119412394484787
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.018078612960210214,
+        "ci_low": 0.00956632050905017,
+        "ci_high": 0.027732212194320337
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.11623888064276446,
+        "cohens_d": 0.37368555572953066,
+        "p_value": 1.0912993900861285e-13,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.03569943666645395,
+        "cohens_d": 0.18390150261964427,
+        "p_value": 4.54773310825263e-05,
+        "significant": true
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.016489249055638464,
+        "cohens_d": -0.11965161736115626,
+        "p_value": 0.008665911111382226,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.0036825063970253318,
+        "cohens_d": -0.048831669216963955,
+        "p_value": 0.25791480724715843,
+        "significant": false
+      }
+    ],
+    "oracle_ceiling": 0.138,
+    "ceiling_utilization": 0.41638084044964785
+  },
+  "mind": {
+    "dataset": "mind",
+    "n_users": 500,
+    "recall_at_K": 0.12,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.01340566913725985,
+        "ci_low": 0.006546652704398094,
+        "ci_high": 0.021430330636153957
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.12,
+        "ci_low": 0.092,
+        "ci_high": 0.15
+      },
+      "LambdaMART": {
+        "ndcg": 0.05147010846684326,
+        "ci_low": 0.033468471639373186,
+        "ci_high": 0.07193015340619768
+      },
+      "RankNet": {
+        "ndcg": 0.0027737056144690833,
+        "ci_low": 0.0,
+        "ci_high": 0.00632111684340725
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.004593158936487545,
+        "ci_low": 0.0013333333333333333,
+        "ci_high": 0.008473903498759042
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.10659433086274014,
+        "cohens_d": 0.35609151845694914,
+        "p_value": 1.581579294226903e-12,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.0380644393295834,
+        "cohens_d": 0.18545308614089168,
+        "p_value": 3.046668774542021e-05,
+        "significant": true
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.010631963522790767,
+        "cohens_d": -0.11227310972775967,
+        "p_value": 0.04328521082658429,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.008812510200772306,
+        "cohens_d": -0.11658475555849013,
+        "p_value": 0.008888336189404517,
+        "significant": true
+      }
+    ],
+    "oracle_ceiling": 0.12,
+    "ceiling_utilization": 0.42891757019959587
+  },
+  "movielens": {
+    "dataset": "movielens",
+    "n_users": 500,
+    "recall_at_K": 0.18880000000000002,
+    "K": 100,
+    "reranker_results": {
+      "CF-Score": {
+        "ndcg": 0.026475021317340336,
+        "ci_low": 0.020416554622059095,
+        "ci_high": 0.03292364224505819
+      },
+      "Oracle-Perfect": {
+        "ndcg": 0.2613598763417724,
+        "ci_low": 0.23774465410194512,
+        "ci_high": 0.285621167843489
+      },
+      "LambdaMART": {
+        "ndcg": 0.021039815091396612,
+        "ci_low": 0.015212374170586527,
+        "ci_high": 0.027353258706075786
+      },
+      "RankNet": {
+        "ndcg": 0.010647435326221156,
+        "ci_low": 0.00717978041551279,
+        "ci_high": 0.014807980797810786
+      },
+      "MLP-Reranker": {
+        "ndcg": 0.021320072913701343,
+        "ci_low": 0.01588973374808668,
+        "ci_high": 0.027629358002639846
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "Oracle-Perfect",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": 0.23488485502443213,
+        "cohens_d": 0.9280126590998294,
+        "p_value": 1.5288606617747435e-46,
+        "significant": true
+      },
+      {
+        "method": "LambdaMART",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.005435206225943725,
+        "cohens_d": -0.060730230130746035,
+        "p_value": 0.15103544033999436,
+        "significant": false
+      },
+      {
+        "method": "RankNet",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.015827585991119178,
+        "cohens_d": -0.1769501036522073,
+        "p_value": 0.000284220621931192,
+        "significant": true
+      },
+      {
+        "method": "MLP-Reranker",
+        "vs": "CF-Score",
+        "mean_ndcg_diff": -0.005154948403638995,
+        "cohens_d": -0.07527815846660355,
+        "p_value": 0.019934572572400694,
+        "significant": true
+      }
+    ],
+    "oracle_ceiling": 0.2613598763417724,
+    "ceiling_utilization": 0.08157362638810085
+  }
+}

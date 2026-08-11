@@ -1,0 +1,58 @@
+{
+  "timestamp": "2026-02-04T16:17:16.159648",
+  "config": {
+    "dataset": "electronics",
+    "n_users": 200,
+    "K": 100,
+    "epochs": 30,
+    "hidden_size": 64,
+    "seed": 42
+  },
+  "retrieval_results": {
+    "CF-SVD": {
+      "recall@100": {
+        "mean": 0.03157112046450281,
+        "ci_low": 0.023643366886381596,
+        "ci_high": 0.04028226227408212
+      },
+      "n_users": 200
+    },
+    "SASRec": {
+      "recall@100": {
+        "mean": 0.01458166577574472,
+        "ci_low": 0.008926264406280854,
+        "ci_high": 0.021424644909184377
+      },
+      "n_users": 200
+    },
+    "BERT4Rec": {
+      "recall@100": {
+        "mean": 0.03651509896836909,
+        "ci_low": 0.026725259449335494,
+        "ci_high": 0.046407382050515276
+      },
+      "n_users": 200
+    }
+  },
+  "statistical_tests": [
+    {
+      "comparison": "SASRec vs CF-SVD",
+      "mean_diff": -0.016989454688758093,
+      "p_value": 0.0005987509446590511,
+      "significant": true
+    },
+    {
+      "comparison": "BERT4Rec vs CF-SVD",
+      "mean_diff": 0.004943978503866275,
+      "p_value": 0.4447375125330886,
+      "significant": false
+    },
+    {
+      "comparison": "SASRec vs BERT4Rec",
+      "mean_diff": -0.02193343319262437,
+      "p_value": 4.720844292055893e-05,
+      "significant": true
+    }
+  ],
+  "key_finding": "Sequential models (SASRec, BERT4Rec) compared to CF-SVD baseline"
+}

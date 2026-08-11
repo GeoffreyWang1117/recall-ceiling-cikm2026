@@ -1,0 +1,1138 @@
+{
+  "beauty": {
+    "dataset": "beauty",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.08233333333333333,
+        "median_recall": 0.0,
+        "pct_zero_recall": 87.6,
+        "pct_full_recall": 5.6000000000000005,
+        "recall_distribution": {
+          "0%": 87.6,
+          "0-10%": 0.0,
+          "10-50%": 6.800000000000001,
+          "50-100%": 0.0,
+          "100%": 5.6000000000000005
+        },
+        "recommendation": "WARNING: Recall < 15%. Reranking gains will be marginal. Consider improving retrieval before optimizing rerankers. Use RA-NDCG for fair comparison if reranking is required."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.005052854685392908,
+          "ra_ndcg": 0.0518577193690449,
+          "ceiling_utilization": 0.0518577193690449,
+          "stratified": {
+            "zero": {
+              "n_users": 438,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 17,
+              "mean_ndcg": 0.00816837905138556,
+              "mean_ra_ndcg": 0.01741658299799207
+            },
+            "high": {
+              "n_users": 45,
+              "mean_ndcg": 0.053056997751619976,
+              "mean_ra_ndcg": 0.06486881533144263
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.0015501402764632863,
+          "ra_ndcg": 0.01630489237481257,
+          "ceiling_utilization": 0.01630489237481257,
+          "stratified": {
+            "zero": {
+              "n_users": 438,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 17,
+              "mean_ndcg": 0.00557578613938534,
+              "mean_ra_ndcg": 0.011888667441208681
+            },
+            "high": {
+              "n_users": 45,
+              "mean_ndcg": 0.0486564560098079,
+              "mean_ra_ndcg": 0.057253185059464376
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.004328561852724764,
+          "ra_ndcg": 0.05202680946559312,
+          "ceiling_utilization": 0.05202680946559312,
+          "stratified": {
+            "zero": {
+              "n_users": 438,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 17,
+              "mean_ndcg": 0.01567483089156621,
+              "mean_ra_ndcg": 0.033410158608512444
+            },
+            "high": {
+              "n_users": 45,
+              "mean_ndcg": 0.04217352891568349,
+              "mean_ra_ndcg": 0.05905976645604581
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.0024831120202531178,
+          "ra_ndcg": 0.034863279451548046,
+          "ceiling_utilization": 0.034863279451548046,
+          "stratified": {
+            "zero": {
+              "n_users": 438,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 17,
+              "mean_ndcg": 0.04446766574605938,
+              "mean_ra_ndcg": 0.09858339020896645
+            },
+            "high": {
+              "n_users": 45,
+              "mean_ndcg": 0.010791237609856652,
+              "mean_ra_ndcg": 0.010791237609856652
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.08233333333333333,
+      "adaptive_recall": 0.13964871794871794,
+      "avg_K": 215.852,
+      "improvement": 0.057315384615384615,
+      "K_distribution": {
+        "min": 164,
+        "max": 238,
+        "mean": 215.852,
+        "median": 217.0
+      }
+    }
+  },
+  "movies": {
+    "dataset": "movies",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.02988352260410328,
+        "median_recall": 0.0,
+        "pct_zero_recall": 72.6,
+        "pct_full_recall": 0.0,
+        "recall_distribution": {
+          "0%": 72.6,
+          "0-10%": 19.0,
+          "10-50%": 7.8,
+          "50-100%": 0.6,
+          "100%": 0.0
+        },
+        "recommendation": "CRITICAL: Recall < 5%. Reranking is futile. Invest ALL resources in improving retrieval. Do not evaluate or compare rerankers."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.009808834562223336,
+          "ra_ndcg": 0.0872216245868314,
+          "ceiling_utilization": 0.0872216245868314,
+          "stratified": {
+            "zero": {
+              "n_users": 363,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 82,
+              "mean_ndcg": 0.016515565281038966,
+              "mean_ra_ndcg": 0.06387189847157816
+            },
+            "medium": {
+              "n_users": 52,
+              "mean_ndcg": 0.05148077603148246,
+              "mean_ra_ndcg": 0.11055626480613082
+            },
+            "high": {
+              "n_users": 3,
+              "mean_ndcg": 0.29104685814312786,
+              "mean_ra_ndcg": 0.3209803746025636
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.00472447854546566,
+          "ra_ndcg": 0.05000105658841456,
+          "ceiling_utilization": 0.05000105658841456,
+          "stratified": {
+            "zero": {
+              "n_users": 363,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 82,
+              "mean_ndcg": 0.011470893130713061,
+              "mean_ra_ndcg": 0.0426832492774711
+            },
+            "medium": {
+              "n_users": 52,
+              "mean_ndcg": 0.02013033806929595,
+              "mean_ra_ndcg": 0.05293310134134781
+            },
+            "high": {
+              "n_users": 3,
+              "mean_ndcg": 0.046287481291184845,
+              "mean_ra_ndcg": 0.05319635904163211
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.0046273517051670645,
+          "ra_ndcg": 0.05984726892745548,
+          "ceiling_utilization": 0.05984726892745548,
+          "stratified": {
+            "zero": {
+              "n_users": 363,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 82,
+              "mean_ndcg": 0.020365847900599525,
+              "mean_ra_ndcg": 0.0830846796225369
+            },
+            "medium": {
+              "n_users": 52,
+              "mean_ndcg": 0.010870731841455684,
+              "mean_ra_ndcg": 0.02492369433386554
+            },
+            "high": {
+              "n_users": 3,
+              "mean_ndcg": 0.02613275632622511,
+              "mean_ra_ndcg": 0.030033336217455894
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.006343027882911141,
+          "ra_ndcg": 0.06403143674421684,
+          "ceiling_utilization": 0.06403143674421684,
+          "stratified": {
+            "zero": {
+              "n_users": 363,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 82,
+              "mean_ndcg": 0.01613496635275552,
+              "mean_ra_ndcg": 0.05886638440391576
+            },
+            "medium": {
+              "n_users": 52,
+              "mean_ndcg": 0.03276527323262603,
+              "mean_ra_ndcg": 0.07267346083590119
+            },
+            "high": {
+              "n_users": 3,
+              "mean_ndcg": 0.048217497477688116,
+              "mean_ra_ndcg": 0.05541444978991706
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.02988352260410328,
+      "adaptive_recall": 0.061261500585881035,
+      "avg_K": 274.296,
+      "improvement": 0.03137797798177776,
+      "K_distribution": {
+        "min": 238,
+        "max": 308,
+        "mean": 274.296,
+        "median": 275.0
+      }
+    }
+  },
+  "electronics": {
+    "dataset": "electronics",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.025564076446429388,
+        "median_recall": 0.0,
+        "pct_zero_recall": 80.4,
+        "pct_full_recall": 0.0,
+        "recall_distribution": {
+          "0%": 80.4,
+          "0-10%": 5.2,
+          "10-50%": 14.399999999999999,
+          "50-100%": 0.0,
+          "100%": 0.0
+        },
+        "recommendation": "CRITICAL: Recall < 5%. Reranking is futile. Invest ALL resources in improving retrieval. Do not evaluate or compare rerankers."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.003241087222635997,
+          "ra_ndcg": 0.06373880977019133,
+          "ceiling_utilization": 0.06373880977019133,
+          "stratified": {
+            "zero": {
+              "n_users": 402,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 23,
+              "mean_ndcg": 0.021757560205667926,
+              "mean_ra_ndcg": 0.09885676584648188
+            },
+            "medium": {
+              "n_users": 75,
+              "mean_ndcg": 0.014934929687835151,
+              "mean_ra_ndcg": 0.052969303240128905
+            },
+            "high": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.0022441058193168385,
+          "ra_ndcg": 0.039562212148629185,
+          "ceiling_utilization": 0.039562212148629185,
+          "stratified": {
+            "zero": {
+              "n_users": 402,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 23,
+              "mean_ndcg": 0.012587956010211194,
+              "mean_ra_ndcg": 0.057194125077640386
+            },
+            "medium": {
+              "n_users": 75,
+              "mean_ndcg": 0.013322829970108876,
+              "mean_ra_ndcg": 0.048329094307210746
+            },
+            "high": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.0025001921844320565,
+          "ra_ndcg": 0.04372099838151783,
+          "ceiling_utilization": 0.04372099838151783,
+          "stratified": {
+            "zero": {
+              "n_users": 402,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 23,
+              "mean_ndcg": 0.006720623459930359,
+              "mean_ra_ndcg": 0.030535551479142185
+            },
+            "medium": {
+              "n_users": 75,
+              "mean_ndcg": 0.014606956701835067,
+              "mean_ra_ndcg": 0.0477645354315797
+            },
+            "high": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.004071303619057716,
+          "ra_ndcg": 0.06773609667014761,
+          "ceiling_utilization": 0.06773609667014761,
+          "stratified": {
+            "zero": {
+              "n_users": 402,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 23,
+              "mean_ndcg": 0.0034086203903771883,
+              "mean_ra_ndcg": 0.015487269004696616
+            },
+            "medium": {
+              "n_users": 75,
+              "mean_ndcg": 0.026096713874002433,
+              "mean_ra_ndcg": 0.08375907048755259
+            },
+            "high": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.025564076446429388,
+      "adaptive_recall": 0.047158472800637695,
+      "avg_K": 262.008,
+      "improvement": 0.021594396354208307,
+      "K_distribution": {
+        "min": 224,
+        "max": 285,
+        "mean": 262.008,
+        "median": 261.0
+      }
+    }
+  },
+  "toys": {
+    "dataset": "toys",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.088,
+        "median_recall": 0.0,
+        "pct_zero_recall": 91.2,
+        "pct_full_recall": 8.799999999999999,
+        "recall_distribution": {
+          "0%": 91.2,
+          "0-10%": 0.0,
+          "10-50%": 0.0,
+          "50-100%": 0.0,
+          "100%": 8.799999999999999
+        },
+        "recommendation": "WARNING: Recall < 15%. Reranking gains will be marginal. Consider improving retrieval before optimizing rerankers. Use RA-NDCG for fair comparison if reranking is required."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.009739645571344777,
+          "ra_ndcg": 0.11067779058346337,
+          "ceiling_utilization": 0.11067779058346337,
+          "stratified": {
+            "zero": {
+              "n_users": 456,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 44,
+              "mean_ndcg": 0.11067779058346337,
+              "mean_ra_ndcg": 0.11067779058346337
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.0012090594062072334,
+          "ra_ndcg": 0.013739311434173106,
+          "ceiling_utilization": 0.013739311434173106,
+          "stratified": {
+            "zero": {
+              "n_users": 456,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 44,
+              "mean_ndcg": 0.029682622565706033,
+              "mean_ra_ndcg": 0.029682622565706033
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.003838193379829837,
+          "ra_ndcg": 0.043615833861702695,
+          "ceiling_utilization": 0.043615833861702695,
+          "stratified": {
+            "zero": {
+              "n_users": 456,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 44,
+              "mean_ndcg": 0.043615833861702695,
+              "mean_ra_ndcg": 0.043615833861702695
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.006934146778290307,
+          "ra_ndcg": 0.07879712248057168,
+          "ceiling_utilization": 0.07879712248057168,
+          "stratified": {
+            "zero": {
+              "n_users": 456,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 44,
+              "mean_ndcg": 0.07879712248057168,
+              "mean_ra_ndcg": 0.07879712248057168
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.088,
+      "adaptive_recall": 0.162,
+      "avg_K": 265.508,
+      "improvement": 0.07400000000000001,
+      "K_distribution": {
+        "min": 188,
+        "max": 287,
+        "mean": 265.508,
+        "median": 271.0
+      }
+    }
+  },
+  "sports": {
+    "dataset": "sports",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.128,
+        "median_recall": 0.0,
+        "pct_zero_recall": 87.2,
+        "pct_full_recall": 12.8,
+        "recall_distribution": {
+          "0%": 87.2,
+          "0-10%": 0.0,
+          "10-50%": 0.0,
+          "50-100%": 0.0,
+          "100%": 12.8
+        },
+        "recommendation": "WARNING: Recall < 15%. Reranking gains will be marginal. Consider improving retrieval before optimizing rerankers. Use RA-NDCG for fair comparison if reranking is required."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.01725696851936896,
+          "ra_ndcg": 0.13482006655756998,
+          "ceiling_utilization": 0.13482006655756998,
+          "stratified": {
+            "zero": {
+              "n_users": 436,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 64,
+              "mean_ndcg": 0.13482006655756998,
+              "mean_ra_ndcg": 0.13482006655756998
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.005953895258432821,
+          "ra_ndcg": 0.046514806706506415,
+          "ceiling_utilization": 0.046514806706506415,
+          "stratified": {
+            "zero": {
+              "n_users": 436,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 64,
+              "mean_ndcg": 0.03693438181954613,
+              "mean_ra_ndcg": 0.03693438181954613
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.0035066558264453575,
+          "ra_ndcg": 0.027395748644104354,
+          "ceiling_utilization": 0.027395748644104354,
+          "stratified": {
+            "zero": {
+              "n_users": 436,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 64,
+              "mean_ndcg": 0.027395748644104354,
+              "mean_ra_ndcg": 0.027395748644104354
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.01366961542989673,
+          "ra_ndcg": 0.10679387054606819,
+          "ceiling_utilization": 0.10679387054606819,
+          "stratified": {
+            "zero": {
+              "n_users": 436,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 64,
+              "mean_ndcg": 0.10679387054606819,
+              "mean_ra_ndcg": 0.10679387054606819
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.128,
+      "adaptive_recall": 0.228,
+      "avg_K": 253.342,
+      "improvement": 0.1,
+      "K_distribution": {
+        "min": 216,
+        "max": 274,
+        "mean": 253.342,
+        "median": 256.0
+      }
+    }
+  },
+  "office": {
+    "dataset": "office",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.138,
+        "median_recall": 0.0,
+        "pct_zero_recall": 86.2,
+        "pct_full_recall": 13.8,
+        "recall_distribution": {
+          "0%": 86.2,
+          "0-10%": 0.0,
+          "10-50%": 0.0,
+          "50-100%": 0.0,
+          "100%": 13.8
+        },
+        "recommendation": "WARNING: Recall < 15%. Reranking gains will be marginal. Consider improving retrieval before optimizing rerankers. Use RA-NDCG for fair comparison if reranking is required."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.021761119357235546,
+          "ra_ndcg": 0.15768927070460542,
+          "ceiling_utilization": 0.15768927070460542,
+          "stratified": {
+            "zero": {
+              "n_users": 431,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 69,
+              "mean_ndcg": 0.15768927070460542,
+              "mean_ra_ndcg": 0.15768927070460542
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.005368898454945331,
+          "ra_ndcg": 0.038905061267719795,
+          "ceiling_utilization": 0.038905061267719795,
+          "stratified": {
+            "zero": {
+              "n_users": 431,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 69,
+              "mean_ndcg": 0.054924889355967156,
+              "mean_ra_ndcg": 0.054924889355967156
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.003890808238230929,
+          "ra_ndcg": 0.028194262595876294,
+          "ceiling_utilization": 0.028194262595876294,
+          "stratified": {
+            "zero": {
+              "n_users": 431,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 69,
+              "mean_ndcg": 0.028194262595876294,
+              "mean_ra_ndcg": 0.028194262595876294
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.019182399485353437,
+          "ra_ndcg": 0.1390028948214017,
+          "ceiling_utilization": 0.1390028948214017,
+          "stratified": {
+            "zero": {
+              "n_users": 431,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 69,
+              "mean_ndcg": 0.1390028948214017,
+              "mean_ra_ndcg": 0.1390028948214017
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.138,
+      "adaptive_recall": 0.224,
+      "avg_K": 259.19,
+      "improvement": 0.086,
+      "K_distribution": {
+        "min": 197,
+        "max": 276,
+        "mean": 259.19,
+        "median": 261.0
+      }
+    }
+  },
+  "mind": {
+    "dataset": "mind",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.12,
+        "median_recall": 0.0,
+        "pct_zero_recall": 88.0,
+        "pct_full_recall": 12.0,
+        "recall_distribution": {
+          "0%": 88.0,
+          "0-10%": 0.0,
+          "10-50%": 0.0,
+          "50-100%": 0.0,
+          "100%": 12.0
+        },
+        "recommendation": "WARNING: Recall < 15%. Reranking gains will be marginal. Consider improving retrieval before optimizing rerankers. Use RA-NDCG for fair comparison if reranking is required."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.01340566913725985,
+          "ra_ndcg": 0.1117139094771654,
+          "ceiling_utilization": 0.1117139094771654,
+          "stratified": {
+            "zero": {
+              "n_users": 440,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 60,
+              "mean_ndcg": 0.1117139094771654,
+              "mean_ra_ndcg": 0.1117139094771654
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.005311736191736705,
+          "ra_ndcg": 0.04426446826447254,
+          "ceiling_utilization": 0.04426446826447254,
+          "stratified": {
+            "zero": {
+              "n_users": 440,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 60,
+              "mean_ndcg": 0.037552489936896305,
+              "mean_ra_ndcg": 0.037552489936896305
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.0032863390794129668,
+          "ra_ndcg": 0.027386158995108056,
+          "ceiling_utilization": 0.027386158995108056,
+          "stratified": {
+            "zero": {
+              "n_users": 440,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 60,
+              "mean_ndcg": 0.027386158995108056,
+              "mean_ra_ndcg": 0.027386158995108056
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.005797199853297178,
+          "ra_ndcg": 0.04830999877747648,
+          "ceiling_utilization": 0.04830999877747648,
+          "stratified": {
+            "zero": {
+              "n_users": 440,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "high": {
+              "n_users": 60,
+              "mean_ndcg": 0.04830999877747648,
+              "mean_ra_ndcg": 0.04830999877747648
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.12,
+      "adaptive_recall": 0.23,
+      "avg_K": 234.182,
+      "improvement": 0.11000000000000001,
+      "K_distribution": {
+        "min": 211,
+        "max": 258,
+        "mean": 234.182,
+        "median": 235.0
+      }
+    }
+  },
+  "movielens": {
+    "dataset": "movielens",
+    "n_users": 500,
+    "raep": {
+      "diagnosis": {
+        "mean_recall": 0.18880000000000002,
+        "median_recall": 0.2,
+        "pct_zero_recall": 46.2,
+        "pct_full_recall": 0.8,
+        "recall_distribution": {
+          "0%": 46.2,
+          "0-10%": 0.0,
+          "10-50%": 42.199999999999996,
+          "50-100%": 10.8,
+          "100%": 0.8
+        },
+        "recommendation": "MODERATE: Recall 15-30%. Reranking can provide some gains. Report both standard and recall-adjusted metrics. Focus on retrieval-reranking co-optimization."
+      },
+      "results": {
+        "CF-Score (no rerank)": {
+          "ndcg": 0.026475021317340336,
+          "ra_ndcg": 0.09471617964698086,
+          "ceiling_utilization": 0.09471617964698086,
+          "stratified": {
+            "zero": {
+              "n_users": 231,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 211,
+              "mean_ndcg": 0.03821228563369216,
+              "mean_ra_ndcg": 0.08978007495917466
+            },
+            "high": {
+              "n_users": 58,
+              "mean_ndcg": 0.08921928258553663,
+              "mean_ra_ndcg": 0.11267338808020691
+            }
+          }
+        },
+        "Random": {
+          "ndcg": 0.012956850578459208,
+          "ra_ndcg": 0.048405774227680644,
+          "ceiling_utilization": 0.048405774227680644,
+          "stratified": {
+            "zero": {
+              "n_users": 231,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 211,
+              "mean_ndcg": 0.018265049991618054,
+              "mean_ra_ndcg": 0.04511027584370375
+            },
+            "high": {
+              "n_users": 58,
+              "mean_ndcg": 0.04096982080208723,
+              "mean_ra_ndcg": 0.05229580371845067
+            }
+          }
+        },
+        "Reverse-CF": {
+          "ndcg": 0.009496048686272492,
+          "ra_ndcg": 0.03895125110094955,
+          "ceiling_utilization": 0.03895125110094955,
+          "stratified": {
+            "zero": {
+              "n_users": 231,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 211,
+              "mean_ndcg": 0.017057129317636404,
+              "mean_ra_ndcg": 0.04260913030648408
+            },
+            "high": {
+              "n_users": 58,
+              "mean_ndcg": 0.019809828570947666,
+              "mean_ra_ndcg": 0.025644138818746314
+            }
+          }
+        },
+        "Popularity-Rerank": {
+          "ndcg": 0.02001945772568219,
+          "ra_ndcg": 0.06592149143992176,
+          "ceiling_utilization": 0.06592149143992176,
+          "stratified": {
+            "zero": {
+              "n_users": 231,
+              "mean_ndcg": 0.0,
+              "mean_ra_ndcg": null
+            },
+            "low": {
+              "n_users": 0,
+              "mean_ndcg": 0,
+              "mean_ra_ndcg": null
+            },
+            "medium": {
+              "n_users": 211,
+              "mean_ndcg": 0.019804528369945174,
+              "mean_ra_ndcg": 0.04908966486193091
+            },
+            "high": {
+              "n_users": 58,
+              "mean_ndcg": 0.1005340237376321,
+              "mean_ra_ndcg": 0.12715451571502645
+            }
+          }
+        }
+      }
+    },
+    "adaptive_K": {
+      "fixed_K100_recall": 0.18880000000000002,
+      "adaptive_recall": 0.36,
+      "avg_K": 257.218,
+      "improvement": 0.17119999999999996,
+      "K_distribution": {
+        "min": 243,
+        "max": 275,
+        "mean": 257.218,
+        "median": 257.0
+      }
+    }
+  }
+}

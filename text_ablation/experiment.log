@@ -1,0 +1,118 @@
+2026-01-07 10:19:32 | INFO     | __main__:__init__:64 - ================================================================================
+2026-01-07 10:19:32 | INFO     | __main__:__init__:65 - CRITICAL P0 EXPERIMENT: Text Ablation Study
+2026-01-07 10:19:32 | INFO     | __main__:__init__:66 - ================================================================================
+2026-01-07 10:19:32 | INFO     | __main__:load_data:70 - Loading dataset...
+2026-01-07 10:19:34 | INFO     | __main__:load_data:89 - Dataset loaded:
+2026-01-07 10:19:34 | INFO     | __main__:load_data:90 -   Total test users: 487
+2026-01-07 10:19:34 | INFO     | __main__:load_data:91 -   Cold-start test users: 348
+2026-01-07 10:19:34 | INFO     | __main__:load_data:92 -   Items: 0
+2026-01-07 10:19:34 | INFO     | __main__:load_llm:96 - 
+Loading LLM...
+2026-01-07 10:19:43 | INFO     | __main__:load_llm:107 - ✓ LLM loaded: Qwen/Qwen2.5-3B-Instruct
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:113 - 
+================================================================================
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:114 - Generating Text Variants
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:115 - ================================================================================
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:122 - Generating 7 variants for all items...
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:131 - 
+Variant Statistics:
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:136 -   total_items: 2235
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:134 -   avg_words_original: 4.78
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:134 -   avg_words_no_brand: 4.24
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:134 -   avg_words_brand_category: 1.57
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:134 -   brand_coverage: 47.38
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:134 -   category_coverage: 75.30
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:139 - 
+Example Variants (first 3 items):
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:141 - 
+Item 1346:
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   full                : Olay Toner - Fragrance-free (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Toner - Fragrance-free (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_category         : Olay - Fragrance-free (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Olay Toner (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1346 (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   shuffled            : - Toner Fragrance-free Olay (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   random              : Elit elit amet quis (5⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:141 - 
+Item 1197:
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   full                : Urban Decay Foundation (Coral) (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Urban Decay Foundation (Coral) (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_category         : Urban Decay (Coral) (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Foundation (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1197 (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   shuffled            : Decay (Coral) Foundation Urban (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   random              : Aliqua ut ipsum lorem (4⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:141 - 
+Item 1189:
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   full                : Estee Lauder Primer (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Primer (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   no_category         : Estee Lauder (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Estee Lauder Primer (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1189 (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   shuffled            : Lauder Primer Estee (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:generate_text_variants:144 -   random              : Elit dolore enim (3⭐)
+2026-01-07 10:19:43 | INFO     | __main__:run_ablation:221 - 
+================================================================================
+2026-01-07 10:19:43 | INFO     | __main__:run_ablation:222 - Running Ablation Experiments
+2026-01-07 10:19:43 | INFO     | __main__:run_ablation:223 - ================================================================================
+2026-01-07 10:19:43 | INFO     | __main__:evaluate_variant:163 - 
+Evaluating variant: full
+2026-01-07 14:36:54 | INFO     | __main__:__init__:64 - ================================================================================
+2026-01-07 14:36:54 | INFO     | __main__:__init__:65 - CRITICAL P0 EXPERIMENT: Text Ablation Study
+2026-01-07 14:36:54 | INFO     | __main__:__init__:66 - ================================================================================
+2026-01-07 14:36:54 | INFO     | __main__:load_data:70 - Loading dataset...
+2026-01-07 14:36:56 | INFO     | __main__:load_data:89 - Dataset loaded:
+2026-01-07 14:36:56 | INFO     | __main__:load_data:90 -   Total test users: 487
+2026-01-07 14:36:56 | INFO     | __main__:load_data:91 -   Cold-start test users: 348
+2026-01-07 14:36:56 | INFO     | __main__:load_data:92 -   Items: 0
+2026-01-07 14:36:56 | INFO     | __main__:load_llm:96 - 
+Loading LLM...
+2026-01-07 14:37:06 | INFO     | __main__:load_llm:107 - ✓ LLM loaded: Qwen/Qwen2.5-3B-Instruct
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:113 - 
+================================================================================
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:114 - Generating Text Variants
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:115 - ================================================================================
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:122 - Generating 7 variants for all items...
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:131 - 
+Variant Statistics:
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:136 -   total_items: 2235
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:134 -   avg_words_original: 4.78
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:134 -   avg_words_no_brand: 4.24
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:134 -   avg_words_brand_category: 1.57
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:134 -   brand_coverage: 47.38
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:134 -   category_coverage: 75.30
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:139 - 
+Example Variants (first 3 items):
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:141 - 
+Item 1346:
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   full                : Olay Toner - Fragrance-free (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Toner - Fragrance-free (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_category         : Olay - Fragrance-free (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Olay Toner (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1346 (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   shuffled            : - Toner Fragrance-free Olay (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   random              : Elit elit amet quis (5⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:141 - 
+Item 1197:
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   full                : Urban Decay Foundation (Coral) (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Urban Decay Foundation (Coral) (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_category         : Urban Decay (Coral) (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Foundation (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1197 (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   shuffled            : Decay (Coral) Foundation Urban (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   random              : Aliqua ut ipsum lorem (4⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:141 - 
+Item 1189:
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   full                : Estee Lauder Primer (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_brand            : Primer (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   no_category         : Estee Lauder (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   brand_category_only : Estee Lauder Primer (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   id_only             : Item 1189 (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   shuffled            : Lauder Primer Estee (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:generate_text_variants:144 -   random              : Elit dolore enim (3⭐)
+2026-01-07 14:37:06 | INFO     | __main__:run_ablation:221 - 
+================================================================================
+2026-01-07 14:37:06 | INFO     | __main__:run_ablation:222 - Running Ablation Experiments
+2026-01-07 14:37:06 | INFO     | __main__:run_ablation:223 - ================================================================================
+2026-01-07 14:37:06 | INFO     | __main__:evaluate_variant:163 - 
+Evaluating variant: full

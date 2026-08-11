@@ -1,0 +1,169 @@
+# GraphLLMRec Main Configuration
+# WARNING: Never commit API keys to version control
+
+# OpenAI Configuration (for teacher & analyzer)
+openai:
+  api_key: ${OPENAI_API_KEY}  # Set via environment variable
+  model: "gpt-4-turbo-preview"
+  temperature: 0.7
+  max_tokens: 2048
+
+# Hardware Configuration
+hardware:
+  gpus: [0, 1]  # Dual RTX 3090
+  mixed_precision: "bf16"  # bf16 or fp16
+  gradient_accumulation_steps: 4
+  dataloader_workers: 8
+
+# Data Configuration
+data:
+  amazon:
+    domains: ["All_Beauty", "Electronics"]
+    min_interactions: 5
+    test_split: 0.1
+    val_split: 0.1
+    temporal_split: true
+
+  criteo:
+    path: "data/raw/criteo"
+    sample_ratio: 0.1  # Due to size
+
+  multimodal:
+    enable: false
+    image_cache: "data/processed/images"
+
+# Graph Construction
+graph:
+  types:
+    - "user_item"
+    - "item_item_cooccur"
+    - "item_category"
+    - "item_brand"
+
+  k_hop: 2
+  max_neighbors: 20
+  sampling_strategy: "degree_weighted"
+
+  # Graph-as-Context serialization
+  context_format: "neighbor_summary"  # or "path_summary"
+  max_context_tokens: 128
+
+# Model Configuration
+model:
+  llm:
+    name: "Qwen/Qwen2.5-3B-Instruct"  # SOTA 3B model, perfect for dual 3090
+    lora:
+      r: 16
+      lora_alpha: 32
+      lora_dropout: 0.1
+      target_modules: ["q_proj", "v_proj", "k_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    quantization: "4bit"  # 4bit saves ~3.5GB per model
+
+  gnn:
+    type: "LightGCN"  # or "GraphSAGE", "HGT"
+    hidden_dim: 256
+    num_layers: 3
+    dropout: 0.1
+
+  moe:
+    enable: true
+    num_experts: 2  # LLM + GNN
+    top_k: 1
+    routing_strategy: "learned"  # or "rule_based"
+
+  fusion:
+    method: "cross_attention"  # or "concat", "gate"
+
+# Training Configuration
+training:
+  batch_size: 32  # Per GPU before gradient accumulation
+  learning_rate: 1e-4
+  weight_decay: 0.01
+  max_epochs: 50
+  warmup_steps: 500
+
+  # Grokking-inducing setup
+  strong_regularization: true
+  label_smoothing: 0.1
+  extra_dropout: 0.2
+  curriculum_sampling: true
+
+  # Loss function
+  loss_type: "InfoNCE"  # or "BPR", "BCE"
+  temperature: 0.05
+  num_negatives: 10
+
+# Grokking Observation
+grokking:
+  enable: true
+  log_interval: 100  # steps
+  window_size: 500
+  threshold_delta: 0.05  # NDCG jump threshold
+  metrics:
+    - "train_loss"
+    - "val_ndcg@10"
+    - "tail_recall@10"
+    - "cold_start_recall@10"
+
+# Emergence Evaluation
+emergence:
+  enable: true
+  protocols:
+    multi_hop:
+      enable: true
+      k_hop: 2
+      edge_masking_ratio: 0.5
+
+    cross_community:
+      enable: true
+      num_communities: 10
+      algorithm: "louvain"
+
+    cross_modal:
+      enable: false  # Set true when multimodal data available
+      dropout_ratio: 0.5
+
+  # Attention/representation analysis
+  probe_tasks:
+    - "neighbor_prediction"
+    - "community_classification"
+    - "hop_distance_regression"
+
+# Evaluation Metrics
+evaluation:
+  metrics:
+    ranking: ["Recall@10", "Recall@20", "NDCG@10", "NDCG@20", "MRR"]
+    ctr: ["AUC", "LogLoss"]
+
+  buckets:
+    - "overall"
+    - "head_items"
+    - "tail_items"
+    - "cold_start_users"
+    - "cross_domain"
+
+# Baselines
+baselines:
+  llm:
+    - "prompt_only"
+    - "graph_as_context"
+    - "graph_as_embedding"
+
+  traditional:
+    - "DLRM"
+    - "DeepFM"
+    - "LightGCN"
+    - "SASRec"
+
+# Logging & Monitoring
+logging:
+  use_wandb: true
+  wandb_project: "GraphLLMRec"
+  wandb_entity: null
+  log_dir: "experiments/logs"
+  checkpoint_dir: "experiments/checkpoints"
+  save_interval: 500
+
+# Reproducibility
+seed: 42
+deterministic: true

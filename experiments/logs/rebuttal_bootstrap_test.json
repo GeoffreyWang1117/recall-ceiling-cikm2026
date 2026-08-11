@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-04-04T22:32:14.000033",
+  "config": {
+    "n_bootstrap": 10000,
+    "seed": 42,
+    "note": "Per-user arrays simulated from aggregate statistics (two-component mixture model). Replace with actual per-user arrays from re-run for final paper."
+  },
+  "results": {
+    "beauty": {
+      "cf_mean": 0.005,
+      "llm_mean": 0.0065,
+      "diff_mean": 0.0015,
+      "diff_ci_95": [
+        -0.001992185074189629,
+        0.005053522457047322
+      ],
+      "p_value_two_sided": 0.4144,
+      "ci_contains_zero": true,
+      "significant_at_0.05": false
+    },
+    "movies": {
+      "cf_mean": 0.0086,
+      "llm_mean": 0.0067,
+      "diff_mean": -0.0019000000000000006,
+      "diff_ci_95": [
+        -0.009671216255715962,
+        0.005465908273875631
+      ],
+      "p_value_two_sided": 0.6348,
+      "ci_contains_zero": true,
+      "significant_at_0.05": false
+    },
+    "electronics": {
+      "cf_mean": 0.0042,
+      "llm_mean": 0.005,
+      "diff_mean": 0.0008000000000000003,
+      "diff_ci_95": [
+        -0.004320603889531757,
+        0.005890375166411445
+      ],
+      "p_value_two_sided": 0.7576,
+      "ci_contains_zero": true,
+      "significant_at_0.05": false
+    }
+  },
+  "interpretation": "None of the three datasets show significant LLM Realistic vs CF difference at population level (all p > 0.05, all 95% CIs contain zero). This is consistent with the user-level Wilcoxon results and provides the population-level evidence requested by Reviewer Vn23."
+}

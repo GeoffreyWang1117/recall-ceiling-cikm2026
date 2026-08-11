@@ -1,0 +1,28 @@
+{
+  "summary": {
+    "cold_start_users_pct": 61.80698151950719,
+    "few_shot_users_pct": 38.19301848049281,
+    "data_sparse_users_pct": 100.0,
+    "cold_items_pct": 54.513888888888886
+  },
+  "user_statistics": {
+    "mean": 0.38193018480492813,
+    "median": 0.0,
+    "std": 0.48585956689129994,
+    "min": 0,
+    "max": 1
+  },
+  "item_statistics": {
+    "mean": 3.21875,
+    "median": 0.0,
+    "std": 5.53374080766247,
+    "min": 0,
+    "max": 39
+  },
+  "recommendations": [
+    "Implement hybrid recall: GNN for warm users, content-based for cold users",
+    "Use text similarity (BM25/TF-IDF) as fallback for items with no interactions",
+    "Adaptive strategy: Switch between collaborative and content-based based on data availability",
+    "Future work: Learn when to trust GNN vs content-based signals"
+  ]
+}

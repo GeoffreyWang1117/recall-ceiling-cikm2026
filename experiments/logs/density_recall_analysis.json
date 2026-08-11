@@ -1,0 +1,826 @@
+{
+  "datasets": {
+    "beauty": {
+      "dataset": "beauty",
+      "name": "Amazon Beauty",
+      "original_density": 0.004715375904978739,
+      "original_n_interactions": 6263,
+      "catalog_size": 1416,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004715375904978739,
+          "n_interactions": 6263,
+          "K": 50,
+          "recall": 0.05366666666666667
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004715375904978739,
+          "n_interactions": 6263,
+          "K": 100,
+          "recall": 0.10358333333333335
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004715375904978739,
+          "n_interactions": 6263,
+          "K": 200,
+          "recall": 0.13849999999999998
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0037059219296259964,
+          "n_interactions": 4715,
+          "n_valid_users": 185,
+          "K": 50,
+          "recall": 0.02648648648648649
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0037059219296259964,
+          "n_interactions": 4715,
+          "n_valid_users": 185,
+          "K": 100,
+          "recall": 0.07333333333333333
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0037059219296259964,
+          "n_interactions": 4715,
+          "n_valid_users": 185,
+          "K": 200,
+          "recall": 0.13594594594594595
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002853802060797051,
+          "n_interactions": 3146,
+          "n_valid_users": 133,
+          "K": 50,
+          "recall": 0.03195488721804511
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002853802060797051,
+          "n_interactions": 3146,
+          "n_valid_users": 133,
+          "K": 100,
+          "recall": 0.06854636591478697
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002853802060797051,
+          "n_interactions": 3146,
+          "n_valid_users": 133,
+          "K": 200,
+          "recall": 0.10601503759398495
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.002454025088296188,
+          "n_interactions": 1612,
+          "n_valid_users": 68,
+          "K": 50,
+          "recall": 0.028676470588235293
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.002454025088296188,
+          "n_interactions": 1612,
+          "n_valid_users": 68,
+          "K": 100,
+          "recall": 0.07450980392156863
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.002454025088296188,
+          "n_interactions": 1612,
+          "n_valid_users": 68,
+          "K": 200,
+          "recall": 0.11838235294117648
+        }
+      ]
+    },
+    "movies": {
+      "dataset": "movies",
+      "name": "Amazon Movies",
+      "original_density": 0.002665571229499063,
+      "original_n_interactions": 286044,
+      "catalog_size": 53709,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.002665571229499063,
+          "n_interactions": 286044,
+          "K": 50,
+          "recall": 0.01687394530358897
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.002665571229499063,
+          "n_interactions": 286044,
+          "K": 100,
+          "recall": 0.032565523400313864
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.002665571229499063,
+          "n_interactions": 286044,
+          "K": 200,
+          "recall": 0.051576354441522254
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0020561174201020943,
+          "n_interactions": 214444,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.014951745290875108
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0020561174201020943,
+          "n_interactions": 214444,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.024305424279856984
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0020561174201020943,
+          "n_interactions": 214444,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.04037453263474115
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014987602127971044,
+          "n_interactions": 142698,
+          "n_valid_users": 199,
+          "K": 50,
+          "recall": 0.00988621856218157
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014987602127971044,
+          "n_interactions": 142698,
+          "n_valid_users": 199,
+          "K": 100,
+          "recall": 0.01920588714932536
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014987602127971044,
+          "n_interactions": 142698,
+          "n_valid_users": 199,
+          "K": 200,
+          "recall": 0.03430557900023968
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009975236544058218,
+          "n_interactions": 71429,
+          "n_valid_users": 199,
+          "K": 50,
+          "recall": 0.005369996700922146
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009975236544058218,
+          "n_interactions": 71429,
+          "n_valid_users": 199,
+          "K": 100,
+          "recall": 0.012072089277897645
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009975236544058218,
+          "n_interactions": 71429,
+          "n_valid_users": 199,
+          "K": 200,
+          "recall": 0.021794334289938662
+        }
+      ]
+    },
+    "electronics": {
+      "dataset": "electronics",
+      "name": "Amazon Electronics",
+      "original_density": 0.0025245160622476793,
+      "original_n_interactions": 146326,
+      "catalog_size": 28981,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0025245160622476793,
+          "n_interactions": 146326,
+          "K": 50,
+          "recall": 0.01523149277193395
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0025245160622476793,
+          "n_interactions": 146326,
+          "K": 100,
+          "recall": 0.03157112046450281
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0025245160622476793,
+          "n_interactions": 146326,
+          "K": 200,
+          "recall": 0.04569547037929391
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.001957435421721136,
+          "n_interactions": 109726,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.012441468253968253
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.001957435421721136,
+          "n_interactions": 109726,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.01926733193277311
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.001957435421721136,
+          "n_interactions": 109726,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.03260912412750648
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014367347742214873,
+          "n_interactions": 72989,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.005017798786181138
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014367347742214873,
+          "n_interactions": 72989,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.011408146591970121
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0014367347742214873,
+          "n_interactions": 72989,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.02282252388134741
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009755987227248536,
+          "n_interactions": 36663,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.006449059927001103
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009755987227248536,
+          "n_interactions": 36663,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.010756294359235535
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0009755987227248536,
+          "n_interactions": 36663,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.01606545456177809
+        }
+      ]
+    },
+    "toys": {
+      "dataset": "toys",
+      "name": "Amazon Toys",
+      "original_density": 0.004468038538968487,
+      "original_n_interactions": 67980,
+      "catalog_size": 9545,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004468038538968487,
+          "n_interactions": 67980,
+          "K": 50,
+          "recall": 0.055
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004468038538968487,
+          "n_interactions": 67980,
+          "K": 100,
+          "recall": 0.095
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004468038538968487,
+          "n_interactions": 67980,
+          "K": 200,
+          "recall": 0.13
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0033571289209864664,
+          "n_interactions": 51035,
+          "n_valid_users": 198,
+          "K": 50,
+          "recall": 0.045454545454545456
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0033571289209864664,
+          "n_interactions": 51035,
+          "n_valid_users": 198,
+          "K": 100,
+          "recall": 0.0707070707070707
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0033571289209864664,
+          "n_interactions": 51035,
+          "n_valid_users": 198,
+          "K": 200,
+          "recall": 0.12626262626262627
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002284451599190063,
+          "n_interactions": 33984,
+          "n_valid_users": 191,
+          "K": 50,
+          "recall": 0.015706806282722512
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002284451599190063,
+          "n_interactions": 33984,
+          "n_valid_users": 191,
+          "K": 100,
+          "recall": 0.06282722513089005
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002284451599190063,
+          "n_interactions": 33984,
+          "n_valid_users": 191,
+          "K": 200,
+          "recall": 0.08376963350785341
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013794937694368526,
+          "n_interactions": 16971,
+          "n_valid_users": 168,
+          "K": 50,
+          "recall": 0.0
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013794937694368526,
+          "n_interactions": 16971,
+          "n_valid_users": 168,
+          "K": 100,
+          "recall": 0.0
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013794937694368526,
+          "n_interactions": 16971,
+          "n_valid_users": 168,
+          "K": 200,
+          "recall": 0.023809523809523808
+        }
+      ]
+    },
+    "sports": {
+      "dataset": "sports",
+      "name": "Amazon Sports",
+      "original_density": 0.004389239299864393,
+      "original_n_interactions": 36381,
+      "catalog_size": 5246,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004389239299864393,
+          "n_interactions": 36381,
+          "K": 50,
+          "recall": 0.09
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004389239299864393,
+          "n_interactions": 36381,
+          "K": 100,
+          "recall": 0.135
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004389239299864393,
+          "n_interactions": 36381,
+          "K": 200,
+          "recall": 0.225
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.003308062471822077,
+          "n_interactions": 27376,
+          "n_valid_users": 197,
+          "K": 50,
+          "recall": 0.07106598984771574
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.003308062471822077,
+          "n_interactions": 27376,
+          "n_valid_users": 197,
+          "K": 100,
+          "recall": 0.10152284263959391
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.003308062471822077,
+          "n_interactions": 27376,
+          "n_valid_users": 197,
+          "K": 200,
+          "recall": 0.17258883248730963
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002256676139962355,
+          "n_interactions": 18171,
+          "n_valid_users": 186,
+          "K": 50,
+          "recall": 0.06451612903225806
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002256676139962355,
+          "n_interactions": 18171,
+          "n_valid_users": 186,
+          "K": 100,
+          "recall": 0.06989247311827956
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.002256676139962355,
+          "n_interactions": 18171,
+          "n_valid_users": 186,
+          "K": 200,
+          "recall": 0.10752688172043011
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013958808312031258,
+          "n_interactions": 9092,
+          "n_valid_users": 147,
+          "K": 50,
+          "recall": 0.04081632653061224
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013958808312031258,
+          "n_interactions": 9092,
+          "n_valid_users": 147,
+          "K": 100,
+          "recall": 0.08163265306122448
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0013958808312031258,
+          "n_interactions": 9092,
+          "n_valid_users": 147,
+          "K": 200,
+          "recall": 0.10884353741496598
+        }
+      ]
+    },
+    "office": {
+      "dataset": "office",
+      "name": "Amazon Office",
+      "original_density": 0.004534636180527011,
+      "original_n_interactions": 38921,
+      "catalog_size": 5037,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004534636180527011,
+          "n_interactions": 38921,
+          "K": 50,
+          "recall": 0.08
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004534636180527011,
+          "n_interactions": 38921,
+          "K": 100,
+          "recall": 0.12
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.004534636180527011,
+          "n_interactions": 38921,
+          "K": 200,
+          "recall": 0.165
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0034143199484342308,
+          "n_interactions": 29282,
+          "n_valid_users": 196,
+          "K": 50,
+          "recall": 0.07142857142857142
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0034143199484342308,
+          "n_interactions": 29282,
+          "n_valid_users": 196,
+          "K": 100,
+          "recall": 0.09693877551020408
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0034143199484342308,
+          "n_interactions": 29282,
+          "n_valid_users": 196,
+          "K": 200,
+          "recall": 0.15816326530612246
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0023213133297697985,
+          "n_interactions": 19438,
+          "n_valid_users": 181,
+          "K": 50,
+          "recall": 0.06629834254143646
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0023213133297697985,
+          "n_interactions": 19438,
+          "n_valid_users": 181,
+          "K": 100,
+          "recall": 0.08839779005524862
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0023213133297697985,
+          "n_interactions": 19438,
+          "n_valid_users": 181,
+          "K": 200,
+          "recall": 0.13259668508287292
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0014278215223097112,
+          "n_interactions": 9724,
+          "n_valid_users": 148,
+          "K": 50,
+          "recall": 0.006756756756756757
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0014278215223097112,
+          "n_interactions": 9724,
+          "n_valid_users": 148,
+          "K": 100,
+          "recall": 0.013513513513513514
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.0014278215223097112,
+          "n_interactions": 9724,
+          "n_valid_users": 148,
+          "K": 200,
+          "recall": 0.033783783783783786
+        }
+      ]
+    },
+    "mind": {
+      "dataset": "mind",
+      "name": "MIND News",
+      "original_density": 0.0012502191911109176,
+      "original_n_interactions": 2192022,
+      "catalog_size": 20212,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0012502191911109176,
+          "n_interactions": 2192022,
+          "K": 50,
+          "recall": 0.05
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0012502191911109176,
+          "n_interactions": 2192022,
+          "K": 100,
+          "recall": 0.095
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.0012502191911109176,
+          "n_interactions": 2192022,
+          "K": 200,
+          "recall": 0.17
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0009385869741174502,
+          "n_interactions": 1644609,
+          "n_valid_users": 196,
+          "K": 50,
+          "recall": 0.061224489795918366
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0009385869741174502,
+          "n_interactions": 1644609,
+          "n_valid_users": 196,
+          "K": 100,
+          "recall": 0.08163265306122448
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.0009385869741174502,
+          "n_interactions": 1644609,
+          "n_valid_users": 196,
+          "K": 200,
+          "recall": 0.14795918367346939
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0006328389217893082,
+          "n_interactions": 1096391,
+          "n_valid_users": 177,
+          "K": 50,
+          "recall": 0.03389830508474576
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0006328389217893082,
+          "n_interactions": 1096391,
+          "n_valid_users": 177,
+          "K": 100,
+          "recall": 0.05649717514124294
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.0006328389217893082,
+          "n_interactions": 1096391,
+          "n_valid_users": 177,
+          "K": 200,
+          "recall": 0.11864406779661017
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.00035222597429716645,
+          "n_interactions": 547738,
+          "n_valid_users": 133,
+          "K": 50,
+          "recall": 0.03007518796992481
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.00035222597429716645,
+          "n_interactions": 547738,
+          "n_valid_users": 133,
+          "K": 100,
+          "recall": 0.06015037593984962
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.00035222597429716645,
+          "n_interactions": 547738,
+          "n_valid_users": 133,
+          "K": 200,
+          "recall": 0.10526315789473684
+        }
+      ]
+    },
+    "movielens": {
+      "dataset": "movielens",
+      "name": "MovieLens-25M",
+      "original_density": 0.019556587549029468,
+      "original_n_interactions": 3889023,
+      "catalog_size": 19886,
+      "results": [
+        {
+          "keep_ratio": 1.0,
+          "density": 0.019556587549029468,
+          "n_interactions": 3889023,
+          "K": 50,
+          "recall": 0.10100000000000002
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.019556587549029468,
+          "n_interactions": 3889023,
+          "K": 100,
+          "recall": 0.18899999999999997
+        },
+        {
+          "keep_ratio": 1.0,
+          "density": 0.019556587549029468,
+          "n_interactions": 3889023,
+          "K": 200,
+          "recall": 0.31200000000000006
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.014746342819592579,
+          "n_interactions": 2917269,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.06899999999999999
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.014746342819592579,
+          "n_interactions": 2917269,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.147
+        },
+        {
+          "keep_ratio": 0.75,
+          "density": 0.014746342819592579,
+          "n_interactions": 2917269,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.243
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.010018826317687671,
+          "n_interactions": 1944554,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.053000000000000005
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.010018826317687671,
+          "n_interactions": 1944554,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.09600000000000002
+        },
+        {
+          "keep_ratio": 0.5,
+          "density": 0.010018826317687671,
+          "n_interactions": 1944554,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.19700000000000004
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.005430164850516904,
+          "n_interactions": 971728,
+          "n_valid_users": 200,
+          "K": 50,
+          "recall": 0.038
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.005430164850516904,
+          "n_interactions": 971728,
+          "n_valid_users": 200,
+          "K": 100,
+          "recall": 0.07200000000000001
+        },
+        {
+          "keep_ratio": 0.25,
+          "density": 0.005430164850516904,
+          "n_interactions": 971728,
+          "n_valid_users": 200,
+          "K": 200,
+          "recall": 0.142
+        }
+      ]
+    }
+  },
+  "drop_rates": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "timestamp": "2026-03-27T15:34:53.448398"
+}

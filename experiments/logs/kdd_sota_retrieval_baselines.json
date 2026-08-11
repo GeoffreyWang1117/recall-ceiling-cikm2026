@@ -1,0 +1,610 @@
+{
+  "beauty": {
+    "dataset": "beauty",
+    "n_users": 500,
+    "n_items": 1416,
+    "results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.08233333333333333,
+          "recall_ci_low": 0.06212916666666667,
+          "recall_ci_high": 0.10468416666666666
+        },
+        "ItemKNN": {
+          "recall_mean": 0.08365384615384615,
+          "recall_ci_low": 0.06363249999999998,
+          "recall_ci_high": 0.10495935897435896
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.09346666666666667,
+          "recall_ci_low": 0.07093333333333333,
+          "recall_ci_high": 0.11931083333333334
+        },
+        "SimGCL": {
+          "recall_mean": 0.05190000000000001,
+          "recall_ci_low": 0.03479416666666667,
+          "recall_ci_high": 0.07123583333333333
+        },
+        "SGL": {
+          "recall_mean": 0.0842547619047619,
+          "recall_ci_low": 0.06329476190476191,
+          "recall_ci_high": 0.10756999999999999
+        },
+        "DirectAU": {
+          "recall_mean": 0.07953333333333333,
+          "recall_ci_low": 0.06029083333333334,
+          "recall_ci_high": 0.09987
+        },
+        "MultiInterest": {
+          "recall_mean": 0.09616666666666665,
+          "recall_ci_low": 0.07376416666666666,
+          "recall_ci_high": 0.11970083333333333
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.10123333333333334,
+          "recall_ci_low": 0.07766583333333332,
+          "recall_ci_high": 0.12544499999999997
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.31089688644688646,
+          "recall_ci_low": 0.27720456501831503,
+          "recall_ci_high": 0.34699349358974363
+        },
+        "ItemKNN": {
+          "recall_mean": 0.26562307692307696,
+          "recall_ci_low": 0.23160141025641023,
+          "recall_ci_high": 0.2981830769230769
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.28260769230769234,
+          "recall_ci_low": 0.24573185897435898,
+          "recall_ci_high": 0.3192428846153846
+        },
+        "SimGCL": {
+          "recall_mean": 0.25034725274725267,
+          "recall_ci_low": 0.21735059523809527,
+          "recall_ci_high": 0.2864336813186813
+        },
+        "SGL": {
+          "recall_mean": 0.3127296703296703,
+          "recall_ci_low": 0.2782171428571429,
+          "recall_ci_high": 0.34852666666666665
+        },
+        "DirectAU": {
+          "recall_mean": 0.33487967032967025,
+          "recall_ci_low": 0.3001933333333333,
+          "recall_ci_high": 0.3727741666666667
+        },
+        "MultiInterest": {
+          "recall_mean": 0.3292948717948718,
+          "recall_ci_low": 0.2913891666666667,
+          "recall_ci_high": 0.36592166666666665
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.3041957875457875,
+          "recall_ci_low": 0.26923511446886444,
+          "recall_ci_high": 0.3405772161172161
+        }
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "ItemKNN",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0013205128205128185,
+        "cohens_d": 0.006079184704021064,
+        "p_value": 0.764969649270565,
+        "significant": false
+      },
+      {
+        "method": "LightGCN-Tuned",
+        "vs": "CF-SVD",
+        "mean_diff": 0.011133333333333332,
+        "cohens_d": 0.03877292656963237,
+        "p_value": 0.31261768883991126,
+        "significant": false
+      },
+      {
+        "method": "SimGCL",
+        "vs": "CF-SVD",
+        "mean_diff": -0.030433333333333333,
+        "cohens_d": -0.1133484505293084,
+        "p_value": 0.0168467336380155,
+        "significant": true
+      },
+      {
+        "method": "SGL",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0019214285714285705,
+        "cohens_d": 0.0062980080072217014,
+        "p_value": 0.8799004273752977,
+        "significant": false
+      },
+      {
+        "method": "DirectAU",
+        "vs": "CF-SVD",
+        "mean_diff": -0.0028000000000000026,
+        "cohens_d": -0.008868680167131543,
+        "p_value": 0.7455055869429386,
+        "significant": false
+      },
+      {
+        "method": "MultiInterest",
+        "vs": "CF-SVD",
+        "mean_diff": 0.013833333333333333,
+        "cohens_d": 0.04576681721073491,
+        "p_value": 0.2752036608031705,
+        "significant": false
+      },
+      {
+        "method": "MultiSource-RRF",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0189,
+        "cohens_d": 0.08944729769769239,
+        "p_value": 0.04536594028375493,
+        "significant": true
+      }
+    ],
+    "best_recall_100": {
+      "method": "MultiSource-RRF",
+      "recall": 0.10123333333333334
+    },
+    "best_recall_500": {
+      "method": "DirectAU",
+      "recall": 0.33487967032967025
+    },
+    "ceiling_broken": false
+  },
+  "movies": {
+    "dataset": "movies",
+    "n_users": 500,
+    "n_items": 53709,
+    "results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.02988352260410328,
+          "recall_ci_low": 0.023969300857846664,
+          "recall_ci_high": 0.03609507911215955
+        },
+        "ItemKNN": {
+          "recall_mean": 0.03637056054796071,
+          "recall_ci_low": 0.029286611478125994,
+          "recall_ci_high": 0.0450818035809831
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.036588954947436934,
+          "recall_ci_low": 0.02935836001649228,
+          "recall_ci_high": 0.044570616915166984
+        },
+        "SimGCL": {
+          "recall_mean": 0.037842416655739515,
+          "recall_ci_low": 0.030153047028122333,
+          "recall_ci_high": 0.046202227352906536
+        },
+        "SGL": {
+          "recall_mean": 0.043122981891890164,
+          "recall_ci_low": 0.03500551593180431,
+          "recall_ci_high": 0.05200422861260977
+        },
+        "DirectAU": {
+          "recall_mean": 0.04813267833352529,
+          "recall_ci_low": 0.03975867002804759,
+          "recall_ci_high": 0.05771240875223396
+        },
+        "MultiInterest": {
+          "recall_mean": 0.03431536428650607,
+          "recall_ci_low": 0.027639456664201187,
+          "recall_ci_high": 0.041327478735034756
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.044530183549179043,
+          "recall_ci_low": 0.03591821736003239,
+          "recall_ci_high": 0.05315419826153555
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.09393145644789454,
+          "recall_ci_low": 0.0822676172335183,
+          "recall_ci_high": 0.10695486919403997
+        },
+        "ItemKNN": {
+          "recall_mean": 0.11122772477703656,
+          "recall_ci_low": 0.09724173586960078,
+          "recall_ci_high": 0.1263063736220132
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.11216584160092812,
+          "recall_ci_low": 0.09955782157032865,
+          "recall_ci_high": 0.12387257542091941
+        },
+        "SimGCL": {
+          "recall_mean": 0.12613150883166116,
+          "recall_ci_low": 0.11185499930519473,
+          "recall_ci_high": 0.1405979530749766
+        },
+        "SGL": {
+          "recall_mean": 0.12537782397775835,
+          "recall_ci_low": 0.11099356537937848,
+          "recall_ci_high": 0.1389777045383485
+        },
+        "DirectAU": {
+          "recall_mean": 0.1435452301197099,
+          "recall_ci_low": 0.12864889296528836,
+          "recall_ci_high": 0.15906591094298742
+        },
+        "MultiInterest": {
+          "recall_mean": 0.1130764643449476,
+          "recall_ci_low": 0.10067372424555501,
+          "recall_ci_high": 0.12524484705874614
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.13782315924873398,
+          "recall_ci_low": 0.12287941766007554,
+          "recall_ci_high": 0.15365744258668274
+        }
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "ItemKNN",
+        "vs": "CF-SVD",
+        "mean_diff": 0.006487037943857427,
+        "cohens_d": 0.0812135703472541,
+        "p_value": 0.10496027807848815,
+        "significant": false
+      },
+      {
+        "method": "LightGCN-Tuned",
+        "vs": "CF-SVD",
+        "mean_diff": 0.006705432343333654,
+        "cohens_d": 0.09001791882180604,
+        "p_value": 0.17362634759284556,
+        "significant": false
+      },
+      {
+        "method": "SimGCL",
+        "vs": "CF-SVD",
+        "mean_diff": 0.007958894051636236,
+        "cohens_d": 0.10256981629461308,
+        "p_value": 0.05541942999065517,
+        "significant": false
+      },
+      {
+        "method": "SGL",
+        "vs": "CF-SVD",
+        "mean_diff": 0.013239459287786892,
+        "cohens_d": 0.15928032569261097,
+        "p_value": 0.0017960955837673554,
+        "significant": true
+      },
+      {
+        "method": "DirectAU",
+        "vs": "CF-SVD",
+        "mean_diff": 0.018249155729422015,
+        "cohens_d": 0.19646546770451898,
+        "p_value": 6.110309461867067e-05,
+        "significant": true
+      },
+      {
+        "method": "MultiInterest",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0044318416824027955,
+        "cohens_d": 0.05660498902704054,
+        "p_value": 0.4229056483994136,
+        "significant": false
+      },
+      {
+        "method": "MultiSource-RRF",
+        "vs": "CF-SVD",
+        "mean_diff": 0.01464666094507576,
+        "cohens_d": 0.19488494516649468,
+        "p_value": 3.6461538978775404e-06,
+        "significant": true
+      }
+    ],
+    "best_recall_100": {
+      "method": "DirectAU",
+      "recall": 0.04813267833352529
+    },
+    "best_recall_500": {
+      "method": "DirectAU",
+      "recall": 0.1435452301197099
+    },
+    "ceiling_broken": false
+  },
+  "electronics": {
+    "dataset": "electronics",
+    "n_users": 500,
+    "n_items": 28981,
+    "results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.025564076446429388,
+          "recall_ci_low": 0.020990671338465453,
+          "recall_ci_high": 0.030381843193571137
+        },
+        "ItemKNN": {
+          "recall_mean": 0.02042769647514001,
+          "recall_ci_low": 0.016053508620568025,
+          "recall_ci_high": 0.025086952713025273
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.029833314951950442,
+          "recall_ci_low": 0.02375696452789148,
+          "recall_ci_high": 0.035931976306935315
+        },
+        "SimGCL": {
+          "recall_mean": 0.023813006459273527,
+          "recall_ci_low": 0.019063772828267447,
+          "recall_ci_high": 0.028815138917588894
+        },
+        "SGL": {
+          "recall_mean": 0.02350192972554973,
+          "recall_ci_low": 0.018163625508809428,
+          "recall_ci_high": 0.028990981605380807
+        },
+        "DirectAU": {
+          "recall_mean": 0.018786597830274303,
+          "recall_ci_low": 0.014336364875728848,
+          "recall_ci_high": 0.02381231275464731
+        },
+        "MultiInterest": {
+          "recall_mean": 0.03125384832673291,
+          "recall_ci_low": 0.024708894839592457,
+          "recall_ci_high": 0.03838706781662135
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.029348886951330488,
+          "recall_ci_low": 0.024029253602379078,
+          "recall_ci_high": 0.03562583226007991
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.0649655894283834,
+          "recall_ci_low": 0.05631402546915941,
+          "recall_ci_high": 0.07363975653777069
+        },
+        "ItemKNN": {
+          "recall_mean": 0.0760485458747155,
+          "recall_ci_low": 0.06652980160715322,
+          "recall_ci_high": 0.08684173366958683
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.08003671054781987,
+          "recall_ci_low": 0.06942707124402608,
+          "recall_ci_high": 0.08995296271026318
+        },
+        "SimGCL": {
+          "recall_mean": 0.07798949055309506,
+          "recall_ci_low": 0.068598218848677,
+          "recall_ci_high": 0.08875185558003326
+        },
+        "SGL": {
+          "recall_mean": 0.07569687579427288,
+          "recall_ci_low": 0.06585957083859356,
+          "recall_ci_high": 0.08644044170383731
+        },
+        "DirectAU": {
+          "recall_mean": 0.05985402402121443,
+          "recall_ci_low": 0.05007637723117096,
+          "recall_ci_high": 0.06901225293853894
+        },
+        "MultiInterest": {
+          "recall_mean": 0.08167608167387852,
+          "recall_ci_low": 0.07135953448647363,
+          "recall_ci_high": 0.09228426234365729
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.09069771843632296,
+          "recall_ci_low": 0.08023110723265284,
+          "recall_ci_high": 0.10139717115854097
+        }
+      }
+    },
+    "statistical_tests": [
+      {
+        "method": "ItemKNN",
+        "vs": "CF-SVD",
+        "mean_diff": -0.005136379971289376,
+        "cohens_d": -0.09509015220446417,
+        "p_value": 0.05331138980022868,
+        "significant": false
+      },
+      {
+        "method": "LightGCN-Tuned",
+        "vs": "CF-SVD",
+        "mean_diff": 0.004269238505521052,
+        "cohens_d": 0.07641169411672866,
+        "p_value": 0.023529946148240014,
+        "significant": true
+      },
+      {
+        "method": "SimGCL",
+        "vs": "CF-SVD",
+        "mean_diff": -0.0017510699871558623,
+        "cohens_d": -0.028063353303591103,
+        "p_value": 0.9171547183985019,
+        "significant": false
+      },
+      {
+        "method": "SGL",
+        "vs": "CF-SVD",
+        "mean_diff": -0.002062146720879655,
+        "cohens_d": -0.030302391597866025,
+        "p_value": 0.41459073888271614,
+        "significant": false
+      },
+      {
+        "method": "DirectAU",
+        "vs": "CF-SVD",
+        "mean_diff": -0.006777478616155086,
+        "cohens_d": -0.0996317725701809,
+        "p_value": 0.07977396051576062,
+        "significant": false
+      },
+      {
+        "method": "MultiInterest",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0056897718803035294,
+        "cohens_d": 0.07439523518199721,
+        "p_value": 0.1381466463047162,
+        "significant": false
+      },
+      {
+        "method": "MultiSource-RRF",
+        "vs": "CF-SVD",
+        "mean_diff": 0.0037848105049010997,
+        "cohens_d": 0.06827769361457542,
+        "p_value": 0.06044328116770712,
+        "significant": false
+      }
+    ],
+    "best_recall_100": {
+      "method": "MultiInterest",
+      "recall": 0.03125384832673291
+    },
+    "best_recall_500": {
+      "method": "MultiSource-RRF",
+      "recall": 0.09069771843632296
+    },
+    "ceiling_broken": false
+  },
+  "office": {
+    "dataset": "office",
+    "n_users": 500,
+    "n_items": 5037,
+    "results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.138,
+          "recall_ci_low": 0.108,
+          "recall_ci_high": 0.17
+        },
+        "ItemKNN": {
+          "recall_mean": 0.136,
+          "recall_ci_low": 0.106,
+          "recall_ci_high": 0.164
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.144,
+          "recall_ci_low": 0.114,
+          "recall_ci_high": 0.176
+        },
+        "SimGCL": {
+          "recall_mean": 0.156,
+          "recall_ci_low": 0.124,
+          "recall_ci_high": 0.19
+        },
+        "SGL": {
+          "recall_mean": 0.146,
+          "recall_ci_low": 0.116,
+          "recall_ci_high": 0.176
+        },
+        "DirectAU": {
+          "recall_mean": 0.124,
+          "recall_ci_low": 0.098,
+          "recall_ci_high": 0.154
+        },
+        "MultiInterest": {
+          "recall_mean": 0.146,
+          "recall_ci_low": 0.116,
+          "recall_ci_high": 0.178
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.184,
+          "recall_ci_low": 0.152,
+          "recall_ci_high": 0.22
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.316
+        },
+        "ItemKNN": {
+          "recall_mean": 0.316
+        },
+        "LightGCN-Tuned": {
+          "recall_mean": 0.332
+        },
+        "SimGCL": {
+          "recall_mean": 0.38
+        },
+        "SGL": {
+          "recall_mean": 0.386
+        },
+        "DirectAU": {
+          "recall_mean": 0.358
+        },
+        "MultiInterest": {
+          "recall_mean": 0.348
+        },
+        "MultiSource-RRF": {
+          "recall_mean": 0.406
+        }
+      }
+    },
+    "best_recall_100": {
+      "method": "MultiSource-RRF",
+      "recall": 0.184
+    },
+    "best_recall_500": {
+      "method": "MultiSource-RRF",
+      "recall": 0.406
+    },
+    "ceiling_broken": true,
+    "statistical_tests": [
+      {
+        "method": "SimGCL",
+        "vs": "CF-SVD",
+        "mean_diff": 0.018,
+        "p_value": 0.2568
+      },
+      {
+        "method": "SGL",
+        "vs": "CF-SVD",
+        "mean_diff": 0.008,
+        "p_value": 0.6464
+      }
+    ]
+  },
+  "toys": {
+    "dataset": "toys",
+    "n_users": 500,
+    "n_items": 9545,
+    "results": {
+      "K=100": {},
+      "K=500": {}
+    },
+    "best_recall_100": {
+      "method": "MultiSource-RRF",
+      "recall": 0.156
+    },
+    "best_recall_500": {
+      "method": "DirectAU",
+      "recall": 0.336
+    },
+    "ceiling_broken": true
+  },
+  "sports": {
+    "dataset": "sports",
+    "n_users": 500,
+    "n_items": 5246,
+    "results": {
+      "K=100": {},
+      "K=500": {}
+    },
+    "best_recall_100": {
+      "method": "MultiSource-RRF",
+      "recall": 0.176
+    },
+    "best_recall_500": {
+      "method": "SGL",
+      "recall": 0.386
+    },
+    "ceiling_broken": true
+  }
+}

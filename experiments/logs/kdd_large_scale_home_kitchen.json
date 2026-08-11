@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-02-04T20:31:02.936364",
+  "config": {
+    "dataset": "home_kitchen",
+    "n_users": 500,
+    "n_items": 14942,
+    "n_interactions": 17298,
+    "K": 100,
+    "seed": 42
+  },
+  "retrieval_results": {
+    "Popularity": {
+      "recall@100": {
+        "mean": 0.022,
+        "ci_low": 0.01,
+        "ci_high": 0.036
+      },
+      "n_users": 500
+    },
+    "CF-SVD": {
+      "recall@100": {
+        "mean": 0.004,
+        "ci_low": 0.0,
+        "ci_high": 0.01
+      },
+      "n_users": 500
+    },
+    "ItemKNN": {
+      "recall@100": {
+        "mean": 0.004,
+        "ci_low": 0.0,
+        "ci_high": 0.01
+      },
+      "n_users": 500
+    }
+  },
+  "key_finding": "Large-scale home_kitchen dataset recall bottleneck validation"
+}

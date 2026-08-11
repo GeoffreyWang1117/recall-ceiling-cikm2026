@@ -1,0 +1,226 @@
+{
+  "results": {
+    "beauty": {
+      "cold": {
+        "n": 360,
+        "avg_history": 5.725,
+        "recall_mean": 0.08888888888888889,
+        "zero_recall_pct": 90.0,
+        "ndcg_mean": 0.005557533587745437,
+        "oracle_ndcg": 0.09140327095034352,
+        "ceiling_util": 6.080234908403517
+      },
+      "medium": {
+        "n": 135,
+        "avg_history": 18.14814814814815,
+        "recall_mean": 0.06604938271604938,
+        "zero_recall_pct": 81.48148148148148,
+        "ndcg_mean": 0.0028655763498854937,
+        "oracle_ndcg": 0.09035050645767476,
+        "ceiling_util": 3.171621789666326
+      },
+      "warm": {
+        "n": 5,
+        "skip": true
+      }
+    },
+    "movies": {
+      "cold": {
+        "n": 1,
+        "skip": true
+      },
+      "medium": {
+        "n": 24,
+        "avg_history": 35.208333333333336,
+        "recall_mean": 0.011904761904761904,
+        "zero_recall_pct": 91.66666666666666,
+        "ndcg_mean": 0.0038177268460318175,
+        "oracle_ndcg": 0.022906361076190904,
+        "ceiling_util": 16.666666666666668
+      },
+      "warm": {
+        "n": 475,
+        "avg_history": 145.4842105263158,
+        "recall_mean": 0.030854835823868113,
+        "zero_recall_pct": 71.57894736842105,
+        "ndcg_mean": 0.010132193340646113,
+        "oracle_ndcg": 0.09107992537101137,
+        "ceiling_util": 11.124507732492011
+      }
+    },
+    "electronics": {
+      "cold": {
+        "n": 0,
+        "skip": true
+      },
+      "medium": {
+        "n": 119,
+        "avg_history": 40.63865546218487,
+        "recall_mean": 0.03047218887555022,
+        "zero_recall_pct": 83.19327731092437,
+        "ndcg_mean": 0.0052286961473911415,
+        "oracle_ndcg": 0.053640398731888056,
+        "ceiling_util": 9.747683221979472
+      },
+      "warm": {
+        "n": 381,
+        "avg_history": 87.61679790026247,
+        "recall_mean": 0.024031096448882457,
+        "zero_recall_pct": 79.52755905511812,
+        "ndcg_mean": 0.0026202854849828147,
+        "oracle_ndcg": 0.05387181975801314,
+        "ceiling_util": 4.863926068866574
+      }
+    },
+    "toys": {
+      "cold": {
+        "n": 69,
+        "avg_history": 6.0,
+        "recall_mean": 0.08695652173913043,
+        "zero_recall_pct": 91.30434782608695,
+        "ndcg_mean": 0.007246376811594203,
+        "oracle_ndcg": 0.08695652173913043,
+        "ceiling_util": 8.333333333333334
+      },
+      "medium": {
+        "n": 303,
+        "avg_history": 27.983498349834985,
+        "recall_mean": 0.10231023102310231,
+        "zero_recall_pct": 89.76897689768977,
+        "ndcg_mean": 0.010128029009928737,
+        "oracle_ndcg": 0.10231023102310231,
+        "ceiling_util": 9.899331580672282
+      },
+      "warm": {
+        "n": 128,
+        "avg_history": 105.21875,
+        "recall_mean": 0.0546875,
+        "zero_recall_pct": 94.53125,
+        "ndcg_mean": 0.010164296841124854,
+        "oracle_ndcg": 0.0546875,
+        "ceiling_util": 18.58614279519973
+      }
+    },
+    "sports": {
+      "cold": {
+        "n": 93,
+        "avg_history": 6.67741935483871,
+        "recall_mean": 0.17204301075268819,
+        "zero_recall_pct": 82.79569892473118,
+        "ndcg_mean": 0.021211850102771313,
+        "oracle_ndcg": 0.17204301075268819,
+        "ceiling_util": 12.329387872235825
+      },
+      "medium": {
+        "n": 365,
+        "avg_history": 22.246575342465754,
+        "recall_mean": 0.12876712328767123,
+        "zero_recall_pct": 87.12328767123287,
+        "ndcg_mean": 0.01823501972637465,
+        "oracle_ndcg": 0.12876712328767123,
+        "ceiling_util": 14.16123872367393
+      },
+      "warm": {
+        "n": 42,
+        "avg_history": 69.14285714285714,
+        "recall_mean": 0.023809523809523808,
+        "zero_recall_pct": 97.61904761904762,
+        "ndcg_mean": 0.0,
+        "oracle_ndcg": 0.023809523809523808,
+        "ceiling_util": 0.0
+      }
+    },
+    "office": {
+      "cold": {
+        "n": 100,
+        "avg_history": 5.84,
+        "recall_mean": 0.19,
+        "zero_recall_pct": 81.0,
+        "ndcg_mean": 0.03271110474028678,
+        "oracle_ndcg": 0.19,
+        "ceiling_util": 17.21637091594041
+      },
+      "medium": {
+        "n": 356,
+        "avg_history": 22.50561797752809,
+        "recall_mean": 0.12921348314606743,
+        "zero_recall_pct": 87.07865168539325,
+        "ndcg_mean": 0.01856586855221656,
+        "oracle_ndcg": 0.12921348314606743,
+        "ceiling_util": 14.36836783606325
+      },
+      "warm": {
+        "n": 44,
+        "avg_history": 83.97727272727273,
+        "recall_mean": 0.09090909090909091,
+        "zero_recall_pct": 90.9090909090909,
+        "ndcg_mean": 0.022727272727272728,
+        "oracle_ndcg": 0.09090909090909091,
+        "ceiling_util": 25.0
+      }
+    },
+    "mind": {
+      "cold": {
+        "n": 157,
+        "avg_history": 6.012738853503185,
+        "recall_mean": 0.14012738853503184,
+        "zero_recall_pct": 85.98726114649682,
+        "ndcg_mean": 0.019819105661483483,
+        "oracle_ndcg": 0.14012738853503184,
+        "ceiling_util": 14.143634494785939
+      },
+      "medium": {
+        "n": 288,
+        "avg_history": 23.39236111111111,
+        "recall_mean": 0.1111111111111111,
+        "zero_recall_pct": 88.88888888888889,
+        "ndcg_mean": 0.012469565902003535,
+        "oracle_ndcg": 0.1111111111111111,
+        "ceiling_util": 11.222609311803183
+      },
+      "warm": {
+        "n": 55,
+        "avg_history": 91.92727272727272,
+        "recall_mean": 0.10909090909090909,
+        "zero_recall_pct": 89.0909090909091,
+        "ndcg_mean": 0.0,
+        "oracle_ndcg": 0.10909090909090909,
+        "ceiling_util": 0.0
+      }
+    },
+    "movielens": {
+      "cold": {
+        "n": 0,
+        "skip": true
+      },
+      "medium": {
+        "n": 0,
+        "skip": true
+      },
+      "warm": {
+        "n": 500,
+        "avg_history": 388.228,
+        "recall_mean": 0.18880000000000002,
+        "zero_recall_pct": 46.2,
+        "ndcg_mean": 0.026475021317340336,
+        "oracle_ndcg": 0.2613598763417724,
+        "ceiling_util": 10.12971910145831
+      }
+    }
+  },
+  "strata": {
+    "cold": {
+      "lo": 3,
+      "hi": 10
+    },
+    "medium": {
+      "lo": 10,
+      "hi": 50
+    },
+    "warm": {
+      "lo": 50,
+      "hi": 999999
+    }
+  },
+  "timestamp": "2026-03-27T21:53:47.343452"
+}

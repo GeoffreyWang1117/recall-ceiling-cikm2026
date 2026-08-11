@@ -1,0 +1,150 @@
+{
+  "datasets": {
+    "beauty": {
+      "dataset": "beauty",
+      "n_users": 938,
+      "n_items": 1416,
+      "catalog_size": 1416,
+      "n_interactions": 6263,
+      "density": 0.004715375904978739,
+      "avg_interactions_per_user": 6.676972281449894,
+      "recall_at_K": {
+        "K=20": 0.01896666666666667,
+        "K=50": 0.04713333333333333,
+        "K=100": 0.08233333333333333,
+        "K=200": 0.1289153846153846,
+        "K=500": 0.31089688644688646
+      }
+    },
+    "movies": {
+      "dataset": "movies",
+      "n_users": 1998,
+      "n_items": 53709,
+      "catalog_size": 53709,
+      "n_interactions": 286044,
+      "density": 0.002665571229499063,
+      "avg_interactions_per_user": 143.16516516516518,
+      "recall_at_K": {
+        "K=20": 0.00903588754468549,
+        "K=50": 0.016695085773794766,
+        "K=100": 0.02988352260410328,
+        "K=200": 0.05058732808933429,
+        "K=500": 0.09393145644789454
+      }
+    },
+    "electronics": {
+      "dataset": "electronics",
+      "n_users": 2000,
+      "n_items": 28981,
+      "catalog_size": 28981,
+      "n_interactions": 146326,
+      "density": 0.0025245160622476793,
+      "avg_interactions_per_user": 73.163,
+      "recall_at_K": {
+        "K=20": 0.006783145449321919,
+        "K=50": 0.014667092058268529,
+        "K=100": 0.025564076446429388,
+        "K=200": 0.03924574386290876,
+        "K=500": 0.0649655894283834
+      }
+    },
+    "toys": {
+      "dataset": "toys",
+      "n_users": 1594,
+      "n_items": 9545,
+      "catalog_size": 9545,
+      "n_interactions": 67980,
+      "density": 0.004468038538968487,
+      "avg_interactions_per_user": 42.6474278544542,
+      "recall_at_K": {
+        "K=20": 0.022,
+        "K=50": 0.052,
+        "K=100": 0.088,
+        "K=200": 0.134,
+        "K=500": 0.238
+      }
+    },
+    "sports": {
+      "dataset": "sports",
+      "n_users": 1580,
+      "n_items": 5246,
+      "catalog_size": 5246,
+      "n_interactions": 36381,
+      "density": 0.004389239299864393,
+      "avg_interactions_per_user": 23.025949367088607,
+      "recall_at_K": {
+        "K=20": 0.056,
+        "K=50": 0.092,
+        "K=100": 0.128,
+        "K=200": 0.204,
+        "K=500": 0.334
+      }
+    },
+    "office": {
+      "dataset": "office",
+      "n_users": 1704,
+      "n_items": 5037,
+      "catalog_size": 5037,
+      "n_interactions": 38921,
+      "density": 0.004534636180527011,
+      "avg_interactions_per_user": 22.840962441314552,
+      "recall_at_K": {
+        "K=20": 0.062,
+        "K=50": 0.096,
+        "K=100": 0.138,
+        "K=200": 0.192,
+        "K=500": 0.316
+      }
+    },
+    "mind_news": {
+      "dataset": "mind_news",
+      "n_users": 86746,
+      "n_items": 20212,
+      "catalog_size": 20212,
+      "n_interactions": 2192022,
+      "density": 0.0012502191911109176,
+      "avg_interactions_per_user": 25.269430290733865,
+      "recall_at_K": {
+        "K=20": 0.046,
+        "K=50": 0.07,
+        "K=100": 0.12,
+        "K=200": 0.206,
+        "K=500": 0.344
+      }
+    },
+    "movielens": {
+      "dataset": "movielens",
+      "n_users": 10000,
+      "n_items": 19886,
+      "catalog_size": 19886,
+      "n_interactions": 3889023,
+      "density": 0.019556587549029468,
+      "avg_interactions_per_user": 388.9023,
+      "recall_at_K": {
+        "K=20": 0.0508,
+        "K=50": 0.11,
+        "K=100": 0.18880000000000002,
+        "K=200": 0.3072,
+        "K=500": 0.502
+      }
+    }
+  },
+  "analysis": {
+    "catalog_vs_recall": {
+      "pearson_r": -0.28961598789688614,
+      "fit_coef": -0.031579719708998394,
+      "fit_intercept": 0.22776977875472523,
+      "r_squared": 0.08387742044548929
+    },
+    "density_vs_recall": {
+      "pearson_r": 0.603811968236729
+    },
+    "multivariate": {
+      "coef_catalog": -0.018292990156242556,
+      "coef_density": 0.0921729116793414,
+      "intercept": 0.39481076981840024,
+      "r_squared": 0.3914375226076967
+    }
+  },
+  "timestamp": "2026-03-26T16:24:58.994327"
+}

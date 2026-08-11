@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-02-07",
+  "config": {
+    "model": "gemma3:4b",
+    "n_users": 200,
+    "K": 100,
+    "seed": 42
+  },
+  "datasets": {
+    "sports": {
+      "n_users": 200,
+      "n_items": 20324,
+      "recall_at_100": {
+        "mean": 0.02,
+        "ci_low": 0.005,
+        "ci_high": 0.04
+      },
+      "cf_ndcg": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "llm_ndcg": {
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      },
+      "improvement_percent": 0,
+      "wilcoxon_p": 1.0,
+      "cohens_d": 0.0
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "config": {
+    "dataset": "Movies",
+    "n_test_users": 300,
+    "seed": 42,
+    "candidate_sizes": [
+      500,
+      1000,
+      2000,
+      3000
+    ],
+    "cf_factors": 128,
+    "lightgcn_dim": 64,
+    "lightgcn_layers": 3,
+    "lightgcn_epochs": 100,
+    "cold_threshold": 20,
+    "active_threshold": 100
+  },
+  "results": {
+    "500": {
+      "CF-only": {
+        "recall_rate": 0.10287562189058821,
+        "hit_rate": 0.5267857142857143,
+        "n_users": 224
+      },
+      "GNN-only": {
+        "recall_rate": 0.08626777429298046,
+        "hit_rate": 0.5357142857142857,
+        "n_users": 224
+      },
+      "Content-only": {
+        "recall_rate": 0.0088882787365992,
+        "hit_rate": 0.11160714285714286,
+        "n_users": 224
+      },
+      "Cooc-only": {
+        "recall_rate": 0.10011185100839086,
+        "hit_rate": 0.5892857142857143,
+        "n_users": 224
+      },
+      "Pop-only": {
+        "recall_rate": 0.033252286388066404,
+        "hit_rate": 0.32142857142857145,
+        "n_users": 224
+      },
+      "CF+GNN": {
+        "recall_rate": 0.10536592196249904,
+        "hit_rate": 0.53125,
+        "n_users": 224
+      },
+      "CF+GNN+Content": {
+        "recall_rate": 0.1029403079564173,
+        "hit_rate": 0.5267857142857143,
+        "n_users": 224
+      },
+      "All-Sources": {
+        "recall_rate": 0.10904593695533502,
+        "hit_rate": 0.5446428571428571,
+        "n_users": 224
+      }
+    },
+    "1000": {
+      "CF-only": {
+        "recall_rate": 0.153220181046369,
+        "hit_rate": 0.6830357142857143,
+        "n_users": 224
+      },
+      "GNN-only": {
+        "recall_rate": 0.1343585870881591,
+        "hit_rate": 0.6785714285714286,
+        "n_users": 224
+      },
+      "Content-only": {
+        "recall_rate": 0.02061596410638661,
+        "hit_rate": 0.25,
+        "n_users": 224
+      },
+      "Cooc-only": {
+        "recall_rate": 0.14601648540713247,
+        "hit_rate": 0.7723214285714286,
+        "n_users": 224
+      },
+      "Pop-only": {
+        "recall_rate": 0.055051884124207424,
+        "hit_rate": 0.42857142857142855,
+        "n_users": 224
+      },
+      "CF+GNN": {
+        "recall_rate": 0.15331939798765742,
+        "hit_rate": 0.6830357142857143,
+        "n_users": 224
+      },
+      "CF+GNN+Content": {
+        "recall_rate": 0.15963525146779314,
+        "hit_rate": 0.7053571428571429,
+        "n_users": 224
+      },
+      "All-Sources": {
+        "recall_rate": 0.16116323171583719,
+        "hit_rate": 0.7053571428571429,
+        "n_users": 224
+      }
+    },
+    "2000": {
+      "CF-only": {
+        "recall_rate": 0.22035497570888168,
+        "hit_rate": 0.8080357142857143,
+        "n_users": 224
+      },
+      "GNN-only": {
+        "recall_rate": 0.20625570875272992,
+        "hit_rate": 0.7946428571428571,
+        "n_users": 224
+      },
+      "Content-only": {
+        "recall_rate": 0.03628717023087904,
+        "hit_rate": 0.4017857142857143,
+        "n_users": 224
+      },
+      "Cooc-only": {
+        "recall_rate": 0.18952419153246933,
+        "hit_rate": 0.8303571428571429,
+        "n_users": 224
+      },
+      "Pop-only": {
+        "recall_rate": 0.0942901890265196,
+        "hit_rate": 0.5401785714285714,
+        "n_users": 224
+      },
+      "CF+GNN": {
+        "recall_rate": 0.22349236425029304,
+        "hit_rate": 0.7991071428571429,
+        "n_users": 224
+      },
+      "CF+GNN+Content": {
+        "recall_rate": 0.22620906404887267,
+        "hit_rate": 0.8303571428571429,
+        "n_users": 224
+      },
+      "All-Sources": {
+        "recall_rate": 0.23146685448991033,
+        "hit_rate": 0.8214285714285714,
+        "n_users": 224
+      }
+    },
+    "3000": {
+      "CF-only": {
+        "recall_rate": 0.2754008178971212,
+        "hit_rate": 0.8616071428571429,
+        "n_users": 224
+      },
+      "GNN-only": {
+        "recall_rate": 0.2613412273033185,
+        "hit_rate": 0.8660714285714286,
+        "n_users": 224
+      },
+      "Content-only": {
+        "recall_rate": 0.0557924758200447,
+        "hit_rate": 0.5491071428571429,
+        "n_users": 224
+      },
+      "Cooc-only": {
+        "recall_rate": 0.21355357926222612,
+        "hit_rate": 0.8660714285714286,
+        "n_users": 224
+      },
+      "Pop-only": {
+        "recall_rate": 0.12943444701905632,
+        "hit_rate": 0.6339285714285714,
+        "n_users": 224
+      },
+      "CF+GNN": {
+        "recall_rate": 0.2704965014020031,
+        "hit_rate": 0.8616071428571429,
+        "n_users": 224
+      },
+      "CF+GNN+Content": {
+        "recall_rate": 0.2855402155085992,
+        "hit_rate": 0.875,
+        "n_users": 224
+      },
+      "All-Sources": {
+        "recall_rate": 0.2854599839839956,
+        "hit_rate": 0.8839285714285714,
+        "n_users": 224
+      }
+    }
+  }
+}

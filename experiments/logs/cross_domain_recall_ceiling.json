@@ -1,0 +1,398 @@
+{
+  "sports": {
+    "dataset": "sports",
+    "n_users": 500,
+    "n_items": 5246,
+    "n_interactions": 36381,
+    "density_pct": 0.4389,
+    "catalog_size": 5246,
+    "recall_results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.128,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.138,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.066,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.094,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.334,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.366,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.168,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.32,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      }
+    },
+    "reranker_results": {
+      "cf_order": {
+        "ndcg_mean": 0.01725696851936896,
+        "ndcg_std": 0.10235247837212955,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.32484581647322075
+      },
+      "random": {
+        "ndcg_mean": 0.00859413153663985,
+        "ndcg_std": 0.07249515872694558,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "reverse": {
+        "ndcg_mean": 0.0035066558264453575,
+        "ndcg_std": 0.040904611508348794,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "oracle": {
+        "ndcg_mean": 0.128,
+        "ndcg_std": 0.33408980828513757,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 1.0
+      }
+    },
+    "raep": {
+      "mean_recall": 0.128,
+      "zero_recall_pct": 87.2,
+      "mean_ceiling_ndcg": 0.128,
+      "mean_actual_ndcg": 0.01725696851936896,
+      "ceiling_utilization_pct": 13.482006655756997,
+      "ra_ndcg": 0.13482006655756998,
+      "adaptive_k_mean": 127.046,
+      "adaptive_recall": 0.156,
+      "adaptive_improvement": 0.027999999999999997,
+      "recall_diagnosis": "WARNING"
+    },
+    "best_recall_100": {
+      "method": "ItemKNN",
+      "recall": 0.138
+    },
+    "ceiling_broken": false,
+    "elapsed_seconds": 24.0,
+    "timestamp": "2026-03-26T16:01:14.153043"
+  },
+  "office": {
+    "dataset": "office",
+    "n_users": 500,
+    "n_items": 5037,
+    "n_interactions": 38921,
+    "density_pct": 0.4535,
+    "catalog_size": 5037,
+    "recall_results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.138,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.136,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.094,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.104,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.316,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.316,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.212,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.312,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      }
+    },
+    "reranker_results": {
+      "cf_order": {
+        "ndcg_mean": 0.021761119357235546,
+        "ndcg_std": 0.12376959363454226,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.3722961376744442
+      },
+      "random": {
+        "ndcg_mean": 0.004766481429599568,
+        "ndcg_std": 0.044890444759115126,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "reverse": {
+        "ndcg_mean": 0.003890808238230929,
+        "ndcg_std": 0.040632705950801,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "oracle": {
+        "ndcg_mean": 0.138,
+        "ndcg_std": 0.34489998550304407,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 1.0
+      }
+    },
+    "raep": {
+      "mean_recall": 0.138,
+      "zero_recall_pct": 86.2,
+      "mean_ceiling_ndcg": 0.138,
+      "mean_actual_ndcg": 0.021761119357235546,
+      "ceiling_utilization_pct": 15.76892707046054,
+      "ra_ndcg": 0.15768927070460542,
+      "adaptive_k_mean": 120.724,
+      "adaptive_recall": 0.148,
+      "adaptive_improvement": 0.009999999999999981,
+      "recall_diagnosis": "WARNING"
+    },
+    "best_recall_100": {
+      "method": "CF-SVD",
+      "recall": 0.138
+    },
+    "ceiling_broken": false,
+    "elapsed_seconds": 24.9,
+    "timestamp": "2026-03-26T16:01:41.732132"
+  },
+  "mind_news": {
+    "dataset": "mind_news",
+    "n_users": 500,
+    "n_items": 20212,
+    "n_interactions": 2192022,
+    "density_pct": 0.125,
+    "catalog_size": 20212,
+    "recall_results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.12,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.13,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.112,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.154,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.344,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.34,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.31,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.362,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      }
+    },
+    "reranker_results": {
+      "cf_order": {
+        "ndcg_mean": 0.01340566913725985,
+        "ndcg_std": 0.08718715758938557,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.30292485281350373
+      },
+      "random": {
+        "ndcg_mean": 0.0051615159187090014,
+        "ndcg_std": 0.05806892436644922,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "reverse": {
+        "ndcg_mean": 0.0032863390794129668,
+        "ndcg_std": 0.0331339524485219,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "oracle": {
+        "ndcg_mean": 0.12,
+        "ndcg_std": 0.32496153618543844,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 1.0
+      }
+    },
+    "raep": {
+      "mean_recall": 0.12,
+      "zero_recall_pct": 88.0,
+      "mean_ceiling_ndcg": 0.12,
+      "mean_actual_ndcg": 0.01340566913725985,
+      "ceiling_utilization_pct": 11.171390947716542,
+      "ra_ndcg": 0.1117139094771654,
+      "adaptive_k_mean": 125.39,
+      "adaptive_recall": 0.148,
+      "adaptive_improvement": 0.027999999999999997,
+      "recall_diagnosis": "WARNING"
+    },
+    "best_recall_100": {
+      "method": "LightGCN",
+      "recall": 0.154
+    },
+    "ceiling_broken": true,
+    "elapsed_seconds": 475.0,
+    "timestamp": "2026-03-26T16:02:20.837870"
+  },
+  "toys": {
+    "dataset": "toys",
+    "n_users": 500,
+    "n_items": 9545,
+    "n_interactions": 67980,
+    "density_pct": 0.4468,
+    "catalog_size": 9545,
+    "recall_results": {
+      "K=100": {
+        "CF-SVD": {
+          "recall_mean": 0.088,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.138,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.028,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.108,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      },
+      "K=500": {
+        "CF-SVD": {
+          "recall_mean": 0.238,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "ItemKNN": {
+          "recall_mean": 0.234,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "Popularity": {
+          "recall_mean": 0.096,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        },
+        "LightGCN": {
+          "recall_mean": 0.24,
+          "recall_ci_low": 0.0,
+          "recall_ci_high": 1.0
+        }
+      }
+    },
+    "reranker_results": {
+      "cf_order": {
+        "ndcg_mean": 0.009739645571344777,
+        "ndcg_std": 0.0804418888106716,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "random": {
+        "ndcg_mean": 0.002892789260714372,
+        "ndcg_std": 0.03855920973188436,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "reverse": {
+        "ndcg_mean": 0.003838193379829837,
+        "ndcg_std": 0.04486159743276785,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 0.0
+      },
+      "oracle": {
+        "ndcg_mean": 0.088,
+        "ndcg_std": 0.28329489935401236,
+        "ndcg_ci_low": 0.0,
+        "ndcg_ci_high": 1.0
+      }
+    },
+    "raep": {
+      "mean_recall": 0.088,
+      "zero_recall_pct": 91.2,
+      "mean_ceiling_ndcg": 0.088,
+      "mean_actual_ndcg": 0.009739645571344777,
+      "ceiling_utilization_pct": 11.06777905834634,
+      "ra_ndcg": 0.11067779058346337,
+      "adaptive_k_mean": 114.118,
+      "adaptive_recall": 0.094,
+      "adaptive_improvement": 0.006000000000000005,
+      "recall_diagnosis": "WARNING"
+    },
+    "best_recall_100": {
+      "method": "ItemKNN",
+      "recall": 0.138
+    },
+    "ceiling_broken": false,
+    "elapsed_seconds": 35.2,
+    "timestamp": "2026-03-26T16:10:19.757048"
+  }
+}

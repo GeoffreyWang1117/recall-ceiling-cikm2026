@@ -1,0 +1,398 @@
+{
+  "timestamp": "2026-05-11T18:25:53.915705",
+  "config": {
+    "n_users": 200,
+    "K": 100,
+    "top_k": 10,
+    "seed": 42,
+    "n_factors": 128,
+    "mode": "test"
+  },
+  "results": {
+    "beauty": {
+      "CF_Score": {
+        "ndcg_mean": 0.00841984692937226,
+        "ci": [
+          0.0006943122193677726,
+          0.018694630991896256
+        ],
+        "recall_mean": 0.08425,
+        "recall_ci": [
+          0.05075,
+          0.12100416666666665
+        ],
+        "n": 200
+      },
+      "deepseek-v4-pro-think": {
+        "provider": "deepseek",
+        "model_id": "deepseek-v4-pro",
+        "ndcg_mean": 0.004095525292236456,
+        "ci": [
+          0.00036681961049680025,
+          0.008963590226873644
+        ],
+        "vs_cf_pct": -51.35866672901066,
+        "cohens_d": -0.13206706138612845,
+        "wilcoxon_p": 0.3454475304692257,
+        "mean_kendall_tau": 0.9525838383838385,
+        "n": 200,
+        "total_in_tokens": 120349,
+        "total_out_tokens": 1867198,
+        "cost_usd": 1.6768,
+        "price_per_M": {
+          "in": 0.435,
+          "out": 0.87
+        }
+      },
+      "deepseek-v4-flash-think": {
+        "provider": "deepseek",
+        "model_id": "deepseek-v4-flash",
+        "ndcg_mean": 0.0033121947402240674,
+        "ci": [
+          0.0004257155882081049,
+          0.00787704001726105
+        ],
+        "vs_cf_pct": -60.662047960870865,
+        "cohens_d": -0.1890893696631095,
+        "wilcoxon_p": 0.24886387493792206,
+        "mean_kendall_tau": 0.9532545454545456,
+        "n": 200,
+        "total_in_tokens": 120349,
+        "total_out_tokens": 1192288,
+        "cost_usd": 0.3507,
+        "price_per_M": {
+          "in": 0.14,
+          "out": 0.28
+        }
+      }
+    },
+    "movies": {
+      "CF_Score": {
+        "ndcg_mean": 0.009808834562223336,
+        "ci": [
+          0.005974001098191455,
+          0.013941305921698717
+        ],
+        "recall_mean": 0.02988352260410328,
+        "recall_ci": [
+          0.02384750605056055,
+          0.03657130613681875
+        ],
+        "n": 500
+      },
+      "deepseek-v4-pro-think": {
+        "provider": "deepseek",
+        "model_id": "deepseek-v4-pro",
+        "ndcg_mean": 0.005654256134389744,
+        "ci": [
+          0.0029547595649922786,
+          0.009130892407417665
+        ],
+        "vs_cf_pct": -42.35547024393065,
+        "cohens_d": -0.11820659967094108,
+        "wilcoxon_p": 0.005335578577783465,
+        "mean_kendall_tau": 0.9535822222222223,
+        "n": 500,
+        "total_in_tokens": 31505,
+        "total_out_tokens": 729373,
+        "cost_usd": 0.6483,
+        "price_per_M": {
+          "in": 0.435,
+          "out": 0.87
+        }
+      }
+    },
+    "mind": {
+      "CF_Score": {
+        "ndcg_mean": 0.01340566913725985,
+        "ci": [
+          0.006456828153644056,
+          0.02115872226487229
+        ],
+        "recall_mean": 0.12,
+        "recall_ci": [
+          0.092,
+          0.15
+        ],
+        "n": 500
+      },
+      "gpt-4o-mini": {
+        "provider": "openai",
+        "model_id": "gpt-4o-mini",
+        "ndcg_mean": 0.017469936675360037,
+        "ci": [
+          0.008809021788257359,
+          0.02859768579279484
+        ],
+        "vs_cf_pct": 30.31752606536187,
+        "cohens_d": 0.03762964855839867,
+        "wilcoxon_p": 0.46896454129897336,
+        "n": 500,
+        "total_in_tokens": 361908,
+        "total_out_tokens": 20120,
+        "cost_usd": 0.0664,
+        "price_per_M": {
+          "in": 0.15,
+          "out": 0.6
+        }
+      },
+      "llama-3.3-70b-versatile": {
+        "provider": "groq",
+        "model_id": "llama-3.3-70b-versatile",
+        "ndcg_mean": 0.017322793713378155,
+        "ci": [
+          0.008214077895604832,
+          0.02822260052259405
+        ],
+        "vs_cf_pct": 29.219908710352428,
+        "cohens_d": 0.03450509999038472,
+        "wilcoxon_p": 0.40747743808915926,
+        "n": 500,
+        "total_in_tokens": 382249,
+        "total_out_tokens": 20078,
+        "cost_usd": 0.2414,
+        "price_per_M": {
+          "in": 0.59,
+          "out": 0.79
+        }
+      },
+      "qwen3-32b": {
+        "provider": "groq",
+        "model_id": "qwen/qwen3-32b",
+        "ndcg_mean": 0.013282284722486937,
+        "ci": [
+          0.0065861129751281665,
+          0.0215949433311548
+        ],
+        "vs_cf_pct": -0.9203897567938588,
+        "cohens_d": -0.0014237666247203038,
+        "wilcoxon_p": 0.17971249487899976,
+        "n": 500,
+        "total_in_tokens": 385911,
+        "total_out_tokens": 60000,
+        "cost_usd": 0.1353,
+        "price_per_M": {
+          "in": 0.29,
+          "out": 0.39
+        }
+      },
+      "deepseek-chat": {
+        "provider": "deepseek",
+        "model_id": "deepseek-chat",
+        "ndcg_mean": 0.015768158299570473,
+        "ci": [
+          0.007225611292414949,
+          0.02532014964917037
+        ],
+        "vs_cf_pct": 17.623059034880313,
+        "cohens_d": 0.022114904244120645,
+        "wilcoxon_p": 0.5859643604931581,
+        "n": 500,
+        "total_in_tokens": 372835,
+        "total_out_tokens": 19500,
+        "cost_usd": 0.1221,
+        "price_per_M": {
+          "in": 0.27,
+          "out": 1.1
+        }
+      },
+      "kimi-k2-turbo-preview": {
+        "provider": "kimi",
+        "model_id": "kimi-k2-turbo-preview",
+        "ndcg_mean": 0.015595192840476248,
+        "ci": [
+          0.006255313019464341,
+          0.026526691810654868
+        ],
+        "vs_cf_pct": 16.332817985210717,
+        "cohens_d": 0.01884624913390873,
+        "wilcoxon_p": 0.7759604163384943,
+        "n": 500,
+        "total_in_tokens": 368697,
+        "total_out_tokens": 19880,
+        "cost_usd": 0.234,
+        "price_per_M": {
+          "in": 0.5,
+          "out": 2.5
+        }
+      }
+    },
+    "electronics": {
+      "CF_Score": {
+        "ndcg_mean": 0.003241087222635997,
+        "ci": [
+          0.0014687885721149728,
+          0.005310277075894759
+        ],
+        "recall_mean": 0.025564076446429388,
+        "recall_ci": [
+          0.020972525778959604,
+          0.030622101689160512
+        ],
+        "n": 500
+      },
+      "deepseek-v4-pro-nothink": {
+        "provider": "deepseek",
+        "model_id": "deepseek-v4-pro",
+        "ndcg_mean": 0.003241087222635997,
+        "ci": [
+          0.0014952001362125787,
+          0.005266239515422563
+        ],
+        "vs_cf_pct": 0.0,
+        "cohens_d": 0.0,
+        "wilcoxon_p": NaN,
+        "mean_kendall_tau": 1.0,
+        "n": 500,
+        "total_in_tokens": 109500,
+        "total_out_tokens": 19540,
+        "cost_usd": 0.0646,
+        "price_per_M": {
+          "in": 0.435,
+          "out": 0.87
+        }
+      },
+      "deepseek-v4-flash-nothink": {
+        "provider": "deepseek",
+        "model_id": "deepseek-v4-flash",
+        "ndcg_mean": 0.003241087222635997,
+        "ci": [
+          0.0015381450812172875,
+          0.0053358533622927876
+        ],
+        "vs_cf_pct": 0.0,
+        "cohens_d": 0.0,
+        "wilcoxon_p": NaN,
+        "mean_kendall_tau": 1.0,
+        "n": 500,
+        "total_in_tokens": 109500,
+        "total_out_tokens": 19500,
+        "cost_usd": 0.0208,
+        "price_per_M": {
+          "in": 0.14,
+          "out": 0.28
+        }
+      }
+    },
+    "movielens": {
+      "CF_Score": {
+        "ndcg_mean": 0.01276146294020197,
+        "ci": [
+          0.004734388957907328,
+          0.02173506580746469
+        ],
+        "recall_mean": 0.174,
+        "recall_ci": [
+          0.142,
+          0.206
+        ],
+        "n": 500
+      },
+      "gpt-4o-mini": {
+        "provider": "openai",
+        "model_id": "gpt-4o-mini",
+        "ndcg_mean": 0.011959543890614042,
+        "ci": [
+          0.004806757235262251,
+          0.02006678213963178
+        ],
+        "vs_cf_pct": -6.283911104130235,
+        "cohens_d": -0.008889780495896147,
+        "wilcoxon_p": 0.7670968684102772,
+        "mean_kendall_tau": 0.97899797979798,
+        "n": 500,
+        "total_in_tokens": 380043,
+        "total_out_tokens": 20230,
+        "cost_usd": 0.0691,
+        "price_per_M": {
+          "in": 0.15,
+          "out": 0.6
+        }
+      },
+      "llama-3.3-70b-versatile": {
+        "provider": "groq",
+        "model_id": "llama-3.3-70b-versatile",
+        "ndcg_mean": 0.007051553554564693,
+        "ci": [
+          0.002601712002722012,
+          0.013082500454813701
+        ],
+        "vs_cf_pct": -44.743372801058975,
+        "cohens_d": -0.09208787728877603,
+        "wilcoxon_p": 0.20850028603785853,
+        "mean_kendall_tau": 0.9648339393939396,
+        "n": 500,
+        "total_in_tokens": 411739,
+        "total_out_tokens": 20040,
+        "cost_usd": 0.2588,
+        "price_per_M": {
+          "in": 0.59,
+          "out": 0.79
+        }
+      },
+      "qwen3-32b": {
+        "provider": "groq",
+        "model_id": "qwen/qwen3-32b",
+        "ndcg_mean": 0.012023322447344881,
+        "ci": [
+          0.004470275760384123,
+          0.02137015390570422
+        ],
+        "vs_cf_pct": -5.784136493398314,
+        "cohens_d": -0.00789793190365586,
+        "wilcoxon_p": 0.31731050786291415,
+        "mean_kendall_tau": 0.998871111111111,
+        "n": 500,
+        "total_in_tokens": 449953,
+        "total_out_tokens": 60000,
+        "cost_usd": 0.1539,
+        "price_per_M": {
+          "in": 0.29,
+          "out": 0.39
+        }
+      },
+      "deepseek-chat": {
+        "provider": "deepseek",
+        "model_id": "deepseek-chat",
+        "ndcg_mean": 0.010439310977299351,
+        "ci": [
+          0.0042261225940477066,
+          0.018389281120698802
+        ],
+        "vs_cf_pct": -18.196595420273287,
+        "cohens_d": -0.028437512748942715,
+        "wilcoxon_p": 0.6090184166329973,
+        "mean_kendall_tau": 0.9606909090909093,
+        "n": 500,
+        "total_in_tokens": 414773,
+        "total_out_tokens": 19500,
+        "cost_usd": 0.1334,
+        "price_per_M": {
+          "in": 0.27,
+          "out": 1.1
+        }
+      },
+      "kimi-k2-turbo-preview": {
+        "provider": "kimi",
+        "model_id": "kimi-k2-turbo-preview",
+        "ndcg_mean": 0.010280396425640412,
+        "ci": [
+          0.004580869457703482,
+          0.016621679787639825
+        ],
+        "vs_cf_pct": -19.441864398844906,
+        "cohens_d": -0.03465179864281084,
+        "wilcoxon_p": 0.757686851021079,
+        "mean_kendall_tau": 0.9573002020202022,
+        "n": 500,
+        "total_in_tokens": 409450,
+        "total_out_tokens": 20000,
+        "cost_usd": 0.2547,
+        "price_per_M": {
+          "in": 0.5,
+          "out": 2.5
+        }
+      }
+    }
+  }
+}

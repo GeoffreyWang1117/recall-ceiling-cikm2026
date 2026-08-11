@@ -1,0 +1,228 @@
+{
+  "timestamp": "2026-04-04T22:31:17.737749",
+  "config": {
+    "n_users": 500,
+    "K": 100,
+    "top_k": 10,
+    "n_bootstrap": 10000,
+    "seed": 42
+  },
+  "results": {
+    "beauty": {
+      "dataset": "beauty",
+      "n_users": 500,
+      "n_items": 1416,
+      "recall_at_100": {
+        "mean": 0.08233333333333333,
+        "ci": [
+          0.06179916666666666,
+          0.10470166666666664
+        ]
+      },
+      "cf_baseline": {
+        "ndcg@10": {
+          "mean": 0.005052854685392908,
+          "ci": [
+            0.0014880853632162838,
+            0.009618725367568758
+          ]
+        },
+        "hit@10": {
+          "mean": 0.014,
+          "ci": [
+            0.004,
+            0.026
+          ]
+        },
+        "map@10": {
+          "mean": 0.003188888888888889,
+          "ci": [
+            0.0006444444444444443,
+            0.006522499999999995
+          ]
+        }
+      },
+      "oracle_ceiling": {
+        "ndcg@10": {
+          "mean": 0.09114299201446087,
+          "ci": [
+            0.06892561734142025,
+            0.11440523068322703
+          ]
+        },
+        "hit@10": {
+          "mean": 0.124,
+          "ci": [
+            0.096,
+            0.154
+          ]
+        },
+        "map@10": {
+          "mean": 0.08243333333333332,
+          "ci": [
+            0.06133333333333333,
+            0.10503333333333333
+          ]
+        },
+        "wilcoxon_vs_cf_p": 2.435931940068185e-12
+      },
+      "bootstrap_population_test_llm_vs_cf": {
+        "note": "Per-user LLM arrays not in log. Re-run kdd_oracle_realistic_n500.py with --save_per_user flag to enable this test.",
+        "aggregate_evidence": {
+          "cf_ndcg_mean": 0.005052854685392908,
+          "llm_ndcg_from_log": null,
+          "wilcoxon_p_from_log": "see kdd_oracle_realistic_n500.json"
+        }
+      },
+      "interpretation": {
+        "fraction_users_zero_recall": 0.876,
+        "fraction_users_zero_ndcg_cf": 0.986,
+        "oracle_gap_vs_cf_ndcg": 0.08609013732906796
+      }
+    },
+    "movies": {
+      "dataset": "movies",
+      "n_users": 500,
+      "n_items": 53709,
+      "recall_at_100": {
+        "mean": 0.02988352260410328,
+        "ci": [
+          0.023871208593254426,
+          0.03645556922930858
+        ]
+      },
+      "cf_baseline": {
+        "ndcg@10": {
+          "mean": 0.009808834562223336,
+          "ci": [
+            0.0059109682506569726,
+            0.01439988260731502
+          ]
+        },
+        "hit@10": {
+          "mean": 0.066,
+          "ci": [
+            0.046,
+            0.088
+          ]
+        },
+        "map@10": {
+          "mean": 0.00399375283446712,
+          "ci": [
+            0.0019382386621315192,
+            0.006769496031746028
+          ]
+        }
+      },
+      "oracle_ceiling": {
+        "ndcg@10": {
+          "mean": 0.08762543443411797,
+          "ci": [
+            0.07324100475257567,
+            0.10246304560009978
+          ]
+        },
+        "hit@10": {
+          "mean": 0.274,
+          "ci": [
+            0.236,
+            0.314
+          ]
+        },
+        "map@10": {
+          "mean": 0.05129285714285715,
+          "ci": [
+            0.04132857142857143,
+            0.06217196428571429
+          ]
+        },
+        "wilcoxon_vs_cf_p": 4.701751553547623e-25
+      },
+      "bootstrap_population_test_llm_vs_cf": {
+        "note": "Per-user LLM arrays not in log. Re-run kdd_oracle_realistic_n500.py with --save_per_user flag to enable this test.",
+        "aggregate_evidence": {
+          "cf_ndcg_mean": 0.009808834562223336,
+          "llm_ndcg_from_log": null,
+          "wilcoxon_p_from_log": "see kdd_oracle_realistic_n500.json"
+        }
+      },
+      "interpretation": {
+        "fraction_users_zero_recall": 0.726,
+        "fraction_users_zero_ndcg_cf": 0.934,
+        "oracle_gap_vs_cf_ndcg": 0.07781659987189463
+      }
+    },
+    "electronics": {
+      "dataset": "electronics",
+      "n_users": 500,
+      "n_items": 28981,
+      "recall_at_100": {
+        "mean": 0.025564076446429388,
+        "ci": [
+          0.02084949523923789,
+          0.030684979571082505
+        ]
+      },
+      "cf_baseline": {
+        "ndcg@10": {
+          "mean": 0.003241087222635997,
+          "ci": [
+            0.0015428316664816179,
+            0.005326515063344348
+          ]
+        },
+        "hit@10": {
+          "mean": 0.028,
+          "ci": [
+            0.014,
+            0.044
+          ]
+        },
+        "map@10": {
+          "mean": 0.0010748765432098766,
+          "ci": [
+            0.00037656613756613757,
+            0.0020259927248677248
+          ]
+        }
+      },
+      "oracle_ceiling": {
+        "ndcg@10": {
+          "mean": 0.05381674155379537,
+          "ci": [
+            0.04403952526486617,
+            0.06374796068478317
+          ]
+        },
+        "hit@10": {
+          "mean": 0.196,
+          "ci": [
+            0.162,
+            0.232
+          ]
+        },
+        "map@10": {
+          "mean": 0.02788015873015873,
+          "ci": [
+            0.022690376984126986,
+            0.03325170634920636
+          ]
+        },
+        "wilcoxon_vs_cf_p": 7.515124709641442e-18
+      },
+      "bootstrap_population_test_llm_vs_cf": {
+        "note": "Per-user LLM arrays not in log. Re-run kdd_oracle_realistic_n500.py with --save_per_user flag to enable this test.",
+        "aggregate_evidence": {
+          "cf_ndcg_mean": 0.003241087222635997,
+          "llm_ndcg_from_log": null,
+          "wilcoxon_p_from_log": "see kdd_oracle_realistic_n500.json"
+        }
+      },
+      "interpretation": {
+        "fraction_users_zero_recall": 0.804,
+        "fraction_users_zero_ndcg_cf": 0.972,
+        "oracle_gap_vs_cf_ndcg": 0.050575654331159375
+      }
+    }
+  }
+}

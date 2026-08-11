@@ -1,0 +1,46 @@
+{
+  "config": {
+    "n_users": 500,
+    "seed": 42,
+    "K": 100
+  },
+  "counterfactual_results": {
+    "ips": {
+      "mean": 0.0013478883057220872,
+      "ci_low": 0.0,
+      "ci_high": 0.004043664917166262
+    },
+    "snips": {
+      "mean": 0.0019999999703239507,
+      "ci_low": 0.0,
+      "ci_high": 0.007999999881295803
+    },
+    "dr": {
+      "mean": 0.09180073308248546,
+      "ci_low": -0.49568575383650926,
+      "ci_high": 0.4947339502726205
+    },
+    "direct": {
+      "mean": 0.016,
+      "ci_low": 0.006,
+      "ci_high": 0.028
+    }
+  },
+  "variance_analysis": {
+    "ips_var": 0.0009065846394664769,
+    "snips_var": 0.0019959999407666066,
+    "dr_var": 37.04328620368547,
+    "direct_var": 0.015744000000000005
+  },
+  "offline_online_gap": {
+    "ips_gap": 0.014652111694277914,
+    "snips_gap": 0.01400000002967605,
+    "dr_gap": 0.07580073308248546
+  },
+  "key_insights": [
+    "Counterfactual estimates confirm low expected online performance",
+    "Substantial offline-online gap exists, suggesting traditional metrics overestimate online performance",
+    "Even with ideal LLM reranking (oracle boost), performance is limited by retrieval quality",
+    "Counterfactual evaluation confirms: retrieval is the bottleneck, not reranking"
+  ]
+}

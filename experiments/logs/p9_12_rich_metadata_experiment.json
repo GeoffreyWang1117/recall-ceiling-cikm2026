@@ -1,0 +1,69 @@
+{
+  "config": {
+    "n_test_users": 90,
+    "seed": 42,
+    "K": 500,
+    "top_k_eval": 10,
+    "top_k_rerank": 30,
+    "cf_factors": 128,
+    "cold_threshold": 20,
+    "active_threshold": 100,
+    "default_model": "gpt-4o-mini",
+    "max_retries": 3,
+    "request_timeout": 60
+  },
+  "results": {
+    "synthetic": {
+      "CF-only": {
+        "cold": 0.0,
+        "medium": 0.0,
+        "active": 0.017245445424671237,
+        "overall": 0.0061590876516683
+      },
+      "LLM-only": {
+        "cold": 0.0,
+        "medium": 0.0026132756326225108,
+        "active": 0.0,
+        "overall": 0.000933312725936611,
+        "avg_latency": 1.5988557225181943
+      },
+      "llm_stats": {
+        "calls": 84,
+        "total_tokens": 51518,
+        "avg_tokens_per_call": 613.3095238095239
+      }
+    },
+    "rich": {
+      "CF-only": {
+        "cold": 0.0,
+        "medium": 0.0,
+        "active": 0.017245445424671237,
+        "overall": 0.0061590876516683
+      },
+      "LLM-only": {
+        "cold": 0.0,
+        "medium": 0.003668196104968003,
+        "active": 0.0,
+        "overall": 0.0013100700374885723,
+        "avg_latency": 1.9070646251950945
+      },
+      "llm_stats": {
+        "calls": 84,
+        "total_tokens": 170047,
+        "avg_tokens_per_call": 2024.3690476190477
+      }
+    }
+  },
+  "comparison": {
+    "llm_synthetic_ndcg": 0.000933312725936611,
+    "llm_rich_ndcg": 0.0013100700374885723,
+    "llm_improvement_pct": 40.36774610288021,
+    "cf_baseline_ndcg": 0.0061590876516683,
+    "llm_vs_cf_synthetic_pct": -84.84657503317385,
+    "llm_vs_cf_rich_pct": -78.729478916675
+  },
+  "findings": {
+    "rich_metadata_helps": "True",
+    "llm_beats_cf_with_rich": "False"
+  }
+}

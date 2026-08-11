@@ -1,0 +1,245 @@
+{
+  "amazon_beauty_sampled": {
+    "dataset": "amazon_beauty_sampled",
+    "train_catalog_size": 1416,
+    "total_users_sampled": 500,
+    "open_catalog_pct": 9.0,
+    "full_sample": {
+      "n_users": 500,
+      "recall_at_100": {
+        "mean": 0.068,
+        "ci": [
+          0.048,
+          0.09
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.005154648767857287,
+        "ci": [
+          0.0006309297535714575,
+          0.011678367782143118
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.9319999999999999
+    },
+    "closed_catalog_only": {
+      "n_users": 455,
+      "recall_at_100": {
+        "mean": 0.07472527472527472,
+        "ci": [
+          0.05274725274725275,
+          0.1010989010989011
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.005664449195447569,
+        "ci": [
+          0.0006933293995290742,
+          0.01259774319073831
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.9252747252747253
+    },
+    "open_catalog_only": {
+      "n_users": 45,
+      "recall_at_100": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 1.0
+    }
+  },
+  "amazon_movies_sampled": {
+    "dataset": "amazon_movies_sampled",
+    "train_catalog_size": 53709,
+    "total_users_sampled": 500,
+    "open_catalog_pct": 12.8,
+    "full_sample": {
+      "n_users": 500,
+      "recall_at_100": {
+        "mean": 0.028,
+        "ci": [
+          0.014,
+          0.042
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0021061494354492286,
+        "ci": [
+          0.0,
+          0.004878965537565124
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.972
+    },
+    "closed_catalog_only": {
+      "n_users": 436,
+      "recall_at_100": {
+        "mean": 0.03211009174311927,
+        "ci": [
+          0.01834862385321101,
+          0.05045871559633028
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0024153089856069135,
+        "ci": [
+          0.0,
+          0.005696847240815514
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.9678899082568807
+    },
+    "open_catalog_only": {
+      "n_users": 64,
+      "recall_at_100": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 1.0
+    }
+  },
+  "amazon_electronics_sampled": {
+    "dataset": "amazon_electronics_sampled",
+    "train_catalog_size": 28981,
+    "total_users_sampled": 500,
+    "open_catalog_pct": 17.6,
+    "full_sample": {
+      "n_users": 500,
+      "recall_at_100": {
+        "mean": 0.02,
+        "ci": [
+          0.008,
+          0.034
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.98
+    },
+    "closed_catalog_only": {
+      "n_users": 412,
+      "recall_at_100": {
+        "mean": 0.024271844660194174,
+        "ci": [
+          0.009708737864077669,
+          0.0412621359223301
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 0.9757281553398058
+    },
+    "open_catalog_only": {
+      "n_users": 88,
+      "recall_at_100": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "cf_ndcg10": {
+        "mean": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "injection_oracle_ndcg10": {
+        "mean": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ]
+      },
+      "zero_recall_rate": 1.0
+    }
+  }
+}

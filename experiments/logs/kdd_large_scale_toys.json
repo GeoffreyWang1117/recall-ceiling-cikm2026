@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-02-04T20:27:08.011940",
+  "config": {
+    "dataset": "toys",
+    "n_users": 500,
+    "n_items": 12816,
+    "n_interactions": 16399,
+    "K": 100,
+    "seed": 42
+  },
+  "retrieval_results": {
+    "Popularity": {
+      "recall@100": {
+        "mean": 0.02,
+        "ci_low": 0.008,
+        "ci_high": 0.032
+      },
+      "n_users": 500
+    },
+    "CF-SVD": {
+      "recall@100": {
+        "mean": 0.014,
+        "ci_low": 0.004,
+        "ci_high": 0.026
+      },
+      "n_users": 500
+    },
+    "ItemKNN": {
+      "recall@100": {
+        "mean": 0.016,
+        "ci_low": 0.006,
+        "ci_high": 0.028
+      },
+      "n_users": 500
+    }
+  },
+  "key_finding": "Large-scale toys dataset recall bottleneck validation"
+}

@@ -1,0 +1,105 @@
+{
+  "experiment": "cikm_lambdamart_leak_diagnostic",
+  "dataset": "toys",
+  "K": 100,
+  "n_users": 500,
+  "seed": 42,
+  "timestamp": "2026-05-10T06:46:59",
+  "protocols": {
+    "protocol_A_original_overlap": {
+      "label": "A_original_overlap",
+      "n": 500,
+      "recall_mean": 0.072,
+      "cf_ndcg": 0.008475937402747748,
+      "cf_ci": [
+        0.002593998300187797,
+        0.016077676730902563
+      ],
+      "lm_ndcg": 0.03584249414835746,
+      "lm_ci": [
+        0.021887569637412837,
+        0.051375381092407905
+      ],
+      "delta": 0.027366556745609713,
+      "wilcoxon_p": 0.00043872017983204625,
+      "n_train_users": 200,
+      "n_train_rows": 20000,
+      "train_pos_rate": 0.0008
+    },
+    "protocol_A_seen_users_only": {
+      "label": "A_overlap_seen_users",
+      "n": 200,
+      "recall_mean": 0.08,
+      "cf_ndcg": 0.006934264036172708,
+      "cf_ci": [
+        0.0,
+        0.019679537176341945
+      ],
+      "lm_ndcg": 0.08,
+      "lm_ci": [
+        0.045,
+        0.12
+      ],
+      "delta": 0.07306573596382729,
+      "wilcoxon_p": 0.00016244084518680075
+    },
+    "protocol_A_unseen_users_only": {
+      "label": "A_overlap_unseen_users",
+      "n": 300,
+      "recall_mean": 0.06666666666666667,
+      "cf_ndcg": 0.009503719647131108,
+      "cf_ci": [
+        0.002400620468559583,
+        0.019527473077098994
+      ],
+      "lm_ndcg": 0.0064041569139291,
+      "lm_ci": [
+        0.0014355885269113102,
+        0.012305512253947836
+      ],
+      "delta": -0.003099562733202008,
+      "wilcoxon_p": 0.3621375748479858
+    },
+    "protocol_B_disjoint": {
+      "label": "B_disjoint",
+      "n": 250,
+      "recall_mean": 0.052,
+      "cf_ndcg": 0.008071130243223998,
+      "cf_ci": [
+        0.0,
+        0.01909660071395693
+      ],
+      "lm_ndcg": 0.005013311652890715,
+      "lm_ci": [
+        0.0,
+        0.012550342320067258
+      ],
+      "delta": -0.0030578185903332826,
+      "wilcoxon_p": 0.41636567790816525,
+      "n_train_users": 250,
+      "n_train_rows": 25000,
+      "train_pos_rate": 0.00092
+    },
+    "protocol_C_clean": {
+      "label": "C_clean_separate_pool",
+      "n": 500,
+      "recall_mean": 0.072,
+      "cf_ndcg": 0.008475937402747748,
+      "cf_ci": [
+        0.002593998300187797,
+        0.016077676730902563
+      ],
+      "lm_ndcg": 0.004347473104831914,
+      "lm_ci": [
+        0.0008613531161467861,
+        0.008498474257653902
+      ],
+      "delta": -0.004128464297915834,
+      "wilcoxon_p": 0.20534286667006885,
+      "n_train_users": 250,
+      "n_train_rows": 25000,
+      "train_pos_rate": 0.00472
+    }
+  },
+  "elapsed_sec": 391.6294004917145
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-02-04T20:26:08.258376",
+  "config": {
+    "dataset": "sports",
+    "n_users": 500,
+    "n_items": 12011,
+    "n_interactions": 15704,
+    "K": 100,
+    "seed": 42
+  },
+  "retrieval_results": {
+    "Popularity": {
+      "recall@100": {
+        "mean": 0.042,
+        "ci_low": 0.026,
+        "ci_high": 0.06
+      },
+      "n_users": 500
+    },
+    "CF-SVD": {
+      "recall@100": {
+        "mean": 0.014,
+        "ci_low": 0.004,
+        "ci_high": 0.026
+      },
+      "n_users": 500
+    },
+    "ItemKNN": {
+      "recall@100": {
+        "mean": 0.014,
+        "ci_low": 0.006,
+        "ci_high": 0.026
+      },
+      "n_users": 500
+    }
+  },
+  "key_finding": "Large-scale sports dataset recall bottleneck validation"
+}

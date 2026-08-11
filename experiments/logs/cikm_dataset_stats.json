@@ -1,0 +1,76 @@
+{
+ "datasets": [
+  {
+   "name": "Beauty",
+   "users": 938,
+   "catalog_items": 1416,
+   "interactions": 8241,
+   "density_pct": 0.6205,
+   "domain": "Product",
+   "open_catalog_items": 24
+  },
+  {
+   "name": "Movies",
+   "users": 1998,
+   "catalog_items": 53709,
+   "interactions": 358587,
+   "density_pct": 0.3342,
+   "domain": "Product",
+   "open_catalog_items": 1010
+  },
+  {
+   "name": "Electronics",
+   "users": 2000,
+   "catalog_items": 28981,
+   "interactions": 183913,
+   "density_pct": 0.3173,
+   "domain": "Product",
+   "open_catalog_items": 924
+  },
+  {
+   "name": "Sports",
+   "users": 1580,
+   "catalog_items": 5246,
+   "interactions": 37961,
+   "density_pct": 0.458,
+   "domain": "Product",
+   "open_catalog_items": 1
+  },
+  {
+   "name": "Toys",
+   "users": 1594,
+   "catalog_items": 9545,
+   "interactions": 69574,
+   "density_pct": 0.4573,
+   "domain": "Product",
+   "open_catalog_items": 0
+  },
+  {
+   "name": "Office",
+   "users": 1704,
+   "catalog_items": 5037,
+   "interactions": 40625,
+   "density_pct": 0.4733,
+   "domain": "Product",
+   "open_catalog_items": 0
+  },
+  {
+   "name": "MovieLens-25M",
+   "users": 10000,
+   "catalog_items": 19886,
+   "interactions": 3949023,
+   "density_pct": 1.9858,
+   "domain": "Movie",
+   "open_catalog_items": 8
+  },
+  {
+   "name": "MIND News",
+   "users": 86746,
+   "catalog_items": 20212,
+   "interactions": 2278768,
+   "density_pct": 0.13,
+   "domain": "News",
+   "open_catalog_items": 1
+  }
+ ]
+}

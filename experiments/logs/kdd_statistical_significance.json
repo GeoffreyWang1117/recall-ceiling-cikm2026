@@ -1,0 +1,159 @@
+{
+  "comparisons": {
+    "CF_score vs P1_basic": {
+      "bootstrap": {
+        "mean_diff": 0.0006282795483738921,
+        "ci_lower": 3.758055190226407e-05,
+        "ci_upper": 0.0016967663533100944,
+        "p_value": 0.0356,
+        "significant_at_0.05": 1.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    },
+    "CF_score vs P2_direct": {
+      "bootstrap": {
+        "mean_diff": 0.0006676906216895829,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0019374412347071285,
+        "p_value": 0.0994,
+        "significant_at_0.05": 0.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    },
+    "CF_score vs P3_enhanced_cot": {
+      "bootstrap": {
+        "mean_diff": 0.0007356367293738378,
+        "ci_lower": 3.758055190226407e-05,
+        "ci_upper": 0.0017973159109754859,
+        "p_value": 0.0154,
+        "significant_at_0.05": 1.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    },
+    "P1_basic vs P2_direct": {
+      "bootstrap": {
+        "mean_diff": 3.9411073315690805e-05,
+        "ci_lower": -0.0014015902890703617,
+        "ci_upper": 0.0016961323322144076,
+        "p_value": 1.0,
+        "significant_at_0.05": 0.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    },
+    "P1_basic vs P3_enhanced_cot": {
+      "bootstrap": {
+        "mean_diff": 0.0001073571809999457,
+        "ci_lower": -0.0011983267521198503,
+        "ci_upper": 0.0014113121136272771,
+        "p_value": 0.8788,
+        "significant_at_0.05": 0.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    },
+    "P2_direct vs P3_enhanced_cot": {
+      "bootstrap": {
+        "mean_diff": 6.79461076842549e-05,
+        "ci_lower": -0.001488819588583426,
+        "ci_upper": 0.001447088542312288,
+        "p_value": 0.915,
+        "significant_at_0.05": 0.0
+      },
+      "wilcoxon": {
+        "statistic": NaN,
+        "p_value": 1.0,
+        "significant_at_0.05": false,
+        "note": "Too few non-zero differences"
+      }
+    }
+  },
+  "holm_bonferroni": {
+    "CF_score vs P3_enhanced_cot": {
+      "original_p": 0.0154,
+      "adjusted_alpha": 0.008333333333333333,
+      "rank": 1,
+      "significant_after_correction": 0.0
+    },
+    "CF_score vs P1_basic": {
+      "original_p": 0.0356,
+      "adjusted_alpha": 0.01,
+      "rank": 2,
+      "significant_after_correction": 0.0
+    },
+    "CF_score vs P2_direct": {
+      "original_p": 0.0994,
+      "adjusted_alpha": 0.0125,
+      "rank": 3,
+      "significant_after_correction": 0.0
+    },
+    "P1_basic vs P3_enhanced_cot": {
+      "original_p": 0.8788,
+      "adjusted_alpha": 0.016666666666666666,
+      "rank": 4,
+      "significant_after_correction": 0.0
+    },
+    "P2_direct vs P3_enhanced_cot": {
+      "original_p": 0.915,
+      "adjusted_alpha": 0.025,
+      "rank": 5,
+      "significant_after_correction": 0.0
+    },
+    "P1_basic vs P2_direct": {
+      "original_p": 1.0,
+      "adjusted_alpha": 0.05,
+      "rank": 6,
+      "significant_after_correction": false
+    }
+  },
+  "summary": {
+    "CF_score": {
+      "mean": 0.005052854685392908,
+      "std": 0.047429477293677975,
+      "n": 500
+    },
+    "P1_basic": {
+      "mean": 0.004424575137019016,
+      "std": 0.041768734351995164,
+      "n": 500
+    },
+    "P2_direct": {
+      "mean": 0.004385164063703325,
+      "std": 0.04522872643996034,
+      "n": 500
+    },
+    "P3_enhanced_cot": {
+      "mean": 0.00431721795601907,
+      "std": 0.04035244207290207,
+      "n": 500
+    },
+    "significance_tests": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 0
+    }
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "experiment": "cikm_raep_audit_llmrank_P1A",
+  "purpose": "Apply RAEP retroactively to LLMRank (Hou et al., ECIR 2024) and compare to the CIKM 2026 paper's K=100 setup.",
+  "timestamp": "2026-05-10T22:02:12",
+  "llmrank_audits": [
+    {
+      "paper": "LLMRank (Hou et al. 2024)",
+      "section": "3.1 oracle setup",
+      "dataset": "MovieLens-1M",
+      "catalog_size": 3706,
+      "K": 20,
+      "protocol": "oracle",
+      "notes": "1 ground-truth item + 19 random negatives; gt-injected.",
+      "recall_oracle": 0.05,
+      "random_floor": 0.0054,
+      "raep_diagnosis": "ORACLE \u2014 protocol injects ground-truth; recall is 100% by construction",
+      "ndcg_ceiling": 1.0,
+      "raep_flag": "ORACLE-INJECTION (NDCG measures reranker skill only when item present, not deployment performance)"
+    },
+    {
+      "paper": "LLMRank (Hou et al. 2024)",
+      "section": "3.3 realistic setup, BM25",
+      "dataset": "MovieLens-1M",
+      "catalog_size": 3706,
+      "K": 20,
+      "protocol": "realistic",
+      "retriever": "BM25",
+      "notes": "Realistic candidates from BM25; recall not reported in paper.",
+      "recall_random_floor": 0.005396654074473826,
+      "recall_estimated_low": 0.005396654074473826,
+      "recall_estimated_high": 0.1,
+      "random_floor": 0.0054,
+      "recall_lower_bound": 0.0054,
+      "recall_upper_bound": 0.1,
+      "ndcg_ceiling_low": 0.0054,
+      "ndcg_ceiling_high": 0.1,
+      "raep_diagnosis_low": "CRITICAL",
+      "raep_diagnosis_high": "LOW",
+      "raep_flag": "MOSTLY LOW \u2014 at the lower bound the regime is CRITICAL; only the optimistic upper bound reaches LOW"
+    },
+    {
+      "paper": "LLMRank (Hou et al. 2024)",
+      "section": "3.3 realistic setup, BM25",
+      "dataset": "Amazon Games",
+      "catalog_size": 16859,
+      "K": 20,
+      "protocol": "realistic",
+      "retriever": "BM25",
+      "notes": "Realistic candidates from BM25 on sparser Amazon catalog.",
+      "recall_random_floor": 0.0011863099827985053,
+      "recall_estimated_low": 0.0011863099827985053,
+      "recall_estimated_high": 0.05,
+      "random_floor": 0.0012,
+      "recall_lower_bound": 0.0012,
+      "recall_upper_bound": 0.05,
+      "ndcg_ceiling_low": 0.0012,
+      "ndcg_ceiling_high": 0.05,
+      "raep_diagnosis_low": "CRITICAL",
+      "raep_diagnosis_high": "LOW",
+      "raep_flag": "MOSTLY LOW \u2014 at the lower bound the regime is CRITICAL; only the optimistic upper bound reaches LOW"
+    },
+    {
+      "paper": "LLMRank (Hou et al. 2024)",
+      "section": "3.3 realistic setup, SASRec",
+      "dataset": "Amazon Games",
+      "catalog_size": 16859,
+      "K": 20,
+      "protocol": "realistic",
+      "retriever": "SASRec",
+      "notes": "SASRec is sequence-aware; recall at K=20 on Amazon Games likely 1-3%.",
+      "recall_random_floor": 0.0011863099827985053,
+      "recall_estimated_low": 0.01,
+      "recall_estimated_high": 0.03,
+      "random_floor": 0.0012,
+      "recall_lower_bound": 0.01,
+      "recall_upper_bound": 0.03,
+      "ndcg_ceiling_low": 0.01,
+      "ndcg_ceiling_high": 0.03,
+      "raep_diagnosis_low": "CRITICAL",
+      "raep_diagnosis_high": "CRITICAL",
+      "raep_flag": "CRITICAL \u2014 even the upper-bound recall is below 5%; the regime cannot distinguish reranker quality"
+    }
+  ],
+  "our_setup_for_comparison": [
+    {
+      "paper": "Ours (CIKM 2026)",
+      "dataset": "Beauty",
+      "catalog_size": 1416,
+      "K": 100,
+      "recall_realistic": 0.082,
+      "random_floor": 0.0706,
+      "raep_diagnosis": "LOW",
+      "ndcg_ceiling": 0.082
+    },
+    {
+      "paper": "Ours (CIKM 2026)",
+      "dataset": "Movies",
+      "catalog_size": 53709,
+      "K": 100,
+      "recall_realistic": 0.03,
+      "random_floor": 0.0019,
+      "raep_diagnosis": "CRITICAL",
+      "ndcg_ceiling": 0.03
+    },
+    {
+      "paper": "Ours (CIKM 2026)",
+      "dataset": "Electronics",
+      "catalog_size": 28981,
+      "K": 100,
+      "recall_realistic": 0.022,
+      "random_floor": 0.0035,
+      "raep_diagnosis": "CRITICAL",
+      "ndcg_ceiling": 0.022
+    },
+    {
+      "paper": "Ours (CIKM 2026)",
+      "dataset": "MovieLens-25M",
+      "catalog_size": 19886,
+      "K": 100,
+      "recall_realistic": 0.174,
+      "random_floor": 0.005,
+      "raep_diagnosis": "MODERATE",
+      "ndcg_ceiling": 0.174
+    }
+  ],
+  "k20_vs_k100_budget": [
+    {
+      "catalog_size": 3706,
+      "random_K20": 0.0054,
+      "random_K100": 0.027,
+      "ratio": 5.0,
+      "note": "Candidate budget at K=20 covers 5x fewer items than K=100; on catalogs of 10K+ items both are <1% of the catalog."
+    },
+    {
+      "catalog_size": 16859,
+      "random_K20": 0.0012,
+      "random_K100": 0.0059,
+      "ratio": 5.0,
+      "note": "Candidate budget at K=20 covers 5x fewer items than K=100; on catalogs of 10K+ items both are <1% of the catalog."
+    },
+    {
+      "catalog_size": 53709,
+      "random_K20": 0.0004,
+      "random_K100": 0.0019,
+      "ratio": 5.0,
+      "note": "Candidate budget at K=20 covers 5x fewer items than K=100; on catalogs of 10K+ items both are <1% of the catalog."
+    },
+    {
+      "catalog_size": 1416,
+      "random_K20": 0.0141,
+      "random_K100": 0.0706,
+      "ratio": 5.0,
+      "note": "Candidate budget at K=20 covers 5x fewer items than K=100; on catalogs of 10K+ items both are <1% of the catalog."
+    }
+  ],
+  "key_findings": [
+    "LLMRank's oracle setup (1 gt + 19 random negatives) measures reranker skill conditional on the item being present, not the deployment regime where most users have no relevant items in candidates.",
+    "LLMRank's realistic setup at K=20 covers <1% of catalog on Amazon Games (16,859 items); the random-recall floor is 20/16859 = 0.12%, more than 10x below our paper's K=100 realistic recall on the comparable Amazon Movies catalog (3.0%).",
+    "At K=20 on the catalogs LLMRank tested, even an upper-bound recall estimate places the regime in CRITICAL (<5%) or low end of LOW (5-15%); RAEP would flag these results as 'reranker gain not measurable under this candidate budget'.",
+    "Our K=100 setup on Amazon Movies and Electronics is in CRITICAL by RAEP's own diagnosis (recall 2.2-3.0%); for those we report null results, consistent with RAEP's prediction.",
+    "Conclusion: LLMRank's positive reranker results in the realistic setup are obtained at K=20 on catalogs where K=100 (5x the candidate budget) still fails to reach the LOW tier on similar product catalogs. The reranker gains LLMRank reports are not falsified by our work \u2014 but RAEP shows they were obtained in a candidate-budget regime that, when extrapolated to the K=100 deployment setting of larger catalogs, sits in a regime where rerankers cannot be distinguished from CF."
+  ]
+}

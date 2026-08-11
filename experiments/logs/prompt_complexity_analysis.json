@@ -1,0 +1,641 @@
+{
+  "datasets": {
+    "movies": {
+      "dataset": "movies",
+      "name": "Amazon Movies",
+      "density": 0.002665571229499063,
+      "catalog_size": 53709,
+      "n_users": 200,
+      "recall_levels": [
+        {
+          "target_recall": 0.0,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.05,
+          "actual_recall": 0.011166612821254444,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.06614099587397974,
+              "ndcg_std": 0.11322555898383213
+            },
+            "cf_order": {
+              "ndcg_mean": 0.06614099587397974,
+              "ndcg_std": 0.11322555898383213
+            },
+            "random": {
+              "ndcg_mean": 0.003228532929273866,
+              "ndcg_std": 0.016534054200462302
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.06291246294470587
+        },
+        {
+          "target_recall": 0.1,
+          "actual_recall": 0.0689496232028711,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.24764819571000324,
+              "ndcg_std": 0.13780550094949465
+            },
+            "cf_order": {
+              "ndcg_mean": 0.24764819571000324,
+              "ndcg_std": 0.13780550094949465
+            },
+            "random": {
+              "ndcg_mean": 0.011255937285061721,
+              "ndcg_std": 0.03380557715504472
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.23639225842494152
+        },
+        {
+          "target_recall": 0.2,
+          "actual_recall": 0.17033782930672675,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.4551579000704375,
+              "ndcg_std": 0.16763162139242993
+            },
+            "cf_order": {
+              "ndcg_mean": 0.4551579000704375,
+              "ndcg_std": 0.16763162139242993
+            },
+            "random": {
+              "ndcg_mean": 0.03134800771992618,
+              "ndcg_std": 0.06596688965328373
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.4238098923505113
+        },
+        {
+          "target_recall": 0.5,
+          "actual_recall": 0.4784764285614173,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.8170088670140976,
+              "ndcg_std": 0.15407968532190844
+            },
+            "cf_order": {
+              "ndcg_mean": 0.8170088670140976,
+              "ndcg_std": 0.15407968532190844
+            },
+            "random": {
+              "ndcg_mean": 0.08662312249995623,
+              "ndcg_std": 0.11426623749721808
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.7303857445141414
+        },
+        {
+          "target_recall": 1.0,
+          "actual_recall": 0.9995871559633028,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.17067978324967023,
+              "ndcg_std": 0.15862131939129176
+            },
+            "reverse": {
+              "ndcg_mean": 0.005,
+              "ndcg_std": 0.07053367989832944
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.8293202167503297
+        }
+      ]
+    },
+    "electronics": {
+      "dataset": "electronics",
+      "name": "Amazon Electronics",
+      "density": 0.0025245160622476793,
+      "catalog_size": 28981,
+      "n_users": 200,
+      "recall_levels": [
+        {
+          "target_recall": 0.0,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.05,
+          "actual_recall": 0.001853729160910012,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.011622612940374335,
+              "ndcg_std": 0.058239311613807805
+            },
+            "cf_order": {
+              "ndcg_mean": 0.011622612940374335,
+              "ndcg_std": 0.058239311613807805
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.011622612940374335
+        },
+        {
+          "target_recall": 0.1,
+          "actual_recall": 0.02823102306967418,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.08616805318678508,
+              "ndcg_std": 0.13250006435649017
+            },
+            "cf_order": {
+              "ndcg_mean": 0.08616805318678508,
+              "ndcg_std": 0.13250006435649017
+            },
+            "random": {
+              "ndcg_mean": 0.0029377514317855445,
+              "ndcg_std": 0.015830214240970093
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.08323030175499954
+        },
+        {
+          "target_recall": 0.2,
+          "actual_recall": 0.14706792972085114,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.3110919039885404,
+              "ndcg_std": 0.11998045281768639
+            },
+            "cf_order": {
+              "ndcg_mean": 0.3110919039885404,
+              "ndcg_std": 0.11998045281768639
+            },
+            "random": {
+              "ndcg_mean": 0.013705241875211795,
+              "ndcg_std": 0.03682920517821983
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.29738666211332865
+        },
+        {
+          "target_recall": 0.5,
+          "actual_recall": 0.4714012221009125,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.6693138959584166,
+              "ndcg_std": 0.11684807501552485
+            },
+            "cf_order": {
+              "ndcg_mean": 0.6693138959584166,
+              "ndcg_std": 0.11684807501552485
+            },
+            "random": {
+              "ndcg_mean": 0.04622714172797262,
+              "ndcg_std": 0.07595209804885854
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.623086754230444
+        },
+        {
+          "target_recall": 1.0,
+          "actual_recall": 1.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.11352214679653798,
+              "ndcg_std": 0.13020585671446117
+            },
+            "reverse": {
+              "ndcg_mean": 0.0013633507784473905,
+              "ndcg_std": 0.019232429479229297
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.8864778532034621
+        }
+      ]
+    },
+    "office": {
+      "dataset": "office",
+      "name": "Amazon Office",
+      "density": 0.004534636180527011,
+      "catalog_size": 5037,
+      "n_users": 200,
+      "recall_levels": [
+        {
+          "target_recall": 0.0,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.05,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.1,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.2,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.5,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 1.0,
+          "actual_recall": 1.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.04356497560988339,
+              "ndcg_std": 0.153472136311392
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.9564350243901166
+        }
+      ]
+    },
+    "movielens": {
+      "dataset": "movielens",
+      "name": "MovieLens-25M",
+      "density": 0.019556587549029468,
+      "catalog_size": 19886,
+      "n_users": 200,
+      "recall_levels": [
+        {
+          "target_recall": 0.0,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.05,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.1,
+          "actual_recall": 0.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.0
+        },
+        {
+          "target_recall": 0.2,
+          "actual_recall": 0.2,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.3391602052736161,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 0.3391602052736161,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.007850712906337235,
+              "ndcg_std": 0.032486581372661576
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.3313094923672789
+        },
+        {
+          "target_recall": 0.5,
+          "actual_recall": 0.4,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 0.5531464700081434,
+              "ndcg_std": 2.220446049250313e-16
+            },
+            "cf_order": {
+              "ndcg_mean": 0.5531464700081434,
+              "ndcg_std": 2.220446049250313e-16
+            },
+            "random": {
+              "ndcg_mean": 0.03083158086605358,
+              "ndcg_std": 0.07060057111027246
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.5223148891420899
+        },
+        {
+          "target_recall": 1.0,
+          "actual_recall": 1.0,
+          "n_users": 200,
+          "strategies": {
+            "oracle": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "cf_order": {
+              "ndcg_mean": 1.0,
+              "ndcg_std": 0.0
+            },
+            "random": {
+              "ndcg_mean": 0.08226078673274102,
+              "ndcg_std": 0.12904527805457663
+            },
+            "reverse": {
+              "ndcg_mean": 0.0,
+              "ndcg_std": 0.0
+            }
+          },
+          "oracle_vs_cf_gap": 0.0,
+          "cf_vs_random_gap": 0.9177392132672589
+        }
+      ]
+    }
+  },
+  "timestamp": "2026-03-27T14:51:24.154549"
+}

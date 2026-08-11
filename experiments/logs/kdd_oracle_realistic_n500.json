@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-02-07T04:06:57.183913",
+  "config": {
+    "model": "gemma3:4b",
+    "n_users": 500,
+    "K": 100,
+    "seed": 42,
+    "top_k": 10
+  },
+  "datasets": {
+    "amazon_beauty": {
+      "n_users": 500,
+      "n_items": 1416,
+      "oracle": {
+        "mean": 0.0856,
+        "ci_low": 0.0688,
+        "ci_high": 0.1028
+      },
+      "realistic": {
+        "mean": 0.0065,
+        "ci_low": 0.0025,
+        "ci_high": 0.0118
+      },
+      "cf_baseline": {
+        "mean": 0.005,
+        "ci_low": 0.0017,
+        "ci_high": 0.0091
+      },
+      "recall_at_k": {
+        "mean": 0.0806,
+        "ci_low": 0.064,
+        "ci_high": 0.098
+      },
+      "gap_percent": 92.4,
+      "wilcoxon_p": 0.9588
+    },
+    "amazon_movies": {
+      "n_users": 500,
+      "n_items": 53709,
+      "oracle": {
+        "mean": 0.1039,
+        "ci_low": 0.095,
+        "ci_high": 0.1129
+      },
+      "realistic": {
+        "mean": 0.0067,
+        "ci_low": 0.0043,
+        "ci_high": 0.0094
+      },
+      "cf_baseline": {
+        "mean": 0.0086,
+        "ci_low": 0.0052,
+        "ci_high": 0.0129
+      },
+      "recall_at_k": {
+        "mean": 0.0312,
+        "ci_low": 0.027,
+        "ci_high": 0.035
+      },
+      "gap_percent": 93.5,
+      "wilcoxon_p": 0.1944
+    },
+    "amazon_electronics": {
+      "n_users": 500,
+      "n_items": 28981,
+      "oracle": {
+        "mean": 0.0971,
+        "ci_low": 0.088,
+        "ci_high": 0.1066
+      },
+      "realistic": {
+        "mean": 0.005,
+        "ci_low": 0.0027,
+        "ci_high": 0.0076
+      },
+      "cf_baseline": {
+        "mean": 0.0042,
+        "ci_low": 0.0022,
+        "ci_high": 0.0063
+      },
+      "recall_at_k": {
+        "mean": 0.0225,
+        "ci_low": 0.018,
+        "ci_high": 0.027
+      },
+      "gap_percent": 94.9,
+      "wilcoxon_p": 0.3631
+    }
+  }
+}

@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.env
+.env.local
+*.pt
+*.pth
+*.bin
+*.safetensors
+.ipynb_checkpoints
+.vscode/
+.idea/
+wandb/
+experiments/logs/checkpoints/

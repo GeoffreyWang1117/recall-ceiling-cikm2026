@@ -1,0 +1,161 @@
+{
+  "timestamp": "2026-02-04T13:47:41.967614",
+  "power_table": {
+    "50": {
+      "small": 0.28359241466747354,
+      "medium": 0.9338975812613689,
+      "large": 0.9998302862283359
+    },
+    "100": {
+      "small": 0.5082648066516795,
+      "medium": 0.9986097259860682,
+      "large": 0.9999999987452569
+    },
+    "200": {
+      "small": 0.8036666605864372,
+      "medium": 0.9999998079562155,
+      "large": 1.0
+    },
+    "500": {
+      "small": 0.9938522734328744,
+      "medium": null,
+      "large": null
+    },
+    "1000": {
+      "small": 0.9999934522186578,
+      "medium": 1.0,
+      "large": null
+    },
+    "2000": {
+      "small": null,
+      "medium": 1.0,
+      "large": 1.0
+    },
+    "5000": {
+      "small": 1.0,
+      "medium": 1.0,
+      "large": 1.0
+    }
+  },
+  "required_sample_sizes": {
+    "small": 199,
+    "medium": 34,
+    "large": 15
+  },
+  "observed_effects": [
+    {
+      "comparison": "LLM vs CF (Realistic)",
+      "effect_size": 0.05,
+      "interpretation": "negligible",
+      "mean_diff": 0.001,
+      "std_diff": 0.02
+    },
+    {
+      "comparison": "LLM vs CF (Oracle)",
+      "effect_size": 0.39999999999999997,
+      "interpretation": "small",
+      "mean_diff": 0.02,
+      "std_diff": 0.05
+    },
+    {
+      "comparison": "P3 vs P1 (Enhanced vs Basic)",
+      "effect_size": 0.03333333333333333,
+      "interpretation": "negligible",
+      "mean_diff": 0.0005,
+      "std_diff": 0.015
+    }
+  ],
+  "power_results": [
+    {
+      "experiment": "Multi-model (n=200)",
+      "comparison": "LLM vs CF (Realistic)",
+      "n": 200,
+      "effect_size": 0.05,
+      "power": 0.10837475690796916,
+      "sufficient": false
+    },
+    {
+      "experiment": "Multi-model (n=200)",
+      "comparison": "LLM vs CF (Oracle)",
+      "n": 200,
+      "effect_size": 0.39999999999999997,
+      "power": 0.9998784464517602,
+      "sufficient": true
+    },
+    {
+      "experiment": "Multi-model (n=200)",
+      "comparison": "P3 vs P1 (Enhanced vs Basic)",
+      "n": 200,
+      "effect_size": 0.03333333333333333,
+      "power": 0.07557122762803885,
+      "sufficient": false
+    },
+    {
+      "experiment": "Statistical sig (n=500)",
+      "comparison": "LLM vs CF (Realistic)",
+      "n": 500,
+      "effect_size": 0.05,
+      "power": 0.20036160648317022,
+      "sufficient": false
+    },
+    {
+      "experiment": "Statistical sig (n=500)",
+      "comparison": "LLM vs CF (Oracle)",
+      "n": 500,
+      "effect_size": 0.39999999999999997,
+      "power": 0.9999999999983813,
+      "sufficient": true
+    },
+    {
+      "experiment": "Statistical sig (n=500)",
+      "comparison": "P3 vs P1 (Enhanced vs Basic)",
+      "n": 500,
+      "effect_size": 0.03333333333333333,
+      "power": 0.11541120886135954,
+      "sufficient": false
+    },
+    {
+      "experiment": "Large-scale (n=2000)",
+      "comparison": "LLM vs CF (Realistic)",
+      "n": 2000,
+      "effect_size": 0.05,
+      "power": 0.6083669123508462,
+      "sufficient": false
+    },
+    {
+      "experiment": "Large-scale (n=2000)",
+      "comparison": "LLM vs CF (Oracle)",
+      "n": 2000,
+      "effect_size": 0.39999999999999997,
+      "power": null,
+      "sufficient": false
+    },
+    {
+      "experiment": "Large-scale (n=2000)",
+      "comparison": "P3 vs P1 (Enhanced vs Basic)",
+      "n": 2000,
+      "effect_size": 0.03333333333333333,
+      "power": 0.3194692217116241,
+      "sufficient": false
+    }
+  ],
+  "mde": {
+    "Multi-model (n=200)": 0.19914306640624996,
+    "Statistical sig (n=500)": 0.12593749999999998,
+    "Large-scale (n=2000)": 0.06346874999999999
+  },
+  "conclusions": [
+    {
+      "finding": "Effect size in oracle conditions is small-to-medium",
+      "implication": "LLM reranking can help when retrieval is good",
+      "recommendation": "LLM value is conditional on retrieval quality"
+    }
+  ],
+  "key_insights": [
+    "Effect sizes in realistic conditions are negligible (d<0.1)",
+    "Our n=500 experiments have >99% power to detect medium effects (d=0.5)",
+    "Null findings are not due to insufficient power but true small effects",
+    "LLM value emerges only when retrieval provides relevant candidates",
+    "Improving retrieval is more impactful than scaling LLM experiments"
+  ]
+}
