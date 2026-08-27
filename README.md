@@ -6,6 +6,11 @@ Code, processed datasets, and raw result files for the CIKM 2026 paper:
 > In *Proceedings of the 35th ACM International Conference on Information and
 > Knowledge Management (CIKM '26)*, Rome, Italy, November 7–11, 2026.
 
+**Project page — <https://geoffreywang1117.github.io/recall-ceiling-cikm2026/>**
+The theorem, the 92–95% oracle gap, an interactive RAEP diagnostic that takes
+your own Recall@|W| and returns the ceiling it puts on your NDCG, and the full
+ledger of seventeen strategies that failed to beat a $0.00 CF baseline.
+
 Every number in the paper comes from a JSON file in `experiments/logs/`, and
 every one of those files is produced by a script in `scripts/`. The table below
 maps each paper float to the script that produces it and the result file it
@@ -145,6 +150,7 @@ see the data notice at the bottom of `LICENSE`.
                Information and Knowledge Management (CIKM '26)},
   year      = {2026},
   address   = {Rome, Italy},
-  publisher = {ACM}
+  publisher = {ACM},
+  doi       = {10.1145/3799682.3841132}
 }
 ```
