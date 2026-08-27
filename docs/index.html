@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Recall Ceiling of LLM Recommendation Reranking</title>
+<meta name="description" content="CIKM 2026. Oracle evaluation protocols overstate LLM reranking by 92–95%. A recall ceiling bounds any closed-candidate reranker. Interactive RAEP diagnostic, full falsification ledger, and reproduction map.">
+<meta property="og:title" content="The Recall Ceiling of LLM Recommendation Reranking">
+<meta property="og:description" content="CIKM 2026 · Oracle protocols overstate LLM reranking by 92–95%. Seventeen ways we tried to break the ceiling, and what happened.">
+<meta property="og:type" content="article">
+<style>
+:root{
+  --paper:#fbfaf8; --ink:#16181d; --muted:#63676f; --faint:#8c9098;
+  --rule:#e2ddd5; --panel:#ffffff; --panel-alt:#f4f1ec;
+  --red:#b3221f; --red-soft:#f0d9d6; --blue:#4a72b0; --blue-soft:#dde5f0;
+  --amber:#a1791f; --amber-soft:#f6edd7; --green:#2f6b4f;
+  --shadow:0 1px 2px rgba(22,24,29,.05), 0 8px 24px -12px rgba(22,24,29,.18);
+  --serif:ui-serif,Georgia,"Iowan Old Style","Source Serif Pro",Cambria,serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#14161a; --ink:#e8e6e1; --muted:#a0a5ad; --faint:#787d86;
+    --rule:#2c3038; --panel:#1b1e24; --panel-alt:#22262d;
+    --red:#e0665f; --red-soft:#3a2320; --blue:#7ea3d8; --blue-soft:#1f2a38;
+    --amber:#d8ac53; --amber-soft:#332a17; --green:#6bb08c;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px; margin:0 auto; padding:0 24px}
+a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
+a:hover{border-bottom-color:var(--red); color:var(--red)}
+h1,h2,h3{font-family:var(--serif); font-weight:600; letter-spacing:-.015em; line-height:1.2}
+code,kbd{font-family:var(--mono); font-size:.88em}
+
+/* ---------- masthead ---------- */
+header{border-bottom:1px solid var(--rule); padding:56px 0 34px; margin-bottom:44px}
+.venue{
+  display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:.07em;
+  text-transform:uppercase; color:var(--red); font-weight:650; margin-bottom:18px;
+}
+.venue::before{content:""; width:22px; height:2px; background:var(--red); display:block}
+h1{font-size:clamp(30px,5.2vw,50px); margin:0 0 14px; max-width:21ch}
+.byline{font-size:16px; color:var(--muted); margin:0 0 4px}
+.byline strong{color:var(--ink); font-weight:600}
+.pub{font-size:14.5px; color:var(--faint); margin:0}
+.links{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+.btn{
+  display:inline-flex; align-items:center; gap:7px; padding:8px 15px; border-radius:7px;
+  border:1px solid var(--rule); background:var(--panel); font-size:14.5px; font-weight:550;
+  color:var(--ink); box-shadow:var(--shadow);
+}
+.btn:hover{border-color:var(--red); color:var(--red)}
+.btn.primary{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.btn.primary:hover{background:var(--red); border-color:var(--red); color:#fff}
+.btn.quiet{box-shadow:none; background:transparent; color:var(--muted)}
+
+/* ---------- headline stats ---------- */
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule);
+  border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:0 0 46px}
+.stat{background:var(--panel); padding:22px 20px}
+.stat .n{font-family:var(--serif); font-size:clamp(26px,4vw,36px); font-weight:600; line-height:1;
+  color:var(--red); letter-spacing:-.02em}
+.stat .l{font-size:13.5px; color:var(--muted); margin-top:9px; line-height:1.45}
+@media(max-width:640px){.stats{grid-template-columns:1fr}}
+
+section{margin:0 0 62px}
+h2{font-size:clamp(23px,3.4vw,30px); margin:0 0 6px}
+.kicker{font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--faint);
+  font-weight:650; margin:0 0 10px}
+.lede{font-size:18.5px; color:var(--muted); margin:0 0 26px; max-width:64ch}
+p{margin:0 0 17px; max-width:70ch}
+.small{font-size:14.5px; color:var(--muted)}
+
+/* ---------- theorem ---------- */
+.thm{background:var(--panel); border:1px solid var(--rule); border-left:3px solid var(--red);
+  border-radius:0 10px 10px 0; padding:24px 26px; box-shadow:var(--shadow); margin:0 0 22px}
+.thm .tag{font-family:var(--serif); font-weight:650; font-size:15px; margin-bottom:8px; display:block}
+.formula{font-family:var(--serif); font-size:clamp(19px,3.1vw,25px); text-align:center;
+  padding:16px 6px 12px; letter-spacing:.01em}
+.formula em{font-style:italic}
+.thm p:last-child{margin-bottom:0}
+
+/* ---------- figure ---------- */
+figure{margin:0 0 12px; background:#fff; border:1px solid var(--rule); border-radius:10px;
+  padding:14px; box-shadow:var(--shadow); overflow-x:auto}
+figure img{display:block; width:100%; min-width:640px; height:auto}
+figcaption{font-size:14px; color:var(--muted); margin-top:14px; line-height:1.5; max-width:75ch}
+figcaption b{color:var(--ink); font-weight:600}
+
+/* ---------- calculator ---------- */
+.calc{background:var(--panel); border:1px solid var(--rule); border-radius:12px;
+  box-shadow:var(--shadow); overflow:hidden}
+.calc-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+@media(max-width:820px){.calc-grid{grid-template-columns:1fr}}
+.calc-in{padding:26px 26px 24px; border-right:1px solid var(--rule)}
+@media(max-width:820px){.calc-in{border-right:none; border-bottom:1px solid var(--rule)}}
+.calc-out{padding:26px; background:var(--panel-alt)}
+.field{margin-bottom:22px}
+.field:last-child{margin-bottom:0}
+label{display:flex; justify-content:space-between; align-items:baseline; font-size:14px;
+  font-weight:600; margin-bottom:9px; gap:12px}
+label .v{font-family:var(--mono); font-size:15px; color:var(--red); font-weight:600}
+label .h{font-weight:400; color:var(--faint); font-size:12.5px}
+input[type=range]{width:100%; accent-color:var(--red); height:22px; cursor:pointer}
+input[type=number]{width:100%; padding:9px 11px; font-family:var(--mono); font-size:15px;
+  border:1px solid var(--rule); border-radius:7px; background:var(--paper); color:var(--ink)}
+input[type=number]:focus{outline:2px solid var(--red); outline-offset:-1px; border-color:transparent}
+.presets{display:flex; flex-wrap:wrap; gap:6px; margin-top:12px}
+.chip{font-size:12.5px; padding:5px 10px; border-radius:20px; border:1px solid var(--rule);
+  background:var(--paper); color:var(--muted); cursor:pointer; font-family:inherit;
+  transition:.12s}
+.chip:hover{border-color:var(--red); color:var(--red)}
+.chip[aria-pressed=true]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+
+.regime{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:.09em;
+  text-transform:uppercase; font-weight:700; padding:6px 12px; border-radius:6px; margin-bottom:16px}
+.regime .dot{width:8px; height:8px; border-radius:50%; background:currentColor}
+.r-critical{background:var(--red-soft); color:var(--red)}
+.r-low{background:var(--amber-soft); color:var(--amber)}
+.r-moderate{background:var(--blue-soft); color:var(--blue)}
+.r-adequate{background:rgba(47,107,79,.12); color:var(--green)}
+
+.readout{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule);
+  border:1px solid var(--rule); border-radius:9px; overflow:hidden; margin-bottom:18px}
+.ro{background:var(--panel); padding:14px 15px}
+.ro .k{font-size:12px; color:var(--faint); letter-spacing:.03em; margin-bottom:5px}
+.ro .n{font-family:var(--mono); font-size:20px; font-weight:600; letter-spacing:-.02em}
+.verdict{font-size:15px; line-height:1.55; color:var(--ink); margin:0}
+.verdict b{color:var(--red)}
+
+.plot{padding:0 26px 26px}
+svg.chart{width:100%; height:auto; display:block}
+.axis line,.axis path{stroke:var(--rule); stroke-width:1}
+.axis text{fill:var(--faint); font-size:11px; font-family:var(--sans)}
+.gridline{stroke:var(--rule); stroke-dasharray:2 4; stroke-width:1}
+.pt{fill:var(--blue)}
+.pt-label{fill:var(--muted); font-size:10.5px; font-family:var(--sans)}
+.you{fill:var(--red); stroke:var(--paper); stroke-width:2}
+
+/* ---------- ledger ---------- */
+.ledger{border:1px solid var(--rule); border-radius:11px; overflow:hidden; background:var(--panel);
+  box-shadow:var(--shadow)}
+.lrow{display:grid; grid-template-columns:minmax(0,15.5rem) minmax(0,1fr) 5.2rem;
+  align-items:center; gap:14px; padding:9px 18px; border-bottom:1px solid var(--rule); font-size:14px}
+.lrow:last-child{border-bottom:none}
+.lrow:hover{background:var(--panel-alt)}
+.lhead{background:var(--panel-alt); font-size:12px; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--faint); font-weight:650}
+.lname b{font-weight:600; display:block; line-height:1.35}
+.lname span{color:var(--faint); font-size:12.5px}
+.bar{position:relative; height:19px; background:linear-gradient(to right,transparent calc(50% - .5px),
+  var(--rule) calc(50% - .5px), var(--rule) calc(50% + .5px), transparent calc(50% + .5px))}
+.bar i{position:absolute; top:2px; height:15px; border-radius:2px; display:block}
+.bar .neg{background:var(--faint); right:50%}
+.bar .pos{background:var(--faint); left:50%}
+.bar .sig{background:var(--red)}
+.lp{font-family:var(--mono); font-size:12.5px; color:var(--muted); text-align:right; white-space:nowrap}
+.lp.sig{color:var(--red); font-weight:600}
+@media(max-width:700px){
+  .lrow{grid-template-columns:minmax(0,1fr) 4.4rem; gap:10px}
+  .bar{grid-column:1/-1}
+}
+.legend{display:flex; flex-wrap:wrap; gap:18px; font-size:13px; color:var(--muted); margin-top:14px}
+.legend i{display:inline-block; width:22px; height:9px; border-radius:2px; vertical-align:middle;
+  margin-right:7px}
+
+/* ---------- callout ---------- */
+.note{background:var(--amber-soft); border:1px solid rgba(161,121,31,.25); border-radius:10px;
+  padding:20px 22px; margin:0 0 20px}
+.note h3{font-size:16.5px; margin:0 0 8px; color:var(--amber)}
+.note p{margin:0; font-size:15px; color:var(--ink)}
+.note p+p{margin-top:10px}
+
+/* ---------- tables ---------- */
+.tbl-scroll{overflow-x:auto; border:1px solid var(--rule); border-radius:10px; background:var(--panel);
+  box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:14px; min-width:560px}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--rule)}
+th{background:var(--panel-alt); font-size:12px; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--faint); font-weight:650; white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-family:var(--mono); text-align:right; white-space:nowrap}
+td code{background:var(--panel-alt); padding:2px 6px; border-radius:4px; white-space:nowrap}
+
+pre{background:var(--panel); border:1px solid var(--rule); border-radius:10px; padding:18px 20px;
+  overflow-x:auto; font-family:var(--mono); font-size:13.5px; line-height:1.65; box-shadow:var(--shadow)}
+pre .c{color:var(--faint)}
+
+footer{border-top:1px solid var(--rule); padding:34px 0 60px; margin-top:20px;
+  font-size:14px; color:var(--muted)}
+footer p{max-width:70ch}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="venue">CIKM 2026 · Rome · full paper, oral</div>
+    <h1>The Recall Ceiling of LLM Recommendation Reranking</h1>
+    <p class="byline"><strong>Zhaohui Wang</strong> · University of Southern California</p>
+    <p class="pub">Proceedings of the 35th ACM International Conference on Information and Knowledge Management (CIKM&nbsp;’26), November 7–11, 2026 · DOI 10.1145/3799682.3841132</p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/GeoffreyWang1117/recall-ceiling-cikm2026">Code, data &amp; every result JSON</a>
+      <a class="btn" href="#demo">Try the RAEP diagnostic</a>
+      <a class="btn" href="#ledger">The falsification ledger</a>
+      <a class="btn quiet" href="https://doi.org/10.1145/3799682.3841132">DOI (live once the ACM DL publishes)</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="stats">
+  <div class="stat">
+    <div class="n">92–95%</div>
+    <div class="l">by which oracle evaluation overstates LLM reranking, in NDCG@10, on three Amazon datasets</div>
+  </div>
+  <div class="stat">
+    <div class="n">2–19%</div>
+    <div class="l">Recall@100 that realistic retrieval actually achieves, across eight datasets in three domains</div>
+  </div>
+  <div class="stat">
+    <div class="n">≤16%</div>
+    <div class="l">of its own ceiling that any reranker we tested exploits — a second, independent failure</div>
+  </div>
+</div>
+
+<section>
+  <p class="lede">Some LLM recommendation rerankers are evaluated under an <em>oracle</em> protocol that guarantees the ground-truth item is in the scored set. That protocol measures something real. It does not measure deployment performance, because the quantity it holds fixed is the one that binds in production.</p>
+  <p>Under realistic retrieval, none of the seventeen optimisation strategies tested here — prompt design, a 168× model-scaling range, test-time reasoning, three supervised rerankers under a disjoint train/eval split, a LoRA-fine-tuned LLaMA-3B, score-aware prompting, LLM+CF fusion, sequential models, larger candidate budgets, hybrid text retrieval — produces a statistically significant gain over a $0.00 collaborative-filtering baseline on the primary Amazon datasets.</p>
+  <p>The cause is combinatorial, not a modelling failure, and it can be written down.</p>
+</section>
+
+<section>
+  <p class="kicker">Theorem 1</p>
+  <h2>What a reranker cannot do</h2>
+  <p class="lede">A reranker that outputs a permutation of a retrieved candidate set can never place an item the retriever missed.</p>
+
+  <div class="thm">
+    <span class="tag">Recall ceiling — LOO specialisation (Corollary 1)</span>
+    <div class="formula">𝔼[NDCG@<em>k</em>] &nbsp;≤&nbsp; Recall@|<em>W</em><sub>π</sub>|</div>
+    <p class="small" style="margin-bottom:0">For any closed-candidate reranker π with reranking window <em>W</em><sub>π</sub>, under leave-one-out evaluation. The general form covers every top-<em>k</em> metric with a non-increasing positional discount — NDCG, Hit, MAP, Recall, RBP, ERR — through a single rearrangement-inequality argument rather than a per-metric case analysis.</p>
+  </div>
+
+  <p>Two consequences do the work. First, the bound is <b>numerical</b>: on Amazon Movies, where CF-SVD reaches Recall@100 = 2.95%, no closed-candidate reranker can exceed NDCG@10 = 0.0295 — zero-shot LLM, fine-tuned model, or a perfect oracle over the retrieved set. Second, the binding quantity is <b>|W<sub>π</sub>|, not K</b>: a listwise LLM prompt shown 30 of the 100 candidates is accountable to Recall@30, not Recall@100. Scoring it against the wrong denominator understates its ceiling utilisation by about 2.6×.</p>
+
+  <p class="small">We claim no surprise in the statement — that a reranker cannot recover an unretrieved item is intuitive. What the formalisation buys is the exact number a measured NDCG must be read against, and the utilisation ratio η that separates a retrieval failure from a reranking failure.</p>
+</section>
+
+<section>
+  <figure>
+    <img src="fig_overview.png" alt="Panel A: the two-stage pipeline, with the recall ceiling bounding the reranker. Panel B: injection-oracle, closed-candidate bound, and realistic NDCG@10 on Beauty, Movies and Electronics, showing gaps of 92.4%, 93.6% and 94.9%. Panel C: ceiling utilisation for nine rerankers on Beauty, all at or below 15.7% against an oracle's 100%.">
+    <figcaption><b>Figure 1.</b> The ceiling, the gap, and the double failure. <b>(B)</b> The oracle column is not merely optimistic — it sits above the closed-candidate bound itself, because injecting the positive hands the reranker 100% recall. <b>(C)</b> Every method, from a 4B model to a 671B model to three supervised rerankers, exploits under 16% of its own already-limited headroom.</figcaption>
+  </figure>
+</section>
+
+<section id="demo">
+  <p class="kicker">Interactive · RAEP component 1</p>
+  <h2>Diagnose your own setup</h2>
+  <p class="lede">Before comparing rerankers, measure the retrieval recall that bounds them. Enter yours — the ceiling, the regime, and the fraction of it you are using follow deterministically.</p>
+
+  <div class="calc">
+    <div class="calc-grid">
+      <div class="calc-in">
+        <div class="field">
+          <label for="recall">Recall@|W| of your retriever <span class="v" id="recall-v">8.2%</span></label>
+          <input type="range" id="recall" min="0.2" max="40" step="0.1" value="8.2">
+          <div class="presets" id="presets"></div>
+        </div>
+        <div class="field">
+          <label for="ndcg">Your measured NDCG@10 <span class="h">optional</span></label>
+          <input type="number" id="ndcg" min="0" max="1" step="0.0001" value="0.005053" placeholder="e.g. 0.0051">
+        </div>
+        <p class="small" style="margin:18px 0 0">|W| is your reranker’s own window — the number of candidates it actually scores, which for a listwise LLM prompt is usually smaller than K. Regime thresholds and the utilisation ratio are RAEP components 1 and 3.</p>
+      </div>
+
+      <div class="calc-out">
+        <div class="regime r-low" id="regime"><span class="dot"></span><span id="regime-t">LOW</span></div>
+        <div class="readout">
+          <div class="ro"><div class="k">Ceiling on NDCG@10</div><div class="n" id="ceil">0.0820</div></div>
+          <div class="ro"><div class="k">Users with no positive retrieved</div><div class="n" id="zero">91.8%</div></div>
+          <div class="ro"><div class="k">Ceiling utilisation η</div><div class="n" id="eta">6.1%</div></div>
+          <div class="ro"><div class="k">Recall needed for NDCG@10 = .02, at your η</div><div class="n" id="need">33%</div></div>
+        </div>
+        <p class="verdict" id="verdict"></p>
+      </div>
+    </div>
+    <div class="plot">
+      <svg class="chart" id="chart" viewBox="0 0 660 320" role="img" aria-label="Log-log plot of NDCG@10 against retrieval recall. The diagonal is the bound NDCG@10 = Recall@|W|; everything above it is unreachable. The five measured datasets sit roughly one decade below the diagonal."></svg>
+    </div>
+  </div>
+  <p class="small" style="margin-top:14px">Both axes are logarithmic, which makes the bound a 45° line and the vertical gap up to it exactly log(1/η). Blue points are this paper’s measured operating points (CF-SVD retrieval, n=500, K=100); every one sits about a decade below the line. Moving a point <em>right</em> is a retrieval improvement and raises the ceiling. Moving it <em>up</em> is a reranking improvement and consumes headroom that already exists. Seventeen attempts at the second are catalogued below.</p>
+</section>
+
+<section id="ledger">
+  <p class="kicker">RQ3 &amp; RQ4</p>
+  <h2>Seventeen ways we tried to break it</h2>
+  <p class="lede">Each row removes one candidate explanation for the failure: prompt design, model capacity, test-time reasoning, supervised training signal, structured CF features, temporal modelling, candidate budget.</p>
+
+  <div class="ledger" id="ledger-body"></div>
+  <div class="legend">
+    <span><i style="background:var(--faint)"></i>not significant (paired Wilcoxon vs. CF)</span>
+    <span><i style="background:var(--red)"></i>significantly <em>worse</em> than CF</span>
+  </div>
+
+  <div class="note" style="margin-top:26px">
+    <h3>Read the sign carefully</h3>
+    <p>Four strategies came out ahead of CF. <b>None of them is statistically significant.</b> Every result that <em>is</em> significant is a loss. The claim of this paper is the weaker and more defensible one — no significant improvement over CF under realistic retrieval — not that every method is worse.</p>
+    <p>The strongest single piece of evidence is the convergence: 4B to 671B parameters, three supervised architectures, a fine-tuned LLM, and the CF baseline itself all land in a statistically indistinguishable band, and all of them use under 16% of their own ceiling.</p>
+  </div>
+
+  <p style="margin-top:26px">Two results deserve singling out. <b>Test-time reasoning strictly hurts.</b> DeepSeek-V4-Pro with thinking enabled scores 43% below CF on Movies (p = .004) at roughly 37× the cost of the same model without it — $4.75 versus $0.13 per 500 users, and 200–500 s versus under 1 s per user. Reasoning chains have nothing to operate on when the relevant item is absent from the candidate set.</p>
+  <p><b>Giving the LLM the CF scores helps, for the wrong reason.</b> Annotating each candidate with its CF rank, normalised score and popularity percentile improves every dataset — and raises Kendall’s τ against the CF order every time. The model gets better by overriding CF <em>less</em>. An LLM+CF blend with λ tuned on the evaluation users themselves — an upper bound, not a held-out result — recovers exactly CF and no more.</p>
+</section>
+
+<section>
+  <p class="kicker">Reliability</p>
+  <h2>Three things to know before reading the numbers</h2>
+  <p class="lede">Each of these is a limitation we found ourselves and kept in the repository on purpose.</p>
+
+  <div class="note">
+    <h3>One earlier result in this line of work was retracted</h3>
+    <p>An earlier version reported p &lt; 0.0001 gains for LambdaMART above 8.8% recall, and framed it as a recall threshold. The training and evaluation user pools overlapped, so each user’s test item was simultaneously a supervision label and an evaluation target. Under any non-leaky split the effect disappears; the “8.8% boundary” framing does not survive and is not retained. <code>cikm_diagnose_lambdamart_leak.py</code> reproduces the leak, <code>cikm_neural_rerankers_disjoint.py</code> is the corrected protocol — 250 training users disjoint from the 500 evaluation users.</p>
+  </div>
+  <div class="note">
+    <h3>The listwise LLM prompts see 30 candidates, not 100</h3>
+    <p>Retrieval always returns K = 100, but the listwise prompt shows the top-30 CF candidates and appends positions 31–100 below the model’s output in CF order. Pointwise rerankers score all 100. η is therefore computed against each method’s own window; an earlier version scored the LLMs against Recall@100 and understated their utilisation by ≈2.6×.</p>
+  </div>
+  <div class="note">
+    <h3>Amazon Electronics has no item text</h3>
+    <p>All 29,905 items in the sampled subset carry <code>title: null</code> and <code>text: null</code>, which is why the plain-prompt Kendall’s τ against the CF order is exactly 1.000. Electronics remains a valid test for retrieval and for CF-embedding rerankers, but its LLM columns are a null control, not a measurement of semantic reranking.</p>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">Where the ceiling binds</p>
+  <h2>Eight datasets, three domains</h2>
+  <p>Recall falls broadly with catalog scale; density is the stronger descriptive correlate (Pearson r = +0.604 over eight points — a coefficient, not an inferential test). The ceiling bites hardest exactly where recommendation matters most: large, diverse catalogs.</p>
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Dataset</th><th>Domain</th><th class="num">Catalog</th><th class="num">Recall@100</th><th class="num">Zero-recall</th><th>RAEP regime</th></tr></thead>
+      <tbody>
+        <tr><td>Amazon Electronics</td><td>Products</td><td class="num">28,981</td><td class="num">2.24%</td><td class="num">97.8%</td><td>CRITICAL</td></tr>
+        <tr><td>Amazon Movies</td><td>Products</td><td class="num">53,709</td><td class="num">2.95%</td><td class="num">97.1%</td><td>CRITICAL</td></tr>
+        <tr><td>Amazon Toys</td><td>Products</td><td class="num">9,545</td><td class="num">7.0%</td><td class="num">—</td><td>LOW</td></tr>
+        <tr><td>Amazon Beauty</td><td>Products</td><td class="num">1,416</td><td class="num">8.23%</td><td class="num">91.8%</td><td>LOW</td></tr>
+        <tr><td>Amazon Office</td><td>Products</td><td class="num">5,037</td><td class="num">11.4%</td><td class="num">—</td><td>LOW</td></tr>
+        <tr><td>MIND News</td><td>News</td><td class="num">42,155</td><td class="num">12.0%</td><td class="num">88%</td><td>LOW</td></tr>
+        <tr><td>Amazon Sports</td><td>Products</td><td class="num">5,246</td><td class="num">12.8%</td><td class="num">—</td><td>LOW</td></tr>
+        <tr><td>MovieLens-25M</td><td>Movies</td><td class="num">19,886</td><td class="num">18.9%</td><td class="num">—</td><td>MODERATE</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:12px">Recall@100 under CF-SVD. MovieLens-25M is 18.9% on the n=1,000 RAEP diagnostic sample and 17.4% on the n=500 LLM-evaluation sample. Even at the top of this range, all five cloud LLMs score <em>below</em> the CF baseline.</p>
+</section>
+
+<section>
+  <p class="kicker">The one escape route</p>
+  <h2>Generative retrieval, not better reranking</h2>
+  <p>Theorem 1 constrains <em>closed-candidate</em> rerankers. Three directions could break the ceiling; only one breaks that assumption. <b>Better retrieval</b> — multi-source fusion at K = 3,000 reaches 30% recall on Beauty at 30× the candidate budget — raises the ceiling but stays inside the same combinatorial constraint. <b>Richer metadata</b> improves η, not the ceiling. <b>Generative retrieval</b> — end-to-end token-level item generation, TIGER and GenRec — is the only direction in our taxonomy that lets a model emit items absent from the candidate set. That is the natural follow-up: a head-to-head against the hybrid CF+BM25+Dense baseline at the recall–NDCG operating point identified here.</p>
+  <p class="small">Scope, stated plainly: our retrievers reach Recall@100 of 2–19%. A production system operating at substantially higher recall sits outside the regime we measured, and the ceiling loosens as recall rises. Our rerankers see CF embeddings, item text, popularity and CF scores — not the dwell-time, context and cross-feature signals an industrial ranker consumes. Offline evaluation cannot observe the online feedback loop. We do not claim the retrieval-first ordering holds beyond those boundaries.</p>
+</section>
+
+<section id="reproduce">
+  <p class="kicker">Artifact</p>
+  <h2>Reproduce it</h2>
+  <p class="lede">Every number in the paper comes from a JSON file in <code>experiments/logs/</code>, and every one of those files is produced by a script in <code>scripts/</code>. Nothing is hand-entered.</p>
+
+<pre><span class="c"># the datasets under data/processed/ are already preprocessed — no download step</span>
+git clone https://github.com/GeoffreyWang1117/recall-ceiling-cikm2026
+cd recall-ceiling-cikm2026
+conda create -n recallceiling python=3.11 && conda activate recallceiling
+pip install -r requirements.txt
+
+<span class="c"># reproduce the ceiling-utilisation numbers — no API calls, ~30 s</span>
+python scripts/cikm_recompute_eta_windows.py
+
+<span class="c"># reproduce Figure 1 from the result JSONs</span>
+python scripts/make_fig_overview.py</pre>
+
+  <p style="margin-top:24px">SEED = 42 throughout; every non-API experiment is deterministic. The API drivers checkpoint per user, so an interrupted run resumes without repaying for completed users.</p>
+
+  <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Paper float</th><th>Script</th><th>Result file</th></tr></thead>
+      <tbody>
+        <tr><td>Fig. 1 — overview</td><td><code>make_fig_overview.py</code></td><td><code>cikm_eta_windows.json</code></td></tr>
+        <tr><td>Tab. 2 — dataset statistics</td><td><code>cikm_dataset_stats.py</code></td><td><code>cikm_dataset_stats.json</code></td></tr>
+        <tr><td>Tab. 3 — oracle vs. realistic</td><td><code>kdd_oracle_realistic_n500.py</code></td><td><code>kdd_oracle_realistic_n500.json</code></td></tr>
+        <tr><td>Tab. 4 — retrieval sweep</td><td><code>kdd_sota_retrieval_baselines.py</code>, <code>cikm_lightgcn_sweep.py</code></td><td><code>kdd_sota_retrieval_baselines.json</code></td></tr>
+        <tr><td>Tab. 5 — all rerankers on Beauty</td><td><code>cikm_recompute_eta_windows.py</code></td><td><code>cikm_eta_windows.json</code></td></tr>
+        <tr><td>Tab. 6 — supervised rerankers, 6 datasets</td><td><code>cikm_neural_rerankers_disjoint.py</code></td><td><code>cikm_neural_rerankers_disjoint.json</code></td></tr>
+        <tr><td>Tab. 7 — score-aware prompting</td><td><code>cikm_score_aware_prompting.py</code></td><td><code>cikm_score_aware_prompting.json</code></td></tr>
+        <tr><td>Tab. 8 — candidate-budget sweep</td><td><code>cikm_k_sensitivity_n500.py</code></td><td><code>cikm_k_sensitivity_n500.json</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:12px">The full map, including the twenty results reported in prose, is in the <a href="https://github.com/GeoffreyWang1117/recall-ceiling-cikm2026#3-paper-float--script--result-file">repository README</a>. Earlier result families (<code>kdd_*</code>, <code>p9_*</code>) are kept so the paper’s self-corrections can be checked against the original runs.</p>
+</section>
+
+<section>
+  <div class="two">
+    <div>
+      <h2 style="font-size:20px">Cite</h2>
+<pre style="font-size:12.5px">@inproceedings{wang2026recallceiling,
+  author    = {Wang, Zhaohui},
+  title     = {The Recall Ceiling of {LLM}
+               Recommendation Reranking},
+  booktitle = {Proceedings of the 35th ACM
+               International Conference on
+               Information and Knowledge
+               Management (CIKM '26)},
+  year      = {2026},
+  address   = {Rome, Italy},
+  publisher = {ACM},
+  doi       = {10.1145/3799682.3841132}
+}</pre>
+    </div>
+    <div>
+      <h2 style="font-size:20px">Licence &amp; contact</h2>
+      <p class="small">Code is MIT. The redistributed datasets under <code>data/processed/</code> remain under their original terms — Amazon Review Data, MovieLens-25M, MIND.</p>
+      <p class="small">Questions, replication problems, or a disagreement with the result: open an issue on the <a href="https://github.com/GeoffreyWang1117/recall-ceiling-cikm2026/issues">repository</a>. A failed replication is the most useful thing anyone could send.</p>
+      <p class="small">Zhaohui Wang · <a href="https://orcid.org/0009-0006-1187-1903">ORCID 0009-0006-1187-1903</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Accepted to CIKM 2026 · ACM ISBN 979-8-4007-2211-6/2026/11 · Published under CC BY 4.0. This page is generated from the paper’s own result files; where it quotes a number, that number appears in the camera-ready.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- measured operating points (CF-SVD, n=500, K=100) ---- */
+  var POINTS = [
+    {name:"Electronics", r:2.24,  n:0.0035},
+    {name:"Movies",      r:2.95,  n:0.0084},
+    {name:"Beauty",      r:8.23,  n:0.0051},
+    {name:"MIND News",   r:12.0,  n:0.0134},
+    {name:"MovieLens",   r:17.4,  n:0.0128}
+  ];
+  var PRESETS = [
+    {label:"Electronics", r:2.24, n:0.0035},
+    {label:"Movies",      r:2.95, n:0.0084},
+    {label:"Beauty",      r:8.23, n:0.005053},
+    {label:"MIND News",   r:12.0, n:0.0134},
+    {label:"MovieLens",   r:17.4, n:0.0128}
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var recall = $("recall"), ndcg = $("ndcg");
+
+  /* ---- presets ---- */
+  var pbox = $("presets");
+  PRESETS.forEach(function(p){
+    var b = document.createElement("button");
+    b.className = "chip"; b.type = "button"; b.textContent = p.label;
+    b.setAttribute("aria-pressed","false");
+    b.addEventListener("click", function(){
+      recall.value = p.r; ndcg.value = p.n; update();
+    });
+    pbox.appendChild(b);
+  });
+
+  function regimeOf(r){
+    if (r < 5)  return {t:"CRITICAL",  c:"r-critical"};
+    if (r < 15) return {t:"LOW",       c:"r-low"};
+    if (r < 30) return {t:"MODERATE",  c:"r-moderate"};
+    return {t:"ADEQUATE", c:"r-adequate"};
+  }
+
+  function verdictFor(reg, r, eta){
+    var zero = (100 - r).toFixed(1);
+    if (reg === "CRITICAL")
+      return "<b>Reranking cannot be measured here.</b> Under LOO, " + zero + "% of your users have no relevant item in the candidate set at all, and every reranker scores 0 for them by construction. A reranker comparison at this recall is a comparison of noise. Fix retrieval first.";
+    if (reg === "LOW")
+      return "<b>Differentiation is possible but fragile.</b> " + zero + "% of users tie at zero, so your effective sample is the non-tied tail. This is the regime of the primary datasets in this paper, and it is where seventeen optimisation strategies all failed to separate from CF.";
+    if (reg === "MODERATE")
+      return "<b>Reranking is measurable, with care.</b> Report the ceiling alongside the metric. At this recall MovieLens-25M still had all five tested cloud LLMs scoring below the CF baseline, so a positive result here needs a significance test, not a point estimate.";
+    return "<b>Outside the regime this paper measured.</b> At recall ≥ 30% the ceiling loosens and reranker skill can plausibly dominate. Our results do not extend here — and neither does the retrieval-first ordering we argue for.";
+  }
+
+  function update(){
+    var r = parseFloat(recall.value);
+    var frac = r / 100;
+    var m = parseFloat(ndcg.value);
+    if (!isFinite(m) || m < 0) m = 0;
+
+    var reg = regimeOf(r);
+    $("recall-v").textContent = r.toFixed(1) + "%";
+    $("regime").className = "regime " + reg.c;
+    $("regime-t").textContent = reg.t;
+    $("ceil").textContent = frac.toFixed(4);
+    $("zero").textContent = (100 - r).toFixed(1) + "%";
+
+    var eta = m > 0 ? (m / frac) * 100 : 0;
+    var over = m > frac;
+    $("eta").textContent = m > 0 ? (over ? "> 100%" : eta.toFixed(1) + "%") : "—";
+    $("eta").style.color = over ? "var(--red)" : "";
+
+    if (m > 0 && !over) {
+      var need = (0.02 / (eta / 100)) * 100;
+      $("need").textContent = need >= 100 ? "> 100%" : need.toFixed(0) + "%";
+    } else {
+      $("need").textContent = "—";
+    }
+
+    var v = verdictFor(reg.t, r, eta);
+    if (over) {
+      v = "<b>This is impossible.</b> An NDCG@10 of " + m.toFixed(4) + " exceeds the ceiling Recall@|W| = " + frac.toFixed(4) + ". Either the reported recall is measured at a different window than the reranker actually sees, or the positive item is being injected into the candidate set — which is the oracle protocol this paper is about.";
+    }
+    $("verdict").innerHTML = v;
+
+    draw(r, m);
+  }
+
+  /* ---- the feasible-region chart ---- */
+  var SVG = "http://www.w3.org/2000/svg";
+  function el(n, attrs){
+    var e = document.createElementNS(SVG, n);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  /* log-log: the bound NDCG = Recall is then a 45-degree line, and the vertical
+     distance from a point up to it is exactly log(1/eta). */
+  var X0 = 1, X1 = 50, Y0 = 0.001, Y1 = 0.5;
+  var lg = Math.log10 || function(v){ return Math.log(v)/Math.LN10; };
+
+  function draw(userR, userN){
+    var svg = $("chart");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    var W = 660, H = 320, L = 56, R = 18, T = 18, B = 46;
+    var px = function(r){ return L + (lg(r)-lg(X0))/(lg(X1)-lg(X0)) * (W-L-R); };
+    var py = function(n){ return H-B - (lg(n)-lg(Y0))/(lg(Y1)-lg(Y0)) * (H-T-B); };
+    var clx = function(r){ return Math.min(Math.max(r, X0), X1); };
+    var cly = function(n){ return Math.min(Math.max(n, Y0), Y1); };
+
+    var g = el("g", {"class":"axis"});
+    [1,2,5,10,20,50].forEach(function(t){
+      g.appendChild(el("line", {x1:px(t), y1:T, x2:px(t), y2:H-B, "class":"gridline"}));
+      var tx = el("text", {x:px(t), y:H-B+18, "text-anchor":"middle"});
+      tx.textContent = t + "%"; g.appendChild(tx);
+    });
+    [[0.001,".001"],[0.003,".003"],[0.01,".01"],[0.03,".03"],[0.1,".1"],[0.3,".3"]].forEach(function(t){
+      g.appendChild(el("line", {x1:L, y1:py(t[0]), x2:W-R, y2:py(t[0]), "class":"gridline"}));
+      var ty = el("text", {x:L-9, y:py(t[0])+4, "text-anchor":"end"});
+      ty.textContent = t[1]; g.appendChild(ty);
+    });
+    g.appendChild(el("line", {x1:L, y1:H-B, x2:W-R, y2:H-B}));
+    g.appendChild(el("line", {x1:L, y1:T, x2:L, y2:H-B}));
+    svg.appendChild(g);
+
+    // unreachable region: NDCG > Recall
+    svg.appendChild(el("polygon", {
+      points: px(X0)+","+py(X0/100)+" "+px(X1)+","+py(X1/100)+" "+px(X1)+","+T+" "+px(X0)+","+T,
+      fill:"var(--red)", opacity:"0.07"
+    }));
+    svg.appendChild(el("line", {
+      x1:px(X0), y1:py(X0/100), x2:px(X1), y2:py(X1/100),
+      stroke:"var(--red)", "stroke-width":"2", "stroke-dasharray":"6 4"
+    }));
+
+    var lab = el("text", {x:px(1.25), y:py(0.16), fill:"var(--red)",
+      "font-size":"12.5", "font-weight":"600"});
+    lab.textContent = "unreachable: NDCG@10 > Recall@|W|";
+    svg.appendChild(lab);
+    var lab2 = el("text", {x:px(1.25), y:py(0.115), fill:"var(--red)",
+      "font-size":"11", opacity:".85"});
+    lab2.textContent = "Theorem 1 — no closed-candidate reranker, oracle included";
+    svg.appendChild(lab2);
+
+    POINTS.forEach(function(p){
+      svg.appendChild(el("circle", {cx:px(p.r), cy:py(p.n), r:4.5, "class":"pt"}));
+      var t = el("text", {x:px(p.r), y:py(p.n)+18, "text-anchor":"middle", "class":"pt-label"});
+      t.textContent = p.name;
+      svg.appendChild(t);
+    });
+
+    if (userN > 0) {
+      var ur = clx(userR), un = cly(userN);
+      var cx = px(ur), cy = py(un), ceilY = py(cly(ur/100));
+      if (cy > ceilY + 8) {
+        svg.appendChild(el("line", {x1:cx, y1:cy-7, x2:cx, y2:ceilY+2,
+          stroke:"var(--red)", "stroke-width":"1.5", "stroke-dasharray":"3 3", opacity:".65"}));
+        var et = el("text", {x:cx+8, y:(cy+ceilY)/2+4, fill:"var(--red)",
+          "font-size":"11", "font-weight":"600"});
+        et.textContent = "unused headroom";
+        svg.appendChild(et);
+      }
+      svg.appendChild(el("circle", {cx:cx, cy:cy, r:6, "class":"you"}));
+      var yt = el("text", {x:cx, y:cy+21, "text-anchor":"middle", fill:"var(--red)",
+        "font-size":"11", "font-weight":"600"});
+      yt.textContent = "your setup";
+      svg.appendChild(yt);
+    }
+
+    var xt = el("text", {x:(L+W-R)/2, y:H-8, "text-anchor":"middle", fill:"var(--faint)",
+      "font-size":"12"});
+    xt.textContent = "Recall@|W| of the retriever  (log)";
+    svg.appendChild(xt);
+    var ytl = el("text", {x:15, y:(T+H-B)/2, "text-anchor":"middle", fill:"var(--faint)",
+      "font-size":"12", transform:"rotate(-90 15 " + ((T+H-B)/2) + ")"});
+    ytl.textContent = "NDCG@10  (log)";
+    svg.appendChild(ytl);
+  }
+
+  recall.addEventListener("input", update);
+  ndcg.addEventListener("input", update);
+
+  /* ---- falsification ledger ---- */
+  var LEDGER = [
+    {n:"LambdaMART, disjoint split",   d:"Beauty",  v:69.0,  p:".142", s:false, note:"supervised, 250 held-out training users"},
+    {n:"RankNet, disjoint split",      d:"Beauty",  v:67.1,  p:".142", s:false},
+    {n:"LoRA-fine-tuned LLaMA-3.2-3B", d:"Beauty",  v:53.6,  p:".191", s:false, note:"QLoRA r=16, pointwise head"},
+    {n:"MLP reranker",                 d:"Beauty",  v:14.0,  p:".484", s:false},
+    {n:"Best of 7 zero-shot LLMs",     d:"Beauty",  v:0.0,   p:"n.s.", s:false, note:"Qwen3-8B — exactly CF"},
+    {n:"LLM+CF fusion, λ tuned on the eval users", d:"Beauty", v:0.0, p:"—", s:false, note:"an upper bound; recovers exactly CF"},
+    {n:"Reciprocal-rank fusion, LLM+CF", d:"Beauty", v:-1.7, p:".317", s:false},
+    {n:"Score-aware prompting",        d:"Beauty",  v:-15.3, p:".109", s:false, note:"CF rank + score + popularity in the prompt"},
+    {n:"LoRA-fine-tuned LLaMA-3.2-3B", d:"Movies",  v:-39.5, p:".026", s:true},
+    {n:"DeepSeek-V4-Flash, no thinking", d:"Movies", v:-40.0, p:".005", s:true},
+    {n:"DeepSeek-V4-Pro, thinking on", d:"Movies",  v:-43.0, p:".004", s:true, note:"37× the cost of the same model without it"},
+    {n:"Llama-3.3-70B",                d:"Movies",  v:-44.9, p:".006", s:true},
+    {n:"DeepSeek-V4-Flash, thinking on", d:"Movies", v:-50.0, p:".0007", s:true},
+    {n:"Candidate budget K = 200",     d:"Beauty",  v:-54.4, p:".069", s:false, note:"recall rises to 12.9%, NDCG falls"},
+    {n:"BERT4Rec",                     d:"Beauty",  v:-56.0, p:".019", s:true, note:"sequential model, retrieval"},
+    {n:"DeepSeek-V3, 671B",            d:"Beauty",  v:-68.6, p:".093", s:false, note:"the largest model tested"},
+    {n:"SASRec",                       d:"Beauty",  v:-99.0, p:"<.001", s:true, note:"sequential model, retrieval"}
+  ];
+
+  var lb = $("ledger-body");
+  var head = document.createElement("div");
+  head.className = "lrow lhead";
+  head.innerHTML = "<div>Strategy</div><div>NDCG@10 vs. CF baseline</div><div style='text-align:right'>p</div>";
+  lb.appendChild(head);
+
+  var span = 100; // % scale, ±100
+  LEDGER.forEach(function(row){
+    var d = document.createElement("div");
+    d.className = "lrow";
+    var w = Math.min(Math.abs(row.v), span) / span * 50; // half-width %
+    var barCls = row.s ? "sig" : (row.v < 0 ? "neg" : "pos");
+    var side = row.v < 0 ? "neg" : "pos";
+    var bar = row.v === 0
+      ? "<i class='" + side + "' style='width:2px;" + (row.v<0?"right":"left") + ":50%;background:var(--faint)'></i>"
+      : "<i class='" + side + " " + (row.s ? "sig" : "") + "' style='width:" + w + "%'></i>";
+    d.innerHTML =
+      "<div class='lname'><b>" + row.n + "</b><span>" + row.d +
+        (row.note ? " · " + row.note : "") + "</span></div>" +
+      "<div class='bar' title='" + (row.v > 0 ? "+" : "") + row.v.toFixed(1) + "% vs CF'>" + bar +
+        "<em style='position:absolute;" + (row.v < 0 ? "right:calc(50% + " + (w + 1.5) + "%)" : "left:calc(50% + " + (w + 1.5) + "%)") +
+        ";top:1px;font-style:normal;font-size:12px;font-family:var(--mono);color:var(--muted)'>" +
+        (row.v > 0 ? "+" : "") + row.v.toFixed(0) + "%</em></div>" +
+      "<div class='lp" + (row.s ? " sig" : "") + "'>" + row.p + "</div>";
+    lb.appendChild(d);
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
