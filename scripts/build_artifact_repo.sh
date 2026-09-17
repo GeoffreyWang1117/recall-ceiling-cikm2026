@@ -27,10 +27,20 @@ for d in evaluation models utils analysis text_ablation; do
 done
 find "$DEST" -name "__pycache__" -type d -prune -exec rm -rf {} + 2>/dev/null || true
 find "$DEST" -name "*.pyc" -delete 2>/dev/null || true
+# Follow-up research code whose outputs are not part of this artifact.
+# cikm_arm_decomposition.py is kept: README §5(a) invokes its --mode bound to
+# recompute the Corollary 3 bounds.
+rm -f "$DEST/scripts/cikm_arm_selection_analysis.py"
 
-# ── Results (JSON only; no raw logs, no per-user API checkpoints) ─────────────
+# ── Results (JSON only; no raw logs) ──────────────────────────────────────────
 mkdir -p "$DEST/experiments/logs"
 cp "$SRC"/experiments/logs/*.json "$DEST/experiments/logs/" 2>/dev/null || true
+# Follow-up research outputs (post-camera-ready arm decomposition, smoke tests and
+# partial analyses) are not part of the CIKM artifact.
+rm -f "$DEST"/experiments/logs/cikm_arm_decomposition_*.json \
+      "$DEST"/experiments/logs/cikm_arm_selection_*.json \
+      "$DEST"/experiments/logs/partial_*.json \
+      "$DEST"/experiments/logs/smoke_*.json
 
 # ── Processed datasets actually used by the paper ─────────────────────────────
 mkdir -p "$DEST/data/processed"
@@ -43,6 +53,11 @@ done
 # ── Config / docs ─────────────────────────────────────────────────────────────
 cp "$SRC/artifact/README.md" "$DEST/README.md"
 cp "$SRC/artifact/LICENSE"   "$DEST/LICENSE"
+
+# GitHub Pages project page, served from main:/docs. Must be staged here or a
+# rebuild-and-force-push would delete the live page at
+# https://geoffreywang1117.github.io/recall-ceiling-cikm2026/
+[ -d "$SRC/artifact/docs" ] && cp -r "$SRC/artifact/docs" "$DEST/docs"
 cp "$SRC/requirements.txt" "$DEST/" 2>/dev/null || true
 cp "$SRC/config.yaml"      "$DEST/" 2>/dev/null || true
 cp "$SRC/.env.example"     "$DEST/" 2>/dev/null || true
@@ -50,6 +65,24 @@ cp "$SRC/.env.example"     "$DEST/" 2>/dev/null || true
 # ── Safety: never copy these ─────────────────────────────────────────────────
 rm -f "$DEST/.env" "$DEST"/**/.env 2>/dev/null || true
 rm -rf "$DEST/experiments/logs/checkpoints" "$DEST/.git" 2>/dev/null || true
+
+# ── Per-user checkpoints: only files verified by scripts/verify_released_per_user.py ──
+# The whitelist is the manifest that script writes; regenerate it before building.
+MANIFEST="$SRC/experiments/logs/per_user_manifest.json"
+[ -f "$MANIFEST" ] || { echo "missing $MANIFEST: run scripts/verify_released_per_user.py first" >&2; exit 1; }
+mkdir -p "$DEST/experiments/logs/checkpoints"
+python3 - "$MANIFEST" "$SRC/experiments/logs/checkpoints" "$DEST/experiments/logs/checkpoints" <<'PYEOF'
+import json, shutil, sys
+from pathlib import Path
+manifest, src, dst = map(Path, sys.argv[1:4])
+files = [f["file"] for f in json.loads(manifest.read_text())["files"]]
+missing = [f for f in files if not (src / f).is_file()]
+if missing:
+    sys.exit(f"manifest lists files that do not exist: {missing}")
+for f in files:
+    shutil.copy2(src / f, dst / f)
+print(f"per-user checkpoints staged: {len(files)} files")
+PYEOF
 
 cat > "$DEST/.gitignore" <<'EOF'
 __pycache__/
@@ -64,7 +97,6 @@ __pycache__/
 .vscode/
 .idea/
 wandb/
-experiments/logs/checkpoints/
 EOF
 
 echo

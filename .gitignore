@@ -10,4 +10,3 @@ __pycache__/
 .vscode/
 .idea/
 wandb/
-experiments/logs/checkpoints/

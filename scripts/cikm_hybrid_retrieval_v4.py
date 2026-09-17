@@ -228,10 +228,12 @@ def evaluate(ds: str, n_users: int, K: int, seed: int = 42) -> Dict:
     cf_arr = np.array(per_user_recall["CF-SVD"])
     for name in ["BM25", "Dense", "RRF-3way", "RRF-CFBM25", "RRF-CFDense"]:
         arr = np.array(per_user_recall[name])
-        try:
-            _, p = safe_wilcoxon(arr, cf_arr)
-        except Exception:
+        # safe_wilcoxon returns a bare float (NaN when it cannot test). The earlier
+        # `_, p = safe_wilcoxon(...)` always raised and silently nulled every p-value.
+        p = safe_wilcoxon(arr, cf_arr)
+        if p is None or (isinstance(p, float) and np.isnan(p)):
             p = None
+            results[name]["p_vs_CF_SVD_note"] = "not testable: all paired differences zero or fewer than 5 nonzero"
         results[name]["p_vs_CF_SVD"] = float(p) if p is not None else None
     return {
         "dataset": ds,

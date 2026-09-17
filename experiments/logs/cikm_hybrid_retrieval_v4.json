@@ -16,35 +16,35 @@
         "ci_lo": 0.032,
         "ci_hi": 0.07,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.2332302227821853
       },
       "Dense": {
         "recall_at_100_mean": 0.062,
         "ci_lo": 0.042,
         "ci_hi": 0.084,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.7054569861112734
       },
       "RRF-3way": {
         "recall_at_100_mean": 0.07,
         "ci_lo": 0.05,
         "ci_hi": 0.094,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.8758960579229409
       },
       "RRF-CFBM25": {
         "recall_at_100_mean": 0.078,
         "ci_lo": 0.056,
         "ci_hi": 0.1,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.36917141633269157
       },
       "RRF-CFDense": {
         "recall_at_100_mean": 0.068,
         "ci_lo": 0.048,
         "ci_hi": 0.092,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 1.0
       }
     },
     "per_user": {
@@ -3079,35 +3079,35 @@
         "ci_lo": 0.0,
         "ci_hi": 0.01,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.0026997960632601866
       },
       "Dense": {
         "recall_at_100_mean": 0.006,
         "ci_lo": 0.0,
         "ci_hi": 0.014,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.007632881787792299
       },
       "RRF-3way": {
         "recall_at_100_mean": 0.014,
         "ci_lo": 0.006,
         "ci_hi": 0.024,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.05220363534131467
       },
       "RRF-CFBM25": {
         "recall_at_100_mean": 0.018,
         "ci_lo": 0.008,
         "ci_hi": 0.03,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.0955807045456294
       },
       "RRF-CFDense": {
         "recall_at_100_mean": 0.018,
         "ci_lo": 0.008,
         "ci_hi": 0.03,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.0955807045456294
       }
     },
     "per_user": {
@@ -6142,35 +6142,36 @@
         "ci_lo": 0.002,
         "ci_hi": 0.016,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.10880943004054568
       },
       "Dense": {
         "recall_at_100_mean": 0.002,
         "ci_lo": 0.0,
         "ci_hi": 0.006,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.006655605482949377
       },
       "RRF-3way": {
         "recall_at_100_mean": 0.008,
         "ci_lo": 0.002,
         "ci_hi": 0.016,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.014305878435429648
       },
       "RRF-CFBM25": {
         "recall_at_100_mean": 0.014,
         "ci_lo": 0.004,
         "ci_hi": 0.026,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": 0.17971249487899976
       },
       "RRF-CFDense": {
         "recall_at_100_mean": 0.012,
         "ci_lo": 0.004,
         "ci_hi": 0.022,
         "n_users": 500,
-        "p_vs_CF_SVD": null
+        "p_vs_CF_SVD": null,
+        "p_vs_CF_SVD_note": "not testable: all paired differences zero or fewer than 5 nonzero"
       }
     },
     "per_user": {
@@ -9187,5 +9188,6 @@
         0
       ]
     }
-  }
+  },
+  "_p_value_recompute": "p_vs_CF_SVD recomputed 2026-09-17 by scripts/recompute_hybrid_pvalues.py from the stored per-user arrays; the original run nulled them through a tuple-unpack bug. Recall values unchanged."
 }

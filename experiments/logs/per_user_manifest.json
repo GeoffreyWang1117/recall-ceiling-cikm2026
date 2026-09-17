@@ -1,0 +1,1213 @@
+{
+ "generated_by": "scripts/verify_released_per_user.py",
+ "tolerance": 5e-05,
+ "files": [
+  {
+   "file": "cikm_adaptiveK_beauty.jsonl",
+   "paper_items": [
+    "\u00a77.2 adaptive-K"
+   ],
+   "sha256": "69528e5f488348b8d05a3a673b2fffed3737063f95db7fe3b59bef423ea2393a",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "int"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "fk_recall",
+     "published": 0.082,
+     "recomputed": 0.082,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_recall",
+     "published": 0.1393153846153846,
+     "recomputed": 0.1393153846153846,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "fk_ndcg_llm",
+     "published": 0.0015084592900427287,
+     "recomputed": 0.0015084592900427287,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_ndcg_llm",
+     "published": 0.0020239444391668107,
+     "recomputed": 0.0020239444391668107,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_adaptiveK_electronics.jsonl",
+   "paper_items": [
+    "\u00a77.2 adaptive-K"
+   ],
+   "sha256": "da59f59e7fc1e99a64a55c5fcf1ab5d17ac7cf80b65aa729c9fc0b9b08478524",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "int"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "fk_recall",
+     "published": 0.02177854941160788,
+     "recomputed": 0.02177854941160788,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_recall",
+     "published": 0.046241358824417295,
+     "recomputed": 0.046241358824417295,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "fk_ndcg_llm",
+     "published": 0.0035488976807043302,
+     "recomputed": 0.0035488976807043302,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_ndcg_llm",
+     "published": 0.0035488976807043302,
+     "recomputed": 0.0035488976807043302,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_adaptiveK_movies.jsonl",
+   "paper_items": [
+    "\u00a77.2 adaptive-K"
+   ],
+   "sha256": "341fe3a8f3123cfdcff9a427d856de57dec0f3063151de3a693b1fc299689721",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "int"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "fk_recall",
+     "published": 0.029479132338485547,
+     "recomputed": 0.029479132338485547,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_recall",
+     "published": 0.05968662037823266,
+     "recomputed": 0.05968662037823266,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "fk_ndcg_llm",
+     "published": 0.008096140169263528,
+     "recomputed": 0.008096140169263528,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    },
+    {
+     "field": "ak_ndcg_llm",
+     "published": 0.007629748490355108,
+     "recomputed": 0.007629748490355108,
+     "source": "cikm_adaptive_k_ndcg.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_ksens_K100_beauty.jsonl",
+   "paper_items": [
+    "Tab. 8"
+   ],
+   "sha256": "00e9f718b9ad730084f0ebe0f4f5f81a739f5107c793ed52db98a885501d4e7e",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg_llm",
+     "published": 0.002624704548595202,
+     "recomputed": 0.002624704548595202,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "ndcg_cf",
+     "published": 0.005052854685392908,
+     "recomputed": 0.005052854685392908,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "recall",
+     "published": 0.082,
+     "recomputed": 0.082,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_ksens_K10_beauty.jsonl",
+   "paper_items": [
+    "Tab. 8"
+   ],
+   "sha256": "8ad35fa4048d7b308d581d6de215fdf727fa881961062400014b11ed69af8294",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg_llm",
+     "published": 0.004413808897093857,
+     "recomputed": 0.004413808897093857,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "ndcg_cf",
+     "published": 0.005052854685392907,
+     "recomputed": 0.005052854685392907,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "recall",
+     "published": 0.008166666666666668,
+     "recomputed": 0.008166666666666668,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_ksens_K200_beauty.jsonl",
+   "paper_items": [
+    "Tab. 8"
+   ],
+   "sha256": "dbd1246d4bb16cb99a50d566abae2af84fa6d47d7d07dd6e903803f467eb0286",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg_llm",
+     "published": 0.0023019292403543244,
+     "recomputed": 0.0023019292403543244,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "ndcg_cf",
+     "published": 0.005052854685392907,
+     "recomputed": 0.005052854685392907,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "recall",
+     "published": 0.12858205128205127,
+     "recomputed": 0.12858205128205127,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_ksens_K20_beauty.jsonl",
+   "paper_items": [
+    "Tab. 8"
+   ],
+   "sha256": "dbcb50cfe0fd70a595fd699d5cd3cd4fe42e7fb52f658a79ba4dae99b4660b5d",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg_llm",
+     "published": 0.003645206819351449,
+     "recomputed": 0.003645206819351449,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "ndcg_cf",
+     "published": 0.005052854685392907,
+     "recomputed": 0.005052854685392907,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "recall",
+     "published": 0.01896666666666667,
+     "recomputed": 0.01896666666666667,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "cikm_ksens_K50_beauty.jsonl",
+   "paper_items": [
+    "Tab. 8"
+   ],
+   "sha256": "c0d5fc300d72be11b7ddd38afa0b044e60d6755904136236a1bc845205883802",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg_llm",
+     "published": 0.002605853979434256,
+     "recomputed": 0.002605853979434256,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "ndcg_cf",
+     "published": 0.005052854685392908,
+     "recomputed": 0.005052854685392908,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    },
+    {
+     "field": "recall",
+     "published": 0.047133333333333326,
+     "recomputed": 0.047133333333333326,
+     "source": "cikm_k_sensitivity_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-chat_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.2; Tab. 5"
+   ],
+   "sha256": "e50d35b4ead6ef4933cadfb48d5660b6ea2ba043d2b916387ac1ce06c6400d5b",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0015650788435119791,
+     "recomputed": 0.0015650788435119791,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-chat_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "6df40400e6bbb6a5228445b680fe48c2ffb551eefe7368b8660373a1fc886a96",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-chat_mind.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "cd376c8eba4ae4f5b28bca8051ecb78f1b94fd272f7c1d33e817f4f8bca6455e",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.015768158299570473,
+     "recomputed": 0.015768158299570473,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-chat_movielens.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "8b59a38d0882c1317a647a17aa8ed0b93b47426ba29b508eb2112fee5db7f4bb",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.010439310977299351,
+     "recomputed": 0.010439310977299351,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-chat_movies.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "b054c21d063903defb41fce33462aec59f9ef4ee1bd4a9f9728a90ea5f42a8f6",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.006449166015975292,
+     "recomputed": 0.006449166015975292,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-flash-nothink_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "4c8f9bb5450ffcddda81b0d292be96624bc2e4c84d11536ce35a290f8636301d",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0022463023887407296,
+     "recomputed": 0.0022463023887407296,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-flash-nothink_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "fd781414790d9596225e5be8d698251abfd38747b62c5e47ecaf940e6dcd980b",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-flash-nothink_movies.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "290e4ffa3121bd4bf9b89255998c9ce9ae50ab5b30e14e8f94799d041b6c3f3c",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.00592554981287225,
+     "recomputed": 0.00592554981287225,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-flash-think_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "33c167c973d943e794cf861d8daf5b4955c146144b7894447b5108ffa0c4c9a2",
+   "raw_records": 200,
+   "unique_users": 200,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0033121947402240674,
+     "recomputed": 0.0033121947402240674,
+     "source": "rebuttal_multiapi_v4_testrun_20260511.json (n=200)",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-flash-think_movies.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "87fd8eff65b83d27a2f11f1f6ccb474dd0bd12e6a62fd1096cf9a222c5095939",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.004877584197409975,
+     "recomputed": 0.004877584197409975,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-pro-nothink_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "f6f8bbcdf4de367c95c08036e615a476fb2aae82406eeac043b2330a8eb48fb3",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003728920097548655,
+     "recomputed": 0.003728920097548655,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-pro-nothink_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "89eaae479716dd4eab07af5a2ebd304f0a5f01eaad173e56f73c089941939c90",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-pro-nothink_movies.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "4ba735a3bc4355b6a5b1776b40b4b0312802fdfbc2dd7900edbf423ac1b99d20",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.009116810561718014,
+     "recomputed": 0.008940484300853613,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": false
+    }
+   ],
+   "known_discrepancy": "checkpoint mean .00894 vs published .00912 (paper: -7%, p=.245); cause not identified."
+  },
+  {
+   "file": "multiapi_deepseek-v4-pro-think_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "9587ac5feb7e6e9ae3add7d068817a7873edf3a5fbe22279a4ba0f96cf078618",
+   "raw_records": 200,
+   "unique_users": 200,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.004095525292236456,
+     "recomputed": 0.004095525292236456,
+     "source": "rebuttal_multiapi_v4_testrun_20260511.json (n=200)",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_deepseek-v4-pro-think_movies.jsonl",
+   "paper_items": [
+    "\u00a76.3"
+   ],
+   "sha256": "f5261a369e92eadbdb62706f8a6fe67aa5ec76533acd909b658a9fb5fbc849d4",
+   "raw_records": 501,
+   "unique_users": 501,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.005579639973956209,
+     "recomputed": 0.005642970194001741,
+     "source": "v4_aggregate_n500.json",
+     "reproduces": false
+    }
+   ],
+   "known_discrepancy": "checkpoint was repaired after aggregation (154 corrupt records; see .bak_corrupt154 locally). It reproduces the post-repair value in rebuttal_multiapi_v4_testrun_20260511.json (-42.4%, p=.005), not the pre-repair value quoted in the paper (-43%, p=.004)."
+  },
+  {
+   "file": "multiapi_gpt-4o-mini_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.2; Tab. 5"
+   ],
+   "sha256": "7cb2490bf7896aad8f360523f432871ab26c65adc5531992efa88e1c25954fd8",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.004534090010121103,
+     "recomputed": 0.004534090010121103,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_gpt-4o-mini_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "8c99548754722ce5fa599b6e75f62b4510ac5f75bc505fedcf2cfa58d089c5ff",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_gpt-4o-mini_mind.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "1740842b92a23932fb3e82a2ed903b299c7452465c026f23cd76c8a8389ee76f",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.017469936675360037,
+     "recomputed": 0.017469936675360037,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_gpt-4o-mini_movielens.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "950b7afbe791182435b1ec76bd34b055fbef543d985d94e74e3b2fb129ebfe37",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.011959543890614042,
+     "recomputed": 0.011959543890614042,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_gpt-4o-mini_movies.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "75f27403642d8288558e1f1aeaf407cd24d406921a1c656db4a862358d88daa7",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.009306428943939982,
+     "recomputed": 0.009306428943939982,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_kimi-k2-turbo-preview_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.2; Tab. 5"
+   ],
+   "sha256": "72fff7fcc1d5a16177c4e1de739543a22f88ca9aee6e54f6b4786c8b7be416cd",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0028119036883053777,
+     "recomputed": 0.0028119036883053777,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_kimi-k2-turbo-preview_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "fa3f7cb0d73dbbc74ca3ae500a4ab324287d618154b358dd87b0f60908491ab9",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_kimi-k2-turbo-preview_mind.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "90b3b5846b89516e8e72a025b525c360e20747eaee686e1d3975cbcdd8044f2c",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.015595192840476248,
+     "recomputed": 0.015595192840476248,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_kimi-k2-turbo-preview_movielens.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "f9b80692499e3ee8b9c51d450099c211c30e7cb83c5e5951811e26736139dde2",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.010280396425640412,
+     "recomputed": 0.010280396425640412,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_kimi-k2-turbo-preview_movies.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "c6d25823ac96c4e64736a5e78d11a07872670e10b1017074af634b0fd296519b",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.006925933910062284,
+     "recomputed": 0.006925933910062284,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_llama-3.3-70b-versatile_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.2; Tab. 5"
+   ],
+   "sha256": "11ffdfe0b5956c6d306d4d2e69c8f727800a7ddb13f8b75012b7abfd13135060",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003790726100769319,
+     "recomputed": 0.003790726100769319,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_llama-3.3-70b-versatile_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "cc145d7956a53185958fea41329a1e1465607df2aca2d317f8340d140069c796",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.003241087222635997,
+     "recomputed": 0.003241087222635997,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_llama-3.3-70b-versatile_mind.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "14e61e136307227967abdf95bce0d0e2cf399e4da68af628a4499deed79d7a24",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.017322793713378155,
+     "recomputed": 0.017322793713378155,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_llama-3.3-70b-versatile_movielens.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "711954388fd51631460b7a8069c42e86585c06ebcb2827ce7c77632fce878e70",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.007051553554564693,
+     "recomputed": 0.007051553554564693,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_llama-3.3-70b-versatile_movies.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "b9cc5b4898c2b2962da31bdb3a263818248a748fab5375d8dcedec6612f1fbda",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0054371021473159815,
+     "recomputed": 0.0054371021473159815,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_qwen_qwen3-32b_beauty.jsonl",
+   "paper_items": [
+    "\u00a76.2; Tab. 5"
+   ],
+   "sha256": "abde5d86e74189a80f575ee543dcc7954fffbcf2509bd5176eda8a6e1d7e14cb",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0049569029390279865,
+     "recomputed": 0.0049569029390279865,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_qwen_qwen3-32b_electronics.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "f6b0bd137d47cda7785aa97c945608d9f2d0c59d4d384959767a6007b231cbf2",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.0032349585993882704,
+     "recomputed": 0.0032349585993882704,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_qwen_qwen3-32b_mind.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "4070e137fd02bd2e9c86ad083b7f4c566b4874cd5cdf7cc900c1f44f373df7ae",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.013282284722486937,
+     "recomputed": 0.013282284722486937,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_qwen_qwen3-32b_movielens.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "917f8f40dc484751262997df61aaa3b7f321a3bf5e937cd83fdbfa2d0de04ff5",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.012023322447344881,
+     "recomputed": 0.012023322447344881,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "multiapi_qwen_qwen3-32b_movies.jsonl",
+   "paper_items": [
+    "\u00a76.2"
+   ],
+   "sha256": "dd0cb5314fb92b761b4e3157727184d8b42100d71b9a31bc813b7dd3335a373b",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "ndcg",
+     "published": 0.009576918896037146,
+     "recomputed": 0.009576918896037146,
+     "source": "rebuttal_multiapi_n500.json",
+     "reproduces": true
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_plain_beauty.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "15f120a07a274c002fe231026e2d30cd7f6b2b94a6489b85954161c1e61ae915",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_plain_electronics.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "311bf793f77c003d221a66d2a649eaf149de11ace819546eae570e0e9a0e0e60",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_plain_movies.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "1ad91cb25a2985f178a51d60b1be37368691db1646c94e71e83b85d2c248fc89",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_scoreaware_beauty.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "f1aedc17f9675cd8076d4e74957dd1e6499049d524e16c55921b626b806fa6de",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_scoreaware_electronics.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "a81f75596eb69da3b7fdb9f1c2475df0ac5da6823c26549802d17c20a6d7bd29",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  },
+  {
+   "file": "scoreaware_scoreaware_movies.jsonl",
+   "paper_items": [
+    "Tab. 7",
+    "\u00a76.5"
+   ],
+   "sha256": "cea245eeb34238ac7db3298d2ffc2e090992fec12613726dd07b68764134249f",
+   "raw_records": 500,
+   "unique_users": 500,
+   "user_id_types": [
+    "str"
+   ],
+   "int_str_collisions": 0,
+   "checks": [
+    {
+     "field": "llm_order (permutation)",
+     "reproduces": null,
+     "source": "verify with cikm_score_aware_prompting.py --offline_only (2026-09-17: all 247 metric fields identical)"
+    }
+   ]
+  }
+ ]
+}

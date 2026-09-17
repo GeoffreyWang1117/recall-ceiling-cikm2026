@@ -1,0 +1,120 @@
+{
+ "source": "cikm_eta_windows.json",
+ "dataset": "beauty",
+ "n_users": 500,
+ "recall_at_30": 0.03213333333333333,
+ "recall_at_100": 0.08233333333333334,
+ "cor2_bound_at_30": 0.034623560337827666,
+ "cor2_bound_at_100": 0.09114299201446087,
+ "note": "eta_vs_cor2_own_window = ndcg / bound of the paper's Corollary 3 (multi-positive) at the method's own window",
+ "methods": [
+  {
+   "method": "CF-SVD",
+   "ndcg": 0.005052854685392908,
+   "window": 100,
+   "eta_vs_recall100": 0.06137070468088553,
+   "eta_vs_own_window": 0.06137070468088553,
+   "cor2_bound_own_window": 0.09114299201446087,
+   "eta_vs_cor2_own_window": 0.055438762473270745
+  },
+  {
+   "method": "Gemma3-4B",
+   "ndcg": 0.004528710132411442,
+   "window": 30,
+   "eta_vs_recall100": 0.05500457650702157,
+   "eta_vs_own_window": 0.14093496262691207,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.13079851084706734
+  },
+  {
+   "method": "Qwen3-8B",
+   "ndcg": 0.005052854685392908,
+   "window": 30,
+   "eta_vs_recall100": 0.06137070468088553,
+   "eta_vs_own_window": 0.1572465151055884,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.14593688910358696
+  },
+  {
+   "method": "GPT-4o-mini",
+   "ndcg": 0.004534090010121103,
+   "window": 30,
+   "eta_vs_recall100": 0.05506991915126846,
+   "eta_vs_own_window": 0.14110238620708823,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.13095389283716796
+  },
+  {
+   "method": "Qwen3-32B",
+   "ndcg": 0.0049569029390279865,
+   "window": 30,
+   "eta_vs_recall100": 0.06020529885459093,
+   "eta_vs_own_window": 0.15426046490750991,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.14316560430708697
+  },
+  {
+   "method": "Llama-3.3-70B",
+   "ndcg": 0.003790726100769319,
+   "window": 30,
+   "eta_vs_recall100": 0.046041207701651654,
+   "eta_vs_own_window": 0.1179686545882568,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.10948400637550249
+  },
+  {
+   "method": "Kimi-K2",
+   "ndcg": 0.0028119036883053777,
+   "window": 30,
+   "eta_vs_recall100": 0.03415267637617868,
+   "eta_vs_own_window": 0.08750737619207605,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.08121359157952503
+  },
+  {
+   "method": "DeepSeek-V3",
+   "ndcg": 0.0015650788435119791,
+   "window": 30,
+   "eta_vs_recall100": 0.019009054779497724,
+   "eta_vs_own_window": 0.04870577313833959,
+   "cor2_bound_own_window": 0.034623560337827666,
+   "eta_vs_cor2_own_window": 0.0452027124952273
+  },
+  {
+   "method": "LambdaMART",
+   "ndcg": 0.008598815337805682,
+   "window": 100,
+   "eta_vs_recall100": 0.10443905268589898,
+   "eta_vs_own_window": 0.10443905268589898,
+   "cor2_bound_own_window": 0.09114299201446087,
+   "eta_vs_cor2_own_window": 0.09434422930115552
+  },
+  {
+   "method": "RankNet",
+   "ndcg": 0.008520618348419535,
+   "window": 100,
+   "eta_vs_recall100": 0.10348929168120893,
+   "eta_vs_own_window": 0.10348929168120893,
+   "cor2_bound_own_window": 0.09114299201446087,
+   "eta_vs_cor2_own_window": 0.09348626987215476
+  },
+  {
+   "method": "MLP",
+   "ndcg": 0.005804108607523624,
+   "window": 100,
+   "eta_vs_recall100": 0.07049524624522621,
+   "eta_vs_own_window": 0.07049524624522621,
+   "cor2_bound_own_window": 0.09114299201446087,
+   "eta_vs_cor2_own_window": 0.06368134816775312
+  },
+  {
+   "method": "LoRA-LLaMA-3B",
+   "ndcg": 0.007759241956975233,
+   "window": 100,
+   "eta_vs_recall100": 0.09424180514544818,
+   "eta_vs_own_window": 0.09424180514544818,
+   "cor2_bound_own_window": 0.09114299201446087,
+   "eta_vs_cor2_own_window": 0.0851326227664782
+  }
+ ]
+}

@@ -17,9 +17,18 @@ not be regenerated, which let three errors survive review:
 Every number below is read from the experiment JSONs rather than typed in, so
 the figure cannot drift from the tables again.
 
-Usage:  python scripts/make_fig_overview.py
+Usage:  python scripts/make_fig_overview.py                  # camera-ready figure, unchanged
+        python scripts/make_fig_overview.py --variant v2     # arXiv v2 figure
+
+--variant v2 (added 2026-09-17) fixes a scope error the camera-ready figure
+inherited: the shipped test splits are multi-positive, where Recall@K is NOT an
+upper bound on NDCG@k (Corollary 2 needs |Y_u| = 1). In v2 the panel-B bound is
+the Corollary 3 bound read from cikm_corollary2_bound_*.json, panel-C eta divides
+by that bound (cikm_eta_windows_cor2.json), and panel A states Theorem 1 in its
+general form. The default output is left byte-for-byte as submitted.
 """
 
+import argparse
 import json
 import os
 
@@ -32,6 +41,19 @@ from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ETA_JSON = os.path.join(REPO, "experiments", "logs", "cikm_eta_windows.json")
 OUT_DIR = os.path.join(REPO, "submissions", "cikm2026", "figures")
+V2_OUT_DIR = os.path.join(REPO, "submissions", "cikm2026", "arxiv_v2", "figures")
+ETA_V2_JSON = os.path.join(REPO, "experiments", "logs", "cikm_eta_windows_cor2.json")
+COR2_JSON = os.path.join(REPO, "experiments", "logs", "cikm_corollary2_bound_amazon_{}_sampled.json")
+
+# Text that differs between variants. main() switches these for --variant v2.
+CEILING_TEX = r"$\mathbb{E}[\mathrm{NDCG}@k]\ \leq\ \mathrm{Recall}@|W_\pi|$"
+BOUND_LABEL = "closed-candidate bound (Thm. 1)"
+ETA_XLABEL = "ceiling utilisation $\\eta$ = NDCG@10 / Recall@$|W_\\pi|$  (Beauty)"
+ETA_KEY = "eta_vs_own_window"
+# v2 only: the Corollary 3 bound is tall enough that the oracle->realistic gap
+# arrow would cross the bound bar and its label. Draw the bound bar last so the
+# arrow only joins adjacent bars.
+BOUND_LAST = False
 
 # ---------------------------------------------------------------------------
 # Panel B: injection-oracle vs closed-candidate bound vs realistic (Table 2 and
@@ -66,7 +88,7 @@ def load_eta():
     eta = {}
     for m in data["methods"]:
         name = "CF-SVD" if m["method"] == "CF-Score" else m["method"]
-        eta[name] = (100.0 * m["eta_vs_own_window"], m["window"])
+        eta[name] = (100.0 * m[ETA_KEY], m["window"])
     return eta, data
 
 
@@ -95,8 +117,7 @@ def panel_a(ax, recall_lo, recall_hi):
     ax.text(0.0, 0.90, "(A)", fontsize=7.4, fontweight="bold", color=INK)
 
     ax.text(0.53, 0.90,
-            r"Recall ceiling (Theorem 1):  "
-            r"$\mathbb{E}[\mathrm{NDCG}@k]\ \leq\ \mathrm{Recall}@|W_\pi|$",
+            r"Recall ceiling (Theorem 1):  " + CEILING_TEX,
             ha="center", va="center", fontsize=7.2, color=RED,
             fontweight="bold")
     ax.plot([0.01, 0.99], [0.68, 0.68], linestyle=(0, (5, 3)),
@@ -130,11 +151,19 @@ def panel_b(ax):
     names = list(PANEL_B)
     xpos = range(len(names))
     w = 0.25
-    series = [
-        ("injection-oracle", "oracle", "#BFBFBF", -w),
-        ("closed-candidate bound (Thm. 1)", "bound", "#7BA7D7", 0.0),
-        ("realistic retrieval", "realistic", "#B22222", w),
-    ]
+    if BOUND_LAST:
+        series = [
+            ("injection-oracle", "oracle", "#BFBFBF", -w),
+            ("realistic retrieval", "realistic", "#B22222", 0.0),
+            (BOUND_LABEL, "bound", "#7BA7D7", w),
+        ]
+    else:
+        series = [
+            ("injection-oracle", "oracle", "#BFBFBF", -w),
+            (BOUND_LABEL, "bound", "#7BA7D7", 0.0),
+            ("realistic retrieval", "realistic", "#B22222", w),
+        ]
+    real_off = 0.0 if BOUND_LAST else w
     for label, key, color, off in series:
         vals = [PANEL_B[n][key] for n in names]
         ax.bar([x + off for x in xpos], vals, width=w, color=color,
@@ -145,7 +174,7 @@ def panel_b(ax):
 
     for x, n in zip(xpos, names):
         gap = 100 * (1 - PANEL_B[n]["realistic"] / PANEL_B[n]["oracle"])
-        ax.annotate("", xy=(x + w, PANEL_B[n]["realistic"] + 0.008),
+        ax.annotate("", xy=(x + real_off, PANEL_B[n]["realistic"] + 0.008),
                     xytext=(x - w, PANEL_B[n]["oracle"] + 0.008),
                     arrowprops=dict(arrowstyle="-|>", color=RED, lw=0.8,
                                     connectionstyle="arc3,rad=-0.25"),
@@ -200,7 +229,7 @@ def panel_c(ax, eta):
     ax.set_yticklabels([f"{n} ($|W|{{=}}{w}$)" for n, w in zip(names, wins)],
                        fontsize=5.2)
     ax.tick_params(axis="y", length=0, pad=1.5)
-    ax.set_xlabel("ceiling utilisation $\\eta$ = NDCG@10 / Recall@$|W_\\pi|$  (Beauty)",
+    ax.set_xlabel(ETA_XLABEL,
                   fontsize=5.8, labelpad=1.5)
     for s in ("top", "right", "left"):
         ax.spines[s].set_visible(False)
@@ -209,12 +238,33 @@ def panel_c(ax, eta):
 
 
 def main():
+    global ETA_JSON, OUT_DIR, CEILING_TEX, BOUND_LABEL, ETA_XLABEL, ETA_KEY, BOUND_LAST
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--variant", choices=["camera-ready", "v2"], default="camera-ready")
+    ap.add_argument("--out-dir", default=None)
+    args = ap.parse_args()
+    if args.variant == "v2":
+        ETA_JSON, ETA_KEY = ETA_V2_JSON, "eta_vs_cor2_own_window"
+        OUT_DIR = V2_OUT_DIR
+        CEILING_TEX = r"$\mathbb{E}[\mathrm{NDCG}@k]\ \leq\ \mathbb{E}[\mathrm{NDCG}^{*}@k(W_\pi)]$"
+        BOUND_LABEL = "closed-candidate bound (Cor. 3)"
+        BOUND_LAST = True
+        ETA_XLABEL = "ceiling utilisation $\\eta$ = NDCG@10 / NDCG$^*$@10$(W_\\pi)$  (Beauty)"
+        for ds in PANEL_B:
+            with open(COR2_JSON.format(ds.lower())) as fh:
+                PANEL_B[ds]["bound"] = json.load(fh)["corollary2_bound"]["mean"]
+    if args.out_dir:
+        OUT_DIR = args.out_dir
     eta, raw = load_eta()
     plt.rcParams.update({
         "font.family": "serif",
         "font.serif": ["DejaVu Serif"],
         "mathtext.fontset": "dejavuserif",
         "savefig.dpi": 600,
+        # ACM requires Type 1 or TrueType fonts only. Matplotlib's PDF default
+        # is Type 3, which Sheridan rejects, so force TrueType embedding.
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
     })
 
     fig = plt.figure(figsize=(6.0, 2.42))

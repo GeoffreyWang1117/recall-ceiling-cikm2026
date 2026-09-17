@@ -191,13 +191,23 @@ def evaluate(ds: str, n_users: int, K: int, n_positives: int = 5, seed: int = 42
     # gap and paired-Wilcoxon (oracle vs realistic, per user)
     for m in ("hit10", "ndcg10", "map10"):
         a_r = np.array(metrics_real[m]); a_o = np.array(metrics_oracle[m])
-        try:
-            _, p = safe_wilcoxon(a_o, a_r)
-        except Exception:
+        # safe_wilcoxon returns a bare float (NaN when it cannot test). The earlier
+        # `_, p = safe_wilcoxon(...)` always raised and silently nulled every p-value.
+        p = safe_wilcoxon(a_o, a_r)
+        if p is None or (isinstance(p, float) and np.isnan(p)):
             p = None
+            out[f"p_paired_{m}_note"] = "not testable: all paired differences zero or fewer than 5 nonzero"
         gap = 1.0 - (a_r.mean() / a_o.mean() if a_o.mean() > 0 else 0.0)
         out[f"gap_{m}"] = float(gap)
         out[f"p_paired_{m}"] = float(p) if p is not None else None
+
+    # Persist per-user arrays so every aggregate above can be recomputed from the
+    # release. Arrays are aligned with user_id: the loop appends to every list once.
+    lens = {len(v) for v in list(metrics_real.values()) + list(metrics_oracle.values())}
+    assert lens == {len(users)}, f"per-user arrays misaligned: {lens} vs {len(users)}"
+    out["per_user"] = {"user_id": [str(int(u)) for u in users],
+                       "realistic": {k: [float(x) for x in v] for k, v in metrics_real.items()},
+                       "oracle": {k: [float(x) for x in v] for k, v in metrics_oracle.items()}}
 
     return out
 
